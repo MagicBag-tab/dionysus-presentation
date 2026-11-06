@@ -65,6 +65,8 @@
 .theme-symbols .layout-stilllife .symbol-inscription-3{right:5.5vw;top:39vh;background:linear-gradient(270deg,#17111df2 0%,#211925e8 72%,#211925d9 100%)}
 .theme-symbols .layout-stilllife .symbol-inscription-4{right:5.5vw;top:56vh;background:linear-gradient(270deg,#17111df2 0%,#211925e8 72%,#211925d9 100%)}
 .theme-symbols .layout-stilllife .symbol-inscription-5{right:5.5vw;top:72vh;background:linear-gradient(270deg,#17111df2 0%,#211925e8 72%,#211925d9 100%)}
+.theme-symbols .layout-stilllife .symbol-inscription:before{display:none}
+.theme-symbols .layout-stilllife .eyebrow,.theme-symbols .layout-stilllife .copy h1,.theme-symbols .layout-stilllife .subtitle,.theme-symbols .layout-stilllife .symbol-inscription{transform:translateY(2vh)}
 @keyframes symbolsLeafSway{from{translate:-2px 0;rotate:-1deg}to{translate:2px -2px;rotate:1deg}}
 @keyframes symbolsDust{0%,100%{opacity:0;translate:0 5px}35%,70%{opacity:.55}50%{translate:0 -8px}}
 @keyframes symbolsLight{from{opacity:.58}to{opacity:.98}}
@@ -258,9 +260,11 @@
 .layout-facets-mural .eyebrow{position:absolute;left:7vw;top:10vh;color:#d0ad71;font-size:11px;letter-spacing:.3em}
 .layout-facets-mural .copy h1{position:absolute;left:7vw;top:13.5vh;max-width:760px;margin:0;color:#f1e5d0;font-size:clamp(38px,3.8vw,68px);line-height:1.04;letter-spacing:-.03em;text-shadow:0 4px 24px #100b18}
 .layout-facets-mural .subtitle{position:absolute;left:7vw;top:29vh;max-width:620px;margin:0;color:#e3d3b9;font-size:clamp(16px,1.15vw,21px);line-height:1.45;text-shadow:0 2px 14px #100b18}
+.layout-facets-mural .subtitle{top:25vh;max-width:none;width:min(80vw,1080px);font-size:clamp(10px,.54vw,12px);line-height:1.18}
 .layout-facets-mural .facet-inscriptions{display:contents}
 .layout-facets-mural .facet-inscription{position:absolute;z-index:4;width:min(22vw,380px);padding:10px 14px 12px 25px;color:#e9dfc9;background:linear-gradient(90deg,#17121ef2 0%,#211925e8 74%,#211925b8 100%);text-align:left}
 .layout-facets-mural .facet-inscription:before{content:'';position:absolute;left:6px;top:15px;width:7px;height:7px;border:1px solid #d0ad71;transform:rotate(45deg);box-shadow:0 0 9px #c6a15b55}
+.layout-facets-mural .facet-inscription:before{display:none}
 .layout-facets-mural .facet-inscription:after{content:'';position:absolute;left:25px;right:15px;bottom:0;height:1px;background:linear-gradient(90deg,#c6a15b88,transparent)}
 .layout-facets-mural .facet-inscription strong{display:block;margin-bottom:4px;color:#d4b77b;font:600 clamp(18px,1.2vw,23px)/1.18 "Cormorant Garamond",Georgia,serif;letter-spacing:.025em}
 .layout-facets-mural .facet-inscription span{display:block;color:#e4d9c7;font:400 clamp(13px,.86vw,16px)/1.4 Inter,system-ui,sans-serif}
@@ -268,7 +272,7 @@
 .layout-facets-mural .facet-inscription-1{left:7.5vw;top:68vh}
 .layout-facets-mural .facet-inscription-2{right:5.5vw;top:38vh;background:linear-gradient(270deg,#17121ef2 0%,#211925e8 74%,#211925b8 100%)}
 .layout-facets-mural .facet-inscription-3{right:5.5vw;top:67vh;background:linear-gradient(270deg,#17121ef2 0%,#211925e8 74%,#211925b8 100%)}
-.layout-facets-mural .facet-inscription-4{left:42vw;top:33vh;width:min(19vw,340px);background:linear-gradient(90deg,#17121ef2 0%,#211925e8 74%,#211925b8 100%)}
+.layout-facets-mural .facet-inscription-4{left:40vw;top:72vh;width:min(22vw,360px);background:linear-gradient(90deg,#17121ef2 0%,#211925e8 74%,#211925b8 100%)}
 @keyframes facetsLight{from{opacity:.65}to{opacity:.98}}
 @keyframes facetsVine{from{translate:-2px 0;rotate:-.6deg}to{translate:2px -2px;rotate:.6deg}}
 @keyframes facetsCloth{from{translate:-2px 0}to{translate:2px -3px}}
@@ -630,3 +634,1484 @@
 @media(prefers-reduced-motion:reduce){
  .ex-art-wrap,.ex-architecture,.ex-edge{transition:none!important;will-change:auto}
 }
+
+/* Birth of Dionysus: one rising scene links Semele's tragedy to the divine child. */
+.theme-birth .ex-birth{background:#211827}
+.birth-layer{position:absolute;inset:-1%;width:102%;height:102%;overflow:visible;pointer-events:none}
+.birth-background{z-index:0}
+.birth-myth{z-index:1}
+.birth-foreground{z-index:2}
+.birth-clouds{animation:birthCloudDrift 24s ease-in-out infinite alternate}
+.birth-rays{transform-box:fill-box;transform-origin:center;animation:birthRayGlow 8s ease-in-out infinite alternate}
+.birth-light-breath{transform-box:fill-box;transform-origin:center;animation:birthLightBreath 9s ease-in-out infinite alternate}
+.birth-drapery{transform-box:fill-box;transform-origin:center;animation:birthClothSway 14s ease-in-out infinite alternate}
+.layout-birth-story{display:block;padding:0;overflow:hidden}
+.layout-birth-story .copy{display:contents}
+.layout-birth-story .eyebrow{position:absolute;z-index:4;left:8vw;top:9vh;color:#d4b77b;font-size:11px;letter-spacing:.3em}
+.layout-birth-story .copy h1{position:absolute;z-index:4;left:8vw;top:12vh;max-width:760px;margin:0;color:#f1e5d0;font-size:clamp(38px,4vw,70px);line-height:1.04;text-shadow:0 4px 24px #100b18}
+.layout-birth-story .birth-epithet{position:absolute;z-index:4;left:8vw;top:28vh;max-width:650px;margin:0;color:#e3c88e;font:italic 600 clamp(30px,2.7vw,48px)/1.08 "Cormorant Garamond",Georgia,serif;text-shadow:0 3px 22px #100b18}
+.layout-birth-story .birth-epithet:after{content:'';display:block;width:94px;margin-top:15px;border-top:1px solid #b79a68;box-shadow:28px 4px 0 -0.3px #b79a68}
+.layout-birth-story .birth-stages{position:absolute;z-index:4;left:8vw;top:40vh;width:min(35vw,640px);display:flex;flex-direction:column;gap:12px}
+.layout-birth-story .birth-stage{display:grid;grid-template-columns:32px 1fr;gap:12px;padding:0 0 12px;border-bottom:1px solid #b79a684d;text-shadow:0 2px 14px #100b18}
+.layout-birth-story .birth-stage:last-child{border-bottom:0}
+.layout-birth-story .birth-stage-number{color:#d0ad71;font:600 16px Cinzel,serif;padding-top:3px}
+.layout-birth-story .birth-stage strong{display:block;margin-bottom:4px;color:#e8d2a2;font:600 clamp(19px,1.35vw,24px)/1.15 "Cormorant Garamond",Georgia,serif;letter-spacing:.02em}
+.layout-birth-story .birth-stage p{margin:0;color:#e9dfd0;font:400 clamp(14px,1vw,17px)/1.42 Inter,system-ui,sans-serif}
+@keyframes birthCloudDrift{from{translate:-3px 1px}to{translate:5px -5px}}
+@keyframes birthRayGlow{from{opacity:.55;scale:.98}to{opacity:.94;scale:1.02}}
+@keyframes birthLightBreath{from{opacity:.68}to{opacity:1}}
+@keyframes birthClothSway{from{transform:translateX(-2px)}to{transform:translateX(3px)}}
+@media(max-width:800px){
+ .theme-birth .ex-birth{opacity:.7}
+ .layout-birth-story{overflow-y:auto;padding:14vh 7vw 14vh}
+ .layout-birth-story .copy{display:block;position:relative;z-index:4;padding:0}
+ .layout-birth-story .eyebrow,.layout-birth-story .copy h1,.layout-birth-story .birth-epithet,
+ .layout-birth-story .birth-stages{position:relative;inset:auto;left:auto;right:auto;top:auto;width:auto;max-width:100%;margin:0}
+ .layout-birth-story .eyebrow{margin-bottom:13px}
+ .layout-birth-story .copy h1{font-size:clamp(36px,10vw,58px);margin-bottom:18px}
+ .layout-birth-story .birth-epithet{font-size:clamp(30px,8vw,42px);margin-bottom:24px}
+ .layout-birth-story .birth-stages{gap:14px}
+ .layout-birth-story .birth-stage{grid-template-columns:28px 1fr;gap:10px;padding-bottom:14px}
+ .layout-birth-story .birth-stage p{font-size:14px}
+}
+@media(prefers-reduced-motion:reduce){
+ .birth-clouds,.birth-rays,.birth-light-breath,.birth-drapery{animation:none!important}
+}
+
+/* Nisa: a protected garden opens beside the editorial text. */
+.theme-forest .ex-nisa{background:#211827}
+.nisa-layer{position:absolute;inset:-1%;width:102%;height:102%;overflow:visible;pointer-events:none}
+.nisa-distance{z-index:0}
+.nisa-garden{z-index:1}
+.nisa-figures{z-index:2}
+.nisa-foreground{z-index:3}
+.nisa-waterfall{animation:nisa-waterfall-flow 6s ease-in-out infinite alternate}
+.nisa-water-thread{stroke-dasharray:20 13;animation:nisa-water-thread 4s linear infinite}
+.nisa-water-ripple{animation:nisa-river-flow 12s ease-in-out infinite alternate}
+.nisa-sway-leaf{transform-box:fill-box;transform-origin:bottom center;animation:nisa-leaf-sway 12s ease-in-out infinite alternate}
+.nisa-sway-leaf:nth-child(even){animation-duration:16s;animation-direction:alternate-reverse}
+.nisa-firefly{opacity:.18;animation:nisa-firefly-glow 7s ease-in-out infinite}
+.layout-nisa-story{display:block;padding:0;overflow:hidden}
+.layout-nisa-story .copy{display:contents}
+.layout-nisa-story .eyebrow{position:absolute;z-index:4;left:8vw;top:11vh;color:#d4b77b;font-size:11px;letter-spacing:.3em}
+.layout-nisa-story .copy h1{position:absolute;z-index:4;left:8vw;top:15vh;max-width:680px;margin:0;color:#f1e5d0;font-size:clamp(38px,3.8vw,68px);line-height:1.04;text-shadow:0 4px 24px #100b18}
+.layout-nisa-story .nisa-epithet{position:absolute;z-index:4;left:8vw;top:32vh;width:min(36vw,660px);margin:0;color:#e3c88e;font:italic 600 clamp(24px,2vw,36px)/1.16 "Cormorant Garamond",Georgia,serif;text-shadow:0 3px 22px #100b18}
+.layout-nisa-story .nisa-epithet:after{content:'';display:block;width:94px;margin-top:12px;border-top:1px solid #b79a68;box-shadow:28px 4px 0 -0.3px #b79a68}
+.layout-nisa-story .nisa-stages{position:absolute;z-index:4;left:8vw;top:44vh;width:min(36vw,650px);display:flex;flex-direction:column;gap:15px}
+.layout-nisa-story .nisa-stage{display:grid;grid-template-columns:34px 1fr;gap:12px;padding:0 0 14px;border-bottom:1px solid #b79a684d;text-shadow:0 2px 14px #100b18}
+.layout-nisa-story .nisa-stage:last-child{border-bottom:0}
+.layout-nisa-story .nisa-stage-number{color:#d0ad71;font:600 16px Cinzel,serif;padding-top:3px}
+.layout-nisa-story .nisa-stage strong{display:block;margin-bottom:5px;color:#e8d2a2;font:600 clamp(19px,1.35vw,24px)/1.15 "Cormorant Garamond",Georgia,serif;letter-spacing:.02em}
+.layout-nisa-story .nisa-stage p{margin:0;color:#e9dfd0;font:400 clamp(14px,1vw,17px)/1.44 Inter,system-ui,sans-serif}
+@keyframes nisa-waterfall-flow{from{opacity:.68}to{opacity:.98}}
+@keyframes nisa-water-thread{to{stroke-dashoffset:-66}}
+@keyframes nisa-river-flow{from{translate:-5px 0}to{translate:8px 0}}
+@keyframes nisa-leaf-sway{from{rotate:-2deg;translate:-2px 0}to{rotate:2deg;translate:3px -2px}}
+@keyframes nisa-firefly-glow{0%,100%{opacity:.16;translate:0 5px}45%,68%{opacity:.9}55%{translate:0 -10px}}
+@media(max-width:800px){
+ .theme-forest .ex-nisa{opacity:.56}
+ .layout-nisa-story{overflow-y:auto;padding:14vh 7vw 14vh}
+ .layout-nisa-story .copy{display:block;position:relative;z-index:4;padding:0}
+ .layout-nisa-story .eyebrow,.layout-nisa-story .copy h1,.layout-nisa-story .nisa-epithet,
+ .layout-nisa-story .nisa-stages{position:relative;inset:auto;left:auto;right:auto;top:auto;width:auto;max-width:100%;margin:0}
+ .layout-nisa-story .eyebrow{margin-bottom:13px}
+ .layout-nisa-story .copy h1{font-size:clamp(36px,10vw,58px);margin-bottom:20px}
+ .layout-nisa-story .nisa-epithet{font-size:clamp(25px,7vw,34px);margin-bottom:24px}
+ .layout-nisa-story .nisa-stages{gap:15px}
+ .layout-nisa-story .nisa-stage{grid-template-columns:28px 1fr;gap:10px;padding-bottom:15px}
+ .layout-nisa-story .nisa-stage p{font-size:14px}
+}
+@media(prefers-reduced-motion:reduce){
+ .nisa-waterfall,.nisa-water-thread,.nisa-water-ripple,.nisa-sway-leaf,.nisa-firefly{animation:none!important}
+}
+
+/* Temple genealogy relief: lineage is shown through sculpted medallions and vines. */
+.theme-tree .ex-family-mural{background:#211827}
+.theme-tree .ex-shade{display:none}
+.family-mural-layer{position:absolute;inset:-1%;width:102%;height:102%;overflow:visible;pointer-events:none}
+.family-mural-architecture{z-index:0}
+.family-mural-portraits{z-index:1}
+.family-mural-foreground{z-index:2}
+.family-medallion-light{transform-box:fill-box;transform-origin:center;animation:family-medallion-glow 8s ease-in-out infinite alternate}
+.family-name-inscriptions{font:600 19px Cinzel,Georgia,serif;letter-spacing:.18em}
+.family-name-inscriptions .family-name-dionysus{font-size:23px;letter-spacing:.22em}
+.family-relief-branches path{stroke-dasharray:1;stroke-dashoffset:1;animation:family-branch-etch 1.8s cubic-bezier(.2,.8,.2,1) forwards}
+.family-relief-branches path:nth-child(2){animation-delay:.3s}
+.family-relief-branches path:nth-child(3){animation-delay:.6s}
+.family-relief-branches path:nth-child(4){animation-delay:.9s}
+.family-vine-leaf{transform-box:fill-box;transform-origin:bottom center;animation:family-leaf-sway 13s ease-in-out infinite alternate}
+.family-vine-leaf:nth-child(even){animation-direction:alternate-reverse;animation-duration:16s}
+.family-particles circle{opacity:0;animation:family-particle-glow 8s ease-in-out infinite}
+.layout-family-mural{display:block;padding:0;overflow:hidden}
+.layout-family-mural .copy{display:contents}
+.layout-family-mural .eyebrow{position:absolute;z-index:4;left:8vw;top:10vh;color:#d4b77b;font-size:11px;letter-spacing:.3em}
+.layout-family-mural .copy h1{position:absolute;z-index:4;left:8vw;top:8vh;max-width:700px;margin:0;color:#f1e5d0;font-size:clamp(34px,3.5vw,62px);line-height:1.04;text-shadow:0 4px 24px #100b18}
+.layout-family-mural .copy h1{left:50%;width:84vw;max-width:1100px;text-align:center;transform:translateX(-50%)}
+.layout-family-mural .family-facts{position:absolute;z-index:4;left:8vw;right:8vw;top:76vh;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px}
+.layout-family-mural .family-fact{position:relative;padding:0 28px 0 0;text-shadow:0 2px 14px #100b18}
+.layout-family-mural .family-fact:not(:last-child):after{content:'';position:absolute;right:0;top:3px;bottom:2px;border-right:1px solid #b79a6866}
+.layout-family-mural .family-fact strong{display:block;margin-bottom:8px;color:#e8d2a2;font:600 clamp(20px,1.45vw,26px)/1.1 "Cormorant Garamond",Georgia,serif;letter-spacing:.06em;text-transform:uppercase}
+.layout-family-mural .family-fact p{margin:0;color:#e9dfd0;font:400 clamp(14px,1vw,18px)/1.45 Inter,system-ui,sans-serif}
+.layout-family-mural .family-note{position:absolute;z-index:4;left:8vw;right:8vw;top:94vh;margin:0;color:#d2c2a8;font:italic 400 clamp(12px,.8vw,14px)/1.3 "Cormorant Garamond",Georgia,serif;text-align:center;text-shadow:0 2px 12px #100b18}
+.family-connection-labels text{font:600 14px Cinzel,Georgia,serif;letter-spacing:.12em;paint-order:stroke;stroke:#211827;stroke-width:6px;stroke-opacity:.8}
+.family-name-inscriptions text{transform:translateY(10px)}
+.family-name-inscriptions .family-name-dionysus{transform:none}
+.layout-family-mural .family-facts{top:75vh;gap:28px}
+.layout-family-mural .family-fact{min-height:118px;padding-right:24px}
+.layout-family-mural .family-note{top:91vh;font-size:clamp(13px,.95vw,17px);line-height:1.38}
+@keyframes family-medallion-glow{from{filter:drop-shadow(0 0 3px #d2b77822)}to{filter:drop-shadow(0 0 13px #d2b77855)}}
+@keyframes family-branch-etch{to{stroke-dashoffset:0}}
+@keyframes family-leaf-sway{from{rotate:-2deg;translate:-2px 0}to{rotate:2deg;translate:3px -2px}}
+@keyframes family-particle-glow{0%,100%{opacity:0;translate:0 6px}40%,65%{opacity:.7}52%{translate:0 -8px}}
+@media(max-width:800px){
+ .theme-tree .ex-family-mural{opacity:.42}
+ .layout-family-mural{overflow-y:auto;padding:14vh 7vw 15vh}
+ .layout-family-mural .copy{display:block;position:relative;z-index:4;padding:0}
+ .layout-family-mural .eyebrow,.layout-family-mural .copy h1,.layout-family-mural .family-facts,.layout-family-mural .family-note{position:relative;inset:auto;left:auto;right:auto;top:auto;width:auto;max-width:100%;margin:0}
+ .layout-family-mural .eyebrow{margin-bottom:13px}
+ .layout-family-mural .copy h1{font-size:clamp(36px,10vw,58px);margin-bottom:24px}
+ .layout-family-mural .family-facts{grid-template-columns:1fr;gap:18px}
+ .layout-family-mural .family-fact{padding:0 0 16px;border-bottom:1px solid #b79a684d}
+ .layout-family-mural .family-fact:not(:last-child):after{display:none}
+ .layout-family-mural .family-fact strong{font-size:21px;margin-bottom:5px}
+ .layout-family-mural .family-fact p{font-size:14px}
+ .layout-family-mural .family-note{margin-top:22px;font-size:13px}
+}
+@media(prefers-reduced-motion:reduce){
+ .family-medallion-light,.family-relief-branches path,.family-vine-leaf,.family-particles circle{animation:none!important}
+}
+
+/* A Greek polis links vineyards, sanctuary, agora and theatre in one panorama. */
+.theme-society .ex-society-city{background:#211827}
+.society-city-layer{position:absolute;inset:-2%;width:104%;height:104%;overflow:visible;pointer-events:none}
+.society-city-backdrop{z-index:0}
+.society-city-architecture{z-index:1}
+.society-city-life{z-index:2}
+.society-city-foreground{z-index:3}
+.society-vines{transform-box:fill-box;transform-origin:bottom center;animation:society-vine-sway 15s ease-in-out infinite alternate}
+.society-banner{transform-box:fill-box;transform-origin:top center;animation:society-banner-sway 12s ease-in-out infinite alternate}
+.society-ambience circle{opacity:0;animation:society-glimmer 8s ease-in-out infinite}
+.layout-society-city{display:block;padding:0;overflow:hidden}
+.layout-society-city .copy{display:contents}
+.layout-society-city .eyebrow{position:absolute;z-index:5;left:8vw;top:9vh;color:#d4b77b;font-size:11px;letter-spacing:.3em}
+.layout-society-city .copy h1{position:absolute;z-index:5;left:8vw;top:12vh;max-width:62vw;margin:0;color:#f1e5d0;font-size:clamp(38px,3.55vw,66px);line-height:1.04;text-shadow:0 4px 24px #100b18}
+.layout-society-city .subtitle{position:absolute;z-index:5;left:8vw;top:23vh;max-width:min(43vw,700px);margin:0;color:#f0e2ca;font-size:clamp(16px,1.15vw,21px);line-height:1.45;text-shadow:0 2px 14px #100b18}
+.layout-society-city .society-inscriptions{display:contents}
+.layout-society-city .society-inscription{position:absolute;z-index:5;width:19vw;max-width:370px;padding:12px 15px 13px;background:linear-gradient(100deg,#211827ed,#211827c9 82%,#21182788);border-top:1px solid #c7a86f9c;box-shadow:0 10px 24px #100b1840;text-shadow:0 2px 12px #100b18}
+.layout-society-city .society-inscription:before{content:'';position:absolute;left:0;top:-4px;width:34px;border-top:3px solid #b79a68}
+.layout-society-city .society-inscription-0{left:6.5vw;top:47vh}
+.layout-society-city .society-inscription-1{left:29.5vw;top:53vh}
+.layout-society-city .society-inscription-2{left:52.5vw;top:44vh}
+.layout-society-city .society-inscription-3{left:75.5vw;top:50vh}
+.layout-society-city .society-inscription strong{display:block;margin-bottom:5px;color:#e8d2a2;font:600 clamp(19px,1.35vw,25px)/1.1 "Cormorant Garamond",Georgia,serif;letter-spacing:.07em;text-transform:uppercase}
+.layout-society-city .society-inscription p{margin:0;color:#f0e6d7;font:400 clamp(13px,.9vw,17px)/1.42 Inter,system-ui,sans-serif}
+.layout-society-city .society-inscription{transform:translateY(-3vh)}
+.layout-society-city .society-quote{position:absolute;z-index:5;left:15vw;right:15vw;top:78vh;width:auto;max-width:none;margin:0;padding:16px 28px 18px;border-top:1px solid #b79a6899;border-bottom:1px solid #b79a6866;background:linear-gradient(90deg,#211827d9,#211827f2 18%,#211827f2 82%,#211827d9);color:#f0dfbd;text-align:center;font:italic 600 clamp(21px,1.65vw,31px)/1.18 "Cormorant Garamond",Georgia,serif;text-shadow:0 2px 12px #100b18}
+.layout-society-city .society-note{position:absolute;z-index:5;left:15vw;right:15vw;top:91vh;margin:0;color:#e0d1b7;text-align:center;font:italic 400 clamp(12px,.78vw,15px)/1.35 "Cormorant Garamond",Georgia,serif;text-shadow:0 2px 12px #100b18}
+@keyframes society-vine-sway{from{rotate:-1.3deg}to{rotate:1.3deg}}
+@keyframes society-banner-sway{from{rotate:-.8deg}to{rotate:1deg}}
+@keyframes society-glimmer{0%,100%{opacity:0;translate:0 5px}38%,62%{opacity:.68}50%{translate:0 -7px}}
+@media(max-width:800px){
+ .theme-society .ex-society-city{opacity:.45}
+ .layout-society-city{overflow-y:auto;padding:14vh 7vw 15vh}
+ .layout-society-city .copy{display:block;position:relative;z-index:5;padding:0}
+ .layout-society-city .eyebrow,.layout-society-city .copy h1,.layout-society-city .subtitle,
+ .layout-society-city .society-inscription,.layout-society-city .society-quote,.layout-society-city .society-note{
+  position:relative;inset:auto;left:auto;right:auto;top:auto;width:auto;max-width:100%;margin:0
+ }
+ .layout-society-city .eyebrow{margin-bottom:13px}
+ .layout-society-city .copy h1{font-size:clamp(36px,10vw,58px);margin-bottom:16px}
+ .layout-society-city .subtitle{margin-bottom:26px;font-size:16px}
+ .layout-society-city .society-inscriptions{display:flex;flex-direction:column;gap:15px}
+ .layout-society-city .society-inscription{padding:10px 13px;background:#211827ed}
+ .layout-society-city .society-inscription strong{font-size:20px}
+ .layout-society-city .society-inscription p{font-size:14px}
+ .layout-society-city .society-quote{margin-top:24px;padding:13px 10px;font-size:23px}
+ .layout-society-city .society-note{margin-top:10px;font-size:13px}
+}
+@media(prefers-reduced-motion:reduce){
+ .society-vines,.society-banner,.society-ambience circle{animation:none!important}
+ .society-city-layer{transition:none!important;will-change:auto}
+}
+
+/* A living procession joins Athens' theatres, local rites and rural festivals. */
+.theme-festival .ex-festival-procession{background:#211827}
+.festival-layer{position:absolute;inset:-2%;width:104%;height:104%;overflow:visible;pointer-events:none}
+.festival-background{z-index:0}
+.festival-architecture{z-index:1}
+.festival-procession{z-index:2}
+.festival-foreground{z-index:3}
+.festival-banner{transform-box:fill-box;transform-origin:top center;animation:festival-banner-sway 12s ease-in-out infinite alternate}
+.festival-garland{transform-box:fill-box;transform-origin:center;animation:festival-garland-sway 14s ease-in-out infinite alternate}
+.festival-vines{transform-box:fill-box;transform-origin:bottom center;animation:festival-vine-sway 16s ease-in-out infinite alternate}
+.festival-particles circle{opacity:0;animation:festival-particle-glow 8s ease-in-out infinite}
+.layout-festival-procession{display:block;padding:0;overflow:hidden}
+.layout-festival-procession .copy{display:contents}
+.layout-festival-procession .eyebrow{position:absolute;z-index:5;left:8vw;top:8vh;color:#d4b77b;font-size:11px;letter-spacing:.3em}
+.layout-festival-procession .copy h1{position:absolute;z-index:5;left:8vw;top:11vh;max-width:64vw;margin:0;color:#f1e5d0;font-size:clamp(38px,3.8vw,68px);line-height:1.04;text-shadow:0 4px 24px #100b18}
+.layout-festival-procession .subtitle{position:absolute;z-index:5;left:8vw;top:25vh;max-width:min(43vw,760px);margin:0;color:#f0e2ca;font-size:clamp(16px,1.15vw,21px);line-height:1.45;text-shadow:0 2px 14px #100b18}
+.layout-festival-procession .festival-inscriptions{display:contents}
+.layout-festival-procession .festival-inscription{position:absolute;z-index:5;width:20vw;max-width:390px;padding:13px 17px 14px;background:linear-gradient(110deg,#211827f2,#30232bdc 75%,#211827d9);border:1px solid #b79a6870;box-shadow:0 10px 24px #100b1850;text-shadow:0 2px 12px #100b18}
+.layout-festival-procession .festival-inscription:before,.layout-festival-procession .festival-inscription:after{content:'';position:absolute;left:12px;right:12px;height:1px;background:#d6bb8b55}
+.layout-festival-procession .festival-inscription:before{top:4px}
+.layout-festival-procession .festival-inscription:after{bottom:4px}
+.layout-festival-procession .festival-inscription-0{left:5vw;top:38vh}
+.layout-festival-procession .festival-inscription-1{left:28vw;top:48vh}
+.layout-festival-procession .festival-inscription-2{left:49vw;top:38vh}
+.layout-festival-procession .festival-inscription-3{left:76vw;top:48vh}
+.layout-festival-procession .festival-inscription strong{display:block;margin-bottom:5px;color:#e8d2a2;font:600 clamp(19px,1.35vw,25px)/1.1 "Cormorant Garamond",Georgia,serif;letter-spacing:.06em;text-transform:uppercase}
+.layout-festival-procession .festival-inscription p{margin:0;color:#f0e6d7;font:400 clamp(13px,.9vw,17px)/1.42 Inter,system-ui,sans-serif}
+.layout-festival-procession .festival-inscription{transform:translateY(2vh)}
+.layout-festival-procession .festival-inscription-0,.layout-festival-procession .festival-inscription-2{transform:translateY(5vh)}
+.layout-festival-procession .festival-inscription-1,.layout-festival-procession .festival-inscription-3{transform:translateY(0)}
+.layout-festival-procession .festival-inscription-0,.layout-festival-procession .festival-inscription-2{transform:translateY(7vh)}
+.layout-festival-procession .festival-inscription-0,.layout-festival-procession .festival-inscription-2{transform:translateY(9vh)}
+.layout-festival-procession .festival-inscription-0{top:42vh!important}
+.layout-festival-procession .festival-inscription-2{top:42vh!important}
+.layout-festival-procession .festival-note{position:absolute;z-index:5;left:18vw;right:18vw;top:92vh;margin:0;color:#e0d1b7;text-align:center;font:italic 400 clamp(12px,.8vw,15px)/1.35 "Cormorant Garamond",Georgia,serif;text-shadow:0 2px 12px #100b18}
+@keyframes festival-banner-sway{from{rotate:-.8deg}to{rotate:1deg}}
+@keyframes festival-garland-sway{from{translate:-2px 0;rotate:-.25deg}to{translate:3px 1px;rotate:.25deg}}
+@keyframes festival-vine-sway{from{rotate:-1.1deg}to{rotate:1.1deg}}
+@keyframes festival-particle-glow{0%,100%{opacity:0;translate:0 5px}38%,62%{opacity:.68}50%{translate:0 -7px}}
+@media(max-width:800px){
+ .theme-festival .ex-festival-procession{opacity:.42}
+ .layout-festival-procession{overflow-y:auto;padding:14vh 7vw 15vh}
+ .layout-festival-procession .copy{display:block;position:relative;z-index:5;padding:0}
+ .layout-festival-procession .eyebrow,.layout-festival-procession .copy h1,.layout-festival-procession .subtitle,
+ .layout-festival-procession .festival-inscription,.layout-festival-procession .festival-note{
+  position:relative;inset:auto;left:auto;right:auto;top:auto;width:auto;max-width:100%;margin:0
+ }
+ .layout-festival-procession .eyebrow{margin-bottom:13px}
+ .layout-festival-procession .copy h1{font-size:clamp(36px,10vw,58px);margin-bottom:16px}
+ .layout-festival-procession .subtitle{margin-bottom:25px;font-size:16px}
+ .layout-festival-procession .festival-inscriptions{display:flex;flex-direction:column;align-items:stretch;gap:14px;width:100%}
+ .layout-festival-procession .festival-inscription{display:block;flex:0 0 auto;width:100%;padding:11px 14px;background:#211827ed}
+ .layout-festival-procession .festival-inscription strong{font-size:20px}
+ .layout-festival-procession .festival-inscription p{font-size:14px}
+ .layout-festival-procession .festival-note{margin-top:22px;font-size:13px}
+}
+@media(prefers-reduced-motion:reduce){
+ .festival-banner,.festival-garland,.festival-vines,.festival-particles circle{animation:none!important}
+ .festival-layer{transition:none!important;will-change:auto}
+}
+
+/* The Greek theatre is shown as theatron, orchestra and skene around a lit performance. */
+.theme-theatre .ex-theatre-panorama{background:#211827}
+.theatre-layer{position:absolute;inset:-2%;width:104%;height:104%;overflow:visible;pointer-events:none}
+.theatre-architecture{z-index:0}
+.theatre-audience{z-index:1}
+.theatre-performance{z-index:2}
+.theatre-foreground{z-index:3}
+.theatre-stage-glow{transform-box:fill-box;transform-origin:center;animation:theatre-glow-breathe 8s ease-in-out infinite alternate}
+.theatre-curtain-left{transform-box:fill-box;transform-origin:left center;animation:theatre-curtain-left-open 1.35s cubic-bezier(.16,1,.3,1) .18s forwards}
+.theatre-curtain-right{transform-box:fill-box;transform-origin:right center;animation:theatre-curtain-right-open 1.35s cubic-bezier(.16,1,.3,1) .18s forwards}
+.theatre-olive{transform-box:fill-box;transform-origin:bottom center;animation:theatre-olive-sway 15s ease-in-out infinite alternate}
+.layout-theatre-panorama{display:block;padding:0;overflow:hidden}
+.layout-theatre-panorama .copy{display:contents}
+.layout-theatre-panorama .eyebrow{position:absolute;z-index:5;left:8vw;right:8vw;top:6vh;color:#d4b77b;text-align:center;font-size:11px;letter-spacing:.3em}
+.layout-theatre-panorama .copy h1{position:absolute;z-index:5;left:8vw;right:8vw;top:9vh;max-width:none;margin:0;color:#f1e5d0;text-align:center;font-size:clamp(34px,3.35vw,60px);line-height:1.04;text-shadow:0 4px 24px #100b18}
+.layout-theatre-panorama .subtitle{position:absolute;z-index:5;left:25vw;right:25vw;top:22vh;max-width:960px;margin:0 auto;color:#f0e2ca;text-align:center;font-size:clamp(14px,.95vw,18px);line-height:1.3;text-shadow:0 2px 14px #100b18}
+.layout-theatre-panorama .theatre-inscriptions{display:contents}
+.layout-theatre-panorama .theatre-inscription{position:absolute;z-index:5;width:min(24vw,390px);max-width:none;padding:11px 16px 12px;background:linear-gradient(115deg,#211827ed,#30232bdc 78%,#211827d9);border-left:2px solid #b79a68;border-bottom:1px solid #b79a6877;box-shadow:0 10px 24px #100b1850;text-shadow:0 2px 12px #100b18}
+.layout-theatre-panorama .theatre-inscription-0{left:6vw;top:35vh}
+.layout-theatre-panorama .theatre-inscription-3{left:6vw;top:54vh}
+.layout-theatre-panorama .theatre-inscription-2{right:6vw;top:35vh}
+.layout-theatre-panorama .theatre-inscription-1{right:6vw;top:54vh}
+.layout-theatre-panorama .theatre-inscription-1:after{content:'';position:absolute;right:-12vw;top:50%;width:11vw;border-top:1px solid #d1b77899}
+.layout-theatre-panorama .theatre-inscription strong{display:block;margin-bottom:5px;color:#e8d2a2;font:600 clamp(19px,1.35vw,25px)/1.1 "Cormorant Garamond",Georgia,serif;letter-spacing:.06em;text-transform:uppercase}
+.layout-theatre-panorama .theatre-inscription p{margin:0;color:#f0e6d7;font:400 clamp(13px,.9vw,17px)/1.4 Inter,system-ui,sans-serif}
+.layout-theatre-panorama .theatre-quote{position:absolute;z-index:5;left:24vw;right:24vw;top:85vh;width:auto;max-width:none;margin:0;padding:8px 16px 9px;border-top:1px solid #b79a6899;border-bottom:1px solid #b79a6866;background:linear-gradient(90deg,#211827d9,#211827f2 18%,#211827f2 82%,#211827d9);color:#f0dfbd;text-align:center;font:italic 600 clamp(18px,1.25vw,24px)/1.18 "Cormorant Garamond",Georgia,serif;text-shadow:0 2px 12px #100b18}
+.layout-theatre-panorama .theatre-note{position:absolute;z-index:5;left:28vw;right:18vw;top:94vh;margin:0;color:#e0d1b7;text-align:center;font:italic 400 clamp(11px,.72vw,14px)/1.3 "Cormorant Garamond",Georgia,serif;text-shadow:0 2px 12px #100b18}
+@keyframes theatre-glow-breathe{from{opacity:.72;scale:.98}to{opacity:1;scale:1.025}}
+@keyframes theatre-curtain-left-open{to{translate:-76% 0;opacity:0}}
+@keyframes theatre-curtain-right-open{to{translate:76% 0;opacity:0}}
+@keyframes theatre-olive-sway{from{rotate:-.8deg}to{rotate:.8deg}}
+@media(max-width:800px){
+ .theme-theatre .ex-theatre-panorama{opacity:.3}
+ .layout-theatre-panorama{overflow-y:auto;padding:14vh 7vw 15vh}
+ .layout-theatre-panorama .copy{display:block;position:relative;z-index:5;padding:0}
+ .layout-theatre-panorama .eyebrow,.layout-theatre-panorama .copy h1,.layout-theatre-panorama .subtitle,
+ .layout-theatre-panorama .theatre-inscription,.layout-theatre-panorama .theatre-quote,.layout-theatre-panorama .theatre-note{
+  position:relative;inset:auto;left:auto;right:auto;top:auto;width:auto;max-width:100%;margin:0
+ }
+ .layout-theatre-panorama .eyebrow{margin-bottom:13px;text-align:left}
+ .layout-theatre-panorama .copy h1{font-size:clamp(36px,10vw,58px);margin-bottom:16px;text-align:left}
+ .layout-theatre-panorama .subtitle{margin-bottom:24px;text-align:left;font-size:16px}
+ .layout-theatre-panorama .theatre-inscriptions{display:flex;flex-direction:column;align-items:stretch;gap:12px;width:100%}
+ .layout-theatre-panorama .theatre-inscription{display:block;flex:0 0 auto;width:100%;padding:11px 14px;background:#211827ed}
+ .layout-theatre-panorama .theatre-inscription strong{font-size:20px}
+ .layout-theatre-panorama .theatre-inscription p{font-size:14px}
+ .layout-theatre-panorama .theatre-quote{margin-top:22px;padding:13px 10px;font-size:23px}
+ .layout-theatre-panorama .theatre-note{margin-top:10px;font-size:13px}
+}
+@media(prefers-reduced-motion:reduce){
+ .theatre-stage-glow,.theatre-curtain-left,.theatre-curtain-right,.theatre-olive{animation:none!important;translate:none!important;rotate:none!important}
+ .theatre-layer{transition:none!important;will-change:auto}
+}
+
+/* The Homeric Hymn VII episode unfolds across the ship, sea and dolphin transformation. */
+.theme-ship .ex-pirate-metamorphosis{background:#211827}
+.pirate-layer{position:absolute;inset:-2%;width:104%;height:104%;overflow:visible;pointer-events:none;transition:transform .7s cubic-bezier(.16,1,.3,1);will-change:transform}
+.pirate-sky{z-index:0}
+.pirate-ship{z-index:1}
+.pirate-deck{z-index:2}
+.pirate-transformation{z-index:3}
+.pirate-distant-waves,.pirate-foreground-waves{animation:pirate-wave-drift 18s ease-in-out infinite alternate}
+.pirate-foreground-waves{animation-duration:13s;animation-direction:alternate-reverse}
+.pirate-wind-cloth{transform-box:fill-box;transform-origin:left center;animation:pirate-cloth-billow 10s ease-in-out infinite alternate}
+.pirate-vine-growth{stroke-dasharray:1;stroke-dashoffset:1;animation:pirate-vine-reveal 7s ease-out .4s forwards}
+.pirate-divine-light{transform-box:fill-box;transform-origin:center;animation:pirate-divine-breathe 7s ease-in-out infinite alternate}
+.pirate-dolphin{transform-box:fill-box;transform-origin:center;animation:pirate-dolphin-rise 6s ease-in-out infinite alternate}
+.pirate-dolphin-two{animation-delay:-2.3s;animation-duration:7s}
+.pirate-dolphin-three{animation-delay:-3.8s;animation-duration:6.5s}
+.pirate-splash{transform-box:fill-box;transform-origin:center;animation:pirate-splash-rise 5s ease-in-out infinite alternate}
+.pirate-splash-two{animation-delay:-2.5s}
+.pirate-sea-spray circle{opacity:0;animation:pirate-spray-glint 6s ease-in-out infinite}
+.pirate-curtain{position:absolute;z-index:4;top:0;bottom:0;width:51%;pointer-events:none;background:linear-gradient(90deg,#211827 0%,#492c43 72%,#80624c 98%);border-right:4px solid #b79a68;box-shadow:0 0 34px #120d19aa}
+.pirate-curtain-left{left:0;transform-origin:left center;animation:pirate-curtain-reveal 1.25s cubic-bezier(.16,1,.3,1) .18s forwards}
+.pirate-curtain-right{right:0;transform-origin:right center;animation:pirate-curtain-reveal 1.25s cubic-bezier(.16,1,.3,1) .18s forwards;border-right:0;border-left:4px solid #b79a68}
+.layout-pirate-metamorphosis{display:block;padding:0;overflow:hidden}
+.layout-pirate-metamorphosis .copy{display:contents}
+.layout-pirate-metamorphosis .eyebrow{position:absolute;z-index:5;left:7vw;top:8vh;color:#d4b77b;font-size:11px;letter-spacing:.3em}
+.layout-pirate-metamorphosis .copy h1{position:absolute;z-index:5;left:7vw;top:11vh;max-width:70vw;margin:0;color:#f1e5d0;font-size:clamp(38px,3.8vw,68px);line-height:1.04;text-shadow:0 4px 24px #100b18}
+.layout-pirate-metamorphosis .pirate-inscriptions{display:contents}
+.layout-pirate-metamorphosis .pirate-inscription{position:absolute;z-index:5;display:grid;grid-template-columns:25px 1fr;gap:10px;width:23vw;max-width:420px;padding:10px 13px 12px;background:linear-gradient(100deg,#211827eF,#211827c9 86%,#21182788);border-top:1px solid #b79a6899;border-bottom:1px solid #b79a6855;text-shadow:0 2px 12px #100b18}
+.layout-pirate-metamorphosis .pirate-inscription:before{content:'';position:absolute;top:-3px;left:13px;width:33px;border-top:3px solid #b79a68}
+.layout-pirate-metamorphosis .pirate-inscription-0{left:6vw;top:35vh}
+.layout-pirate-metamorphosis .pirate-inscription-1{left:6vw;top:53vh}
+.layout-pirate-metamorphosis .pirate-inscription-2{left:6vw;right:auto;top:71vh}
+.layout-pirate-metamorphosis .pirate-inscription>span{padding-top:2px;color:#d0ad71;font:600 14px Cinzel,Georgia,serif}
+.layout-pirate-metamorphosis .pirate-inscription strong{display:block;margin-bottom:4px;color:#e8d2a2;font:600 clamp(18px,1.3vw,24px)/1.1 "Cormorant Garamond",Georgia,serif;letter-spacing:.05em;text-transform:uppercase}
+.layout-pirate-metamorphosis .pirate-inscription p{margin:0;color:#f0e6d7;font:400 clamp(12px,.84vw,16px)/1.4 Inter,system-ui,sans-serif}
+.layout-pirate-metamorphosis .pirate-note{position:absolute;z-index:5;left:35vw;right:35vw;bottom:3.5vh;margin:0;padding:7px 12px;background:#211827bb;color:#e0d1b7;text-align:center;font:italic 400 clamp(11px,.76vw,14px)/1.3 "Cormorant Garamond",Georgia,serif;text-shadow:0 2px 12px #100b18}
+@keyframes pirate-wave-drift{from{translate:-12px 0}to{translate:13px 0}}
+@keyframes pirate-cloth-billow{from{transform:skewY(-1deg) scaleX(.98)}to{transform:skewY(1.5deg) scaleX(1.02)}}
+@keyframes pirate-vine-reveal{to{stroke-dashoffset:0}}
+@keyframes pirate-divine-breathe{from{opacity:.55;scale:.96}to{opacity:1;scale:1.04}}
+@keyframes pirate-dolphin-rise{from{translate:0 10px;rotate:-2deg}to{translate:0 -12px;rotate:2deg}}
+@keyframes pirate-splash-rise{from{translate:0 6px;opacity:.72}to{translate:0 -7px;opacity:1}}
+@keyframes pirate-spray-glint{0%,100%{opacity:0;translate:0 5px}38%,62%{opacity:.85}50%{translate:0 -8px}}
+@keyframes pirate-curtain-reveal{to{transform:scaleX(0)}}
+@media(max-width:800px){
+ .theme-ship .ex-pirate-metamorphosis{opacity:.28}
+ .layout-pirate-metamorphosis{overflow-y:auto;padding:14vh 7vw 15vh}
+ .layout-pirate-metamorphosis .copy{display:block;position:relative;z-index:5;padding:0}
+ .layout-pirate-metamorphosis .eyebrow,.layout-pirate-metamorphosis .copy h1,
+ .layout-pirate-metamorphosis .pirate-inscription,.layout-pirate-metamorphosis .pirate-note{
+  position:relative;inset:auto;left:auto;right:auto;top:auto;bottom:auto;width:auto;max-width:100%;margin:0
+ }
+ .layout-pirate-metamorphosis .eyebrow{margin-bottom:13px}
+ .layout-pirate-metamorphosis .copy h1{font-size:clamp(36px,10vw,58px);margin-bottom:24px}
+ .layout-pirate-metamorphosis .pirate-inscriptions{display:flex;flex-direction:column;gap:16px}
+ .layout-pirate-metamorphosis .pirate-inscription{padding:10px 12px;background:#211827ed}
+ .layout-pirate-metamorphosis .pirate-inscription strong{font-size:20px}
+ .layout-pirate-metamorphosis .pirate-inscription p{font-size:14px}
+ .layout-pirate-metamorphosis .pirate-note{margin-top:22px;text-align:left;background:#211827ed}
+}
+@media(prefers-reduced-motion:reduce){
+ .pirate-layer{transition:none!important;will-change:auto}
+ .pirate-distant-waves,.pirate-foreground-waves,.pirate-wind-cloth,.pirate-vine-growth,
+ .pirate-divine-light,.pirate-dolphin,.pirate-splash,.pirate-sea-spray circle,
+ .pirate-curtain-left,.pirate-curtain-right{animation:none!important;translate:none!important;rotate:none!important}
+ .pirate-curtain-left,.pirate-curtain-right{transform:scaleX(0)!important}
+}
+
+/* Midas: one palace scene links Silenus, the golden wish and its cost. */
+.theme-gold .ex-midas-story{background:#211827}
+.midas-layer{position:absolute;inset:-2%;width:104%;height:104%;overflow:visible;pointer-events:none;transition:transform .7s cubic-bezier(.16,1,.3,1);will-change:transform}
+.midas-palace{z-index:0}
+.midas-figures{z-index:1}
+.midas-atmosphere{z-index:2}
+.midas-pactolus path:nth-child(2){animation:midas-river-flow 14s ease-in-out infinite alternate}
+.midas-aura{transform-box:fill-box;transform-origin:center;animation:midas-aura-breathe 9s ease-in-out infinite alternate}
+.midas-transformation{transform-box:fill-box;transform-origin:center;animation:midas-gold-pulse 7s ease-in-out infinite alternate}
+.midas-golden-feast{transform-box:fill-box;transform-origin:center;animation:midas-gold-pulse 6s ease-in-out infinite alternate-reverse}
+.midas-water-glints path{animation:midas-water-glint 6s ease-in-out infinite alternate}
+.midas-water-glints path:nth-child(even){animation-delay:-2.7s}
+.midas-gold-dust circle{opacity:0;animation:midas-dust 8s ease-in-out infinite}
+.layout-midas-story{display:block;padding:0;overflow:hidden}
+.layout-midas-story .copy{display:contents}
+.layout-midas-story .eyebrow{position:absolute;z-index:5;left:6.5vw;top:8vh;color:#d4b77b;font-size:11px;letter-spacing:.3em}
+.layout-midas-story .copy h1{position:absolute;z-index:5;left:6.5vw;top:11vh;max-width:70vw;margin:0;color:#f1e5d0;font-size:clamp(38px,3.8vw,68px);line-height:1.04;text-shadow:0 4px 24px #100b18}
+.layout-midas-story .midas-inscriptions{display:contents}
+.layout-midas-story .midas-inscription{position:absolute;z-index:5;display:grid;grid-template-columns:24px 1fr;gap:10px;width:25vw;max-width:490px;padding:8px 13px 10px 0;background:linear-gradient(90deg,#211827eF 0%,#211827d9 82%,#21182700 100%);border-top:1px solid #b79a6888;text-shadow:0 2px 12px #100b18}
+.layout-midas-story .midas-inscription:before{content:'';position:absolute;top:-2px;left:0;width:34px;border-top:3px solid #b79a68}
+.layout-midas-story .midas-inscription-0{left:6vw;top:29vh}
+.layout-midas-story .midas-inscription-1{left:6vw;top:44vh}
+.layout-midas-story .midas-inscription-2{left:6vw;top:59vh}
+.layout-midas-story .midas-inscription>span{padding-top:2px;color:#d0ad71;font:600 14px Cinzel,Georgia,serif}
+.layout-midas-story .midas-inscription strong{display:block;margin-bottom:4px;color:#e8d2a2;font:600 clamp(18px,1.3vw,24px)/1.1 "Cormorant Garamond",Georgia,serif;letter-spacing:.035em;text-transform:uppercase}
+.layout-midas-story .midas-inscription p{margin:0;color:#f0e6d7;font:400 clamp(12px,.84vw,16px)/1.4 Inter,system-ui,sans-serif}
+.layout-midas-story .midas-reflection{position:absolute;z-index:5;left:6vw;bottom:9vh;width:29vw;margin:0;padding:10px 15px;border-left:2px solid #b79a68;background:#211827d9;color:#f0d9a6;font:italic 500 clamp(20px,1.6vw,29px)/1.3 "Cormorant Garamond",Georgia,serif;text-shadow:0 2px 12px #100b18}
+.layout-midas-story .midas-note{position:absolute;z-index:5;right:17vw;bottom:5vh;width:23vw;margin:0;color:#e0d1b7;text-align:right;font:italic 400 clamp(11px,.76vw,14px)/1.35 "Cormorant Garamond",Georgia,serif;text-shadow:0 2px 12px #100b18}
+@keyframes midas-river-flow{from{stroke-dasharray:6 22;stroke-dashoffset:0}to{stroke-dasharray:12 20;stroke-dashoffset:-120}}
+@keyframes midas-aura-breathe{from{opacity:.52;scale:.96}to{opacity:.95;scale:1.04}}
+@keyframes midas-gold-pulse{from{opacity:.78;filter:brightness(.93)}to{opacity:1;filter:brightness(1.13)}}
+@keyframes midas-water-glint{from{opacity:.48;translate:-7px 0}to{opacity:.9;translate:9px -2px}}
+@keyframes midas-dust{0%,100%{opacity:0;translate:0 6px}38%,62%{opacity:.7}50%{translate:0 -9px}}
+@media(max-width:800px){
+ .theme-gold .ex-midas-story{opacity:.27}
+ .animated-museum .layout-midas-story{overflow-y:auto;padding:8vh 7vw 15vh}
+ .layout-midas-story .copy{display:block;position:relative;z-index:5;padding:0}
+ .layout-midas-story .eyebrow,.layout-midas-story .copy h1,.layout-midas-story .midas-inscription,
+ .layout-midas-story .midas-reflection,.layout-midas-story .midas-note{position:relative;inset:auto;left:auto;right:auto;top:auto;bottom:auto;width:auto;max-width:100%;margin:0}
+ .layout-midas-story .eyebrow{margin-bottom:13px}
+ .layout-midas-story .copy h1{font-size:clamp(36px,10vw,58px);margin-bottom:20px}
+ .layout-midas-story .midas-inscriptions{display:flex;flex-direction:column;gap:12px}
+ .layout-midas-story .midas-inscription{padding:10px 12px 12px 0;background:linear-gradient(90deg,#211827ed,#211827b0 88%,transparent)}
+ .layout-midas-story .midas-inscription strong{font-size:20px}
+ .layout-midas-story .midas-inscription p{font-size:14px}
+ .layout-midas-story .midas-reflection{margin-top:14px;padding:10px 14px;font-size:22px}
+ .layout-midas-story .midas-note{margin-top:8px;text-align:left;background:#211827d9}
+}
+@media(prefers-reduced-motion:reduce){
+ .midas-layer{transition:none!important;will-change:auto}
+ .midas-pactolus path:nth-child(2),.midas-aura,.midas-transformation,.midas-golden-feast,
+ .midas-water-glints path,.midas-gold-dust circle{animation:none!important}
+}
+
+/* Lycurgus: the king's pursuit crosses the fleeing Dionysian retinue. */
+.theme-thunder .ex-lycurgus-pursuit{background:#211827}
+.lycurgus-layer{position:absolute;inset:-2%;width:104%;height:104%;overflow:visible;pointer-events:none;transition:transform .7s cubic-bezier(.16,1,.3,1);will-change:transform}
+.lycurgus-mountains{z-index:0}
+.lycurgus-figures{z-index:1}
+.lycurgus-atmosphere{z-index:2}
+.lycurgus-cloud-drift{animation:lycurgus-cloud-move 36s ease-in-out infinite alternate}
+.lycurgus-cloud-shadow{animation:lycurgus-cloud-move 48s ease-in-out infinite alternate-reverse}
+.lycurgus-presence{transform-box:fill-box;transform-origin:center;animation:lycurgus-glow 10s ease-in-out infinite alternate}
+.lycurgus-lightning{animation:lycurgus-flash 12s ease-in-out infinite}
+.lycurgus-runner{transform-box:fill-box;transform-origin:center;animation:lycurgus-flight 8s ease-in-out infinite alternate}
+.lycurgus-runner-two{animation-delay:-3.2s;animation-duration:9s}
+.lycurgus-runner-three{animation-delay:-5.4s;animation-duration:7.5s}
+.lycurgus-leaves{transform-box:fill-box;transform-origin:bottom center;animation:lycurgus-wind 12s ease-in-out infinite alternate}
+.lycurgus-storm-particles circle{opacity:0;animation:lycurgus-dust 9s ease-in-out infinite}
+.layout-lycurgus-story{display:block;padding:0;overflow:hidden}
+.layout-lycurgus-story .copy{display:contents}
+.layout-lycurgus-story .eyebrow{position:absolute;z-index:5;left:6.5vw;top:8vh;color:#d4b77b;font-size:11px;letter-spacing:.3em}
+.layout-lycurgus-story .copy h1{position:absolute;z-index:5;left:6.5vw;top:11vh;max-width:49vw;margin:0;color:#f1e5d0;font-size:clamp(38px,3.8vw,68px);line-height:1.04;text-shadow:0 4px 24px #100b18}
+.layout-lycurgus-story:before{content:'';position:absolute;z-index:3;inset:0 auto 0 0;width:52%;pointer-events:none;background:linear-gradient(90deg,#211827f2 0%,#211827e8 47%,#211827bb 76%,transparent 100%);box-shadow:18px 0 45px #21182733}
+.layout-lycurgus-story .lycurgus-inscriptions{display:contents}
+.layout-lycurgus-story .lycurgus-inscription{position:absolute;z-index:5;display:grid;grid-template-columns:24px 1fr;gap:10px;width:36vw;max-width:620px;padding:8px 13px 10px 0;background:linear-gradient(90deg,#211827eF 0%,#211827d9 82%,#21182700 100%);border-top:1px solid #b79a6888;text-shadow:0 2px 12px #100b18}
+.layout-lycurgus-story .lycurgus-inscription:before{content:'';position:absolute;top:-2px;left:0;width:34px;border-top:3px solid #b79a68}
+.layout-lycurgus-story .lycurgus-inscription-0{left:6vw;top:28vh}
+.layout-lycurgus-story .lycurgus-inscription-1{left:6vw;top:42vh}
+.layout-lycurgus-story .lycurgus-inscription-2{left:6vw;top:55vh}
+.layout-lycurgus-story .lycurgus-inscription>span{padding-top:2px;color:#d0ad71;font:600 14px Cinzel,Georgia,serif}
+.layout-lycurgus-story .lycurgus-inscription strong{display:block;margin-bottom:4px;color:#e8d2a2;font:600 clamp(18px,1.3vw,24px)/1.1 "Cormorant Garamond",Georgia,serif;letter-spacing:.035em;text-transform:uppercase}
+.layout-lycurgus-story .lycurgus-inscription p{margin:0;color:#f0e6d7;font:400 clamp(12px,.84vw,16px)/1.4 Inter,system-ui,sans-serif}
+.layout-lycurgus-story .lycurgus-reflection{position:absolute;z-index:5;left:6vw;bottom:9vh;width:39vw;margin:0;padding:10px 15px;border-left:2px solid #b79a68;background:#211827e8;color:#f0d9a6;font:italic 500 clamp(20px,1.55vw,28px)/1.3 "Cormorant Garamond",Georgia,serif;text-shadow:0 2px 12px #100b18}
+.layout-lycurgus-story .lycurgus-note{position:absolute;z-index:5;right:7vw;bottom:7vh;width:25vw;margin:0;color:#e0d1b7;text-align:right;font:italic 400 clamp(11px,.76vw,14px)/1.35 "Cormorant Garamond",Georgia,serif;text-shadow:0 2px 12px #100b18}
+@keyframes lycurgus-cloud-move{from{translate:-18px 0}to{translate:22px 4px}}
+@keyframes lycurgus-glow{from{opacity:.5;scale:.96}to{opacity:.95;scale:1.04}}
+@keyframes lycurgus-flash{0%,44%,50%,100%{opacity:.16}46%,48%{opacity:.8}}
+@keyframes lycurgus-flight{from{translate:0 1px;rotate:-1deg}to{translate:-6px -7px;rotate:1deg}}
+@keyframes lycurgus-wind{from{rotate:-1.2deg}to{rotate:1.4deg}}
+@keyframes lycurgus-dust{0%,100%{opacity:0;translate:0 5px}38%,62%{opacity:.7}50%{translate:0 -8px}}
+@media(max-width:800px){
+ .theme-thunder .ex-lycurgus-pursuit{opacity:.24}
+ .animated-museum .layout-lycurgus-story{overflow-y:auto;padding:8vh 7vw 15vh}
+ .layout-lycurgus-story .copy{display:block;position:relative;z-index:5;padding:0}
+ .layout-lycurgus-story:before{position:fixed;width:100%;background:linear-gradient(90deg,#211827f2,#211827e8)}
+ .layout-lycurgus-story .eyebrow,.layout-lycurgus-story .copy h1,.layout-lycurgus-story .lycurgus-inscription,
+ .layout-lycurgus-story .lycurgus-reflection,.layout-lycurgus-story .lycurgus-note{position:relative;inset:auto;left:auto;right:auto;top:auto;bottom:auto;width:auto;max-width:100%;margin:0}
+ .layout-lycurgus-story .eyebrow{margin-bottom:13px}
+ .layout-lycurgus-story .copy h1{font-size:clamp(36px,10vw,58px);margin-bottom:20px}
+ .layout-lycurgus-story .lycurgus-inscriptions{display:flex;flex-direction:column;gap:12px}
+ .layout-lycurgus-story .lycurgus-inscription{padding:10px 12px 12px 0;background:linear-gradient(90deg,#211827ed,#211827b0 88%,transparent)}
+ .layout-lycurgus-story .lycurgus-inscription strong{font-size:20px}
+ .layout-lycurgus-story .lycurgus-inscription p{font-size:14px}
+ .layout-lycurgus-story .lycurgus-reflection{margin-top:14px;padding:10px 14px;font-size:22px}
+ .layout-lycurgus-story .lycurgus-note{margin-top:8px;text-align:left;background:#211827d9}
+}
+@media(prefers-reduced-motion:reduce){
+ .lycurgus-layer{transition:none!important;will-change:auto}
+ .lycurgus-cloud-drift,.lycurgus-cloud-shadow,.lycurgus-presence,.lycurgus-lightning,
+ .lycurgus-runner,.lycurgus-leaves,.lycurgus-storm-particles circle{animation:none!important}
+}
+
+/* Ampelos: a living vine carries the memory across a quiet landscape. */
+.theme-ampelo .ex-ampelos-memory{background:#211827}
+.ampelos-layer{position:absolute;inset:-2%;width:104%;height:104%;overflow:visible;pointer-events:none;transition:transform .7s cubic-bezier(.16,1,.3,1);will-change:transform}
+.ampelos-landscape{z-index:0}
+.ampelos-figures{z-index:1}
+.ampelos-foreground{z-index:2}
+.ampelos-warm-light{transform-box:fill-box;transform-origin:center;animation:ampelos-light-breathe 12s ease-in-out infinite alternate}
+.ampelos-vine-memory path,.ampelos-foreground-vine path{stroke-dasharray:1;stroke-dashoffset:1;animation:ampelos-vine-unfurl 12s ease-out .4s forwards}
+.ampelos-vine-leaves,.ampelos-foreground-leaves{transform-box:fill-box;transform-origin:bottom center;animation:ampelos-leaf-sway 13s ease-in-out infinite alternate}
+.ampelos-vine-leaves path:nth-child(even),.ampelos-foreground-leaves path:nth-child(even){animation:ampelos-leaf-sway 15s ease-in-out infinite alternate-reverse}
+.ampelos-ambient-dust circle{opacity:0;animation:ampelos-dust 9s ease-in-out infinite}
+.ampelos-figure-light{animation:ampelos-light-breathe 12s ease-in-out infinite alternate}
+.layout-ampelos-story{display:block;padding:0;overflow:hidden}
+.layout-ampelos-story .copy{display:contents}
+.layout-ampelos-story .eyebrow{position:absolute;z-index:5;left:6.5vw;top:8vh;color:#d4b77b;font-size:11px;letter-spacing:.3em}
+.layout-ampelos-story .copy h1{position:absolute;z-index:5;left:6.5vw;top:11vh;max-width:79vw;margin:0;color:#f1e5d0;font-size:clamp(38px,3.8vw,68px);line-height:1.04;text-shadow:0 4px 24px #100b18}
+.layout-ampelos-story:before{content:'';position:absolute;z-index:3;inset:0 auto 0 0;width:49%;pointer-events:none;background:linear-gradient(90deg,#211827f2 0%,#211827e8 51%,#211827ad 79%,transparent 100%)}
+.layout-ampelos-story .ampelos-inscriptions{display:contents}
+.layout-ampelos-story .ampelos-inscription{position:absolute;z-index:5;display:grid;grid-template-columns:24px 1fr;gap:10px;width:29vw;max-width:540px;padding:8px 13px 10px 0;background:linear-gradient(90deg,#211827eb 0%,#211827d1 83%,#21182700 100%);border-top:1px solid #b79a6888;text-shadow:0 2px 12px #100b18}
+.layout-ampelos-story .ampelos-inscription:before{content:'';position:absolute;top:-2px;left:0;width:34px;border-top:3px solid #b79a68}
+.layout-ampelos-story .ampelos-inscription-0{left:6vw;top:29vh}
+.layout-ampelos-story .ampelos-inscription-1{left:6vw;top:49vh}
+.layout-ampelos-story .ampelos-inscription-2{right:5vw;top:43vh;width:25vw;background:linear-gradient(270deg,#211827e8 0%,#211827c9 80%,#21182700 100%)}
+.layout-ampelos-story .ampelos-inscription>span{padding-top:2px;color:#d0ad71;font:600 14px Cinzel,Georgia,serif}
+.layout-ampelos-story .ampelos-inscription strong{display:block;margin-bottom:4px;color:#e8d2a2;font:600 clamp(18px,1.3vw,24px)/1.1 "Cormorant Garamond",Georgia,serif;letter-spacing:.035em;text-transform:uppercase}
+.layout-ampelos-story .ampelos-inscription p{margin:0;color:#f0e6d7;font:400 clamp(12px,.84vw,16px)/1.4 Inter,system-ui,sans-serif}
+.layout-ampelos-story .ampelos-reflection{position:absolute;z-index:5;left:30vw;bottom:8vh;width:39vw;margin:0;padding:12px 18px;border:1px solid #b79a684d;background:#211827df;color:#f0d9a6;text-align:center;font:italic 500 clamp(22px,1.8vw,34px)/1.3 "Cormorant Garamond",Georgia,serif;text-shadow:0 2px 12px #100b18}
+.layout-ampelos-story .ampelos-note{position:absolute;z-index:5;right:5vw;bottom:5vh;width:29vw;margin:0;color:#e0d1b7;text-align:right;font:italic 400 clamp(11px,.76vw,14px)/1.35 "Cormorant Garamond",Georgia,serif;text-shadow:0 2px 12px #100b18}
+@keyframes ampelos-light-breathe{from{opacity:.55;scale:.97}to{opacity:.96;scale:1.035}}
+@keyframes ampelos-vine-unfurl{to{stroke-dashoffset:0}}
+@keyframes ampelos-leaf-sway{from{rotate:-1.3deg}to{rotate:1.5deg}}
+@keyframes ampelos-dust{0%,100%{opacity:0;translate:0 6px}38%,62%{opacity:.72}50%{translate:0 -8px}}
+@media(max-width:800px){
+ .theme-ampelo .ex-ampelos-memory{opacity:.22}
+ .animated-museum .layout-ampelos-story{overflow-y:auto;padding:8vh 7vw 15vh}
+ .layout-ampelos-story .copy{display:block;position:relative;z-index:5;padding:0}
+ .layout-ampelos-story:before{position:absolute;width:100%;background:linear-gradient(90deg,#211827f4,#211827e9)}
+ .layout-ampelos-story .eyebrow,.layout-ampelos-story .copy h1,.layout-ampelos-story .ampelos-inscription,
+ .layout-ampelos-story .ampelos-reflection,.layout-ampelos-story .ampelos-note{position:relative;inset:auto;left:auto;right:auto;top:auto;bottom:auto;width:auto;max-width:100%;margin:0}
+ .layout-ampelos-story .eyebrow{margin-bottom:13px}
+ .layout-ampelos-story .copy h1{font-size:clamp(34px,9vw,54px);margin-bottom:20px}
+ .layout-ampelos-story .ampelos-inscriptions{display:flex;flex-direction:column;gap:12px}
+ .layout-ampelos-story .ampelos-inscription,.layout-ampelos-story .ampelos-inscription-2{padding:10px 12px 12px 0;background:linear-gradient(90deg,#211827ed,#211827b0 88%,transparent)}
+ .layout-ampelos-story .ampelos-inscription strong{font-size:20px}
+ .layout-ampelos-story .ampelos-inscription p{font-size:14px}
+ .layout-ampelos-story .ampelos-reflection{margin-top:14px;padding:10px 14px;font-size:23px}
+ .layout-ampelos-story .ampelos-note{margin-top:8px;text-align:left;background:#211827d9}
+}
+@media(prefers-reduced-motion:reduce){
+ .ampelos-layer{transition:none!important;will-change:auto}
+ .ampelos-warm-light,.ampelos-vine-memory path,.ampelos-foreground-vine path,
+ .ampelos-vine-leaves,.ampelos-foreground-leaves,.ampelos-foreground-leaves path,
+ .ampelos-ambient-dust circle{animation:none!important}
+ .ampelos-vine-memory path,.ampelos-foreground-vine path{stroke-dasharray:none;stroke-dashoffset:0}
+}
+
+/* India expedition: a broad mythic procession with editorial field notes. */
+.theme-india .ex-dionysus-expedition{background:#211827}
+.expedition-layer{position:absolute;inset:-2%;width:104%;height:104%;overflow:visible;pointer-events:none;transition:transform .7s cubic-bezier(.16,1,.3,1);will-change:transform}
+.expedition-land{z-index:0}
+.expedition-procession{z-index:1}
+.expedition-foreground{z-index:2}
+.expedition-divine-aura{transform-box:fill-box;transform-origin:center;animation:expedition-glow 10s ease-in-out infinite alternate}
+.expedition-banner{transform-box:fill-box;transform-origin:top center;animation:expedition-banner-wind 9s ease-in-out infinite alternate}
+.expedition-banner-two{animation-delay:-3.7s;animation-duration:11s}
+.expedition-troupe{animation:expedition-march 7s ease-in-out infinite alternate}
+.expedition-vine-leaves,.expedition-foreground-leaves{transform-box:fill-box;transform-origin:bottom center;animation:expedition-leaf-wind 13s ease-in-out infinite alternate}
+.expedition-foreground-leaves path:nth-child(even){animation:expedition-leaf-wind 15s ease-in-out infinite alternate-reverse}
+.expedition-dust circle{opacity:0;animation:expedition-dust-drift 9s ease-in-out infinite}
+.layout-expedition-procession{display:block;padding:0;overflow:hidden}
+.layout-expedition-procession .copy{display:contents}
+.layout-expedition-procession .eyebrow{position:absolute;z-index:5;left:6.5vw;top:7.5vh;color:#d4b77b;font-size:11px;letter-spacing:.3em}
+.layout-expedition-procession .copy h1{position:absolute;z-index:5;left:6.5vw;top:10.5vh;max-width:85vw;margin:0;color:#f1e5d0;font-size:clamp(38px,3.8vw,68px);line-height:1.04;text-shadow:0 4px 24px #100b18}
+.layout-expedition-procession:before{content:'';position:absolute;z-index:3;inset:0 0 auto;height:50%;pointer-events:none;background:linear-gradient(180deg,#211827d9 0%,#211827aa 45%,transparent 100%)}
+.layout-expedition-procession .expedition-inscriptions{display:contents}
+.layout-expedition-procession .expedition-inscription{position:absolute;z-index:5;display:grid;grid-template-columns:24px 1fr;gap:10px;width:26vw;max-width:500px;min-height:110px;padding:8px 13px 10px 0;background:linear-gradient(100deg,#211827ed 0%,#211827ca 85%,#21182700 100%);border-top:1px solid #b79a6888;text-shadow:0 2px 12px #100b18}
+.layout-expedition-procession .expedition-inscription:before{content:'';position:absolute;top:-2px;left:0;width:34px;border-top:3px solid #b79a68}
+.layout-expedition-procession .expedition-inscription-0{left:5vw;top:25vh}
+.layout-expedition-procession .expedition-inscription-1{left:36vw;top:27vh}
+.layout-expedition-procession .expedition-inscription-2{right:5vw;top:25vh;width:27vw}
+.layout-expedition-procession .expedition-inscription>span{padding-top:2px;color:#d0ad71;font:600 14px Cinzel,Georgia,serif}
+.layout-expedition-procession .expedition-inscription strong{display:block;margin-bottom:4px;color:#e8d2a2;font:600 clamp(18px,1.3vw,24px)/1.1 "Cormorant Garamond",Georgia,serif;letter-spacing:.035em;text-transform:uppercase}
+.layout-expedition-procession .expedition-inscription p{margin:0;color:#f0e6d7;font:400 clamp(12px,.84vw,16px)/1.4 Inter,system-ui,sans-serif}
+.layout-expedition-procession .expedition-reflection{position:absolute;z-index:5;left:6vw;bottom:7.5vh;width:49vw;margin:0;padding:10px 16px;border-left:2px solid #b79a68;background:#211827e8;color:#f0d9a6;font:italic 500 clamp(20px,1.55vw,28px)/1.3 "Cormorant Garamond",Georgia,serif;text-shadow:0 2px 12px #100b18}
+.layout-expedition-procession .expedition-note{position:absolute;z-index:5;right:5vw;bottom:5vh;width:35vw;margin:0;color:#e0d1b7;text-align:right;font:italic 400 clamp(11px,.76vw,14px)/1.35 "Cormorant Garamond",Georgia,serif;text-shadow:0 2px 12px #100b18}
+@keyframes expedition-glow{from{opacity:.52;scale:.96}to{opacity:.98;scale:1.04}}
+@keyframes expedition-banner-wind{from{transform:skewY(-1deg) scaleX(.98)}to{transform:skewY(1.5deg) scaleX(1.02)}}
+@keyframes expedition-march{from{translate:-2px 2px}to{translate:3px -3px}}
+@keyframes expedition-leaf-wind{from{rotate:-1.3deg}to{rotate:1.5deg}}
+@keyframes expedition-dust-drift{0%,100%{opacity:0;translate:0 6px}38%,62%{opacity:.72}50%{translate:0 -8px}}
+@media(max-width:800px){
+ .theme-india .ex-dionysus-expedition{opacity:.2}
+ .animated-museum .layout-expedition-procession{overflow-y:auto;padding:8vh 7vw 15vh}
+ .layout-expedition-procession .copy{display:block;position:relative;z-index:5;padding:0}
+ .layout-expedition-procession:before{height:100%;background:#211827e8}
+ .layout-expedition-procession .eyebrow,.layout-expedition-procession .copy h1,.layout-expedition-procession .expedition-inscription,
+ .layout-expedition-procession .expedition-reflection,.layout-expedition-procession .expedition-note{position:relative;inset:auto;left:auto;right:auto;top:auto;bottom:auto;width:auto;max-width:100%;margin:0}
+ .layout-expedition-procession .eyebrow{margin-bottom:13px}
+ .layout-expedition-procession .copy h1{font-size:clamp(34px,9vw,54px);margin-bottom:20px}
+ .layout-expedition-procession .expedition-inscriptions{display:flex;flex-direction:column;gap:12px}
+ .layout-expedition-procession .expedition-inscription{min-height:0;padding:10px 12px 12px 0;background:linear-gradient(90deg,#211827ed,#211827b0 88%,transparent)}
+ .layout-expedition-procession .expedition-inscription strong{font-size:20px}
+ .layout-expedition-procession .expedition-inscription p{font-size:14px}
+ .layout-expedition-procession .expedition-reflection{margin-top:14px;padding:10px 14px;font-size:22px}
+ .layout-expedition-procession .expedition-note{margin-top:8px;text-align:left;background:#211827d9}
+}
+@media(prefers-reduced-motion:reduce){
+ .expedition-layer{transition:none!important;will-change:auto}
+ .expedition-divine-aura,.expedition-banner,.expedition-troupe,.expedition-vine-leaves,
+ .expedition-foreground-leaves,.expedition-foreground-leaves path,.expedition-dust circle{animation:none!important}
+}
+
+/* Pentheus: theatrical framing and shadow suggest the tragedy without gore. */
+.theme-bacchae .ex-pentheus-tragedy{background:#211827}
+.pentheus-layer{position:absolute;inset:-2%;width:104%;height:104%;overflow:visible;pointer-events:none;transition:transform .7s cubic-bezier(.16,1,.3,1);will-change:transform}
+.pentheus-stage{z-index:0}
+.pentheus-actors{z-index:1}
+.pentheus-dust{z-index:2}
+.pentheus-divine-aura{transform-box:fill-box;transform-origin:center;animation:pentheus-aura-breathe 10s ease-in-out infinite alternate}
+.pentheus-flame{transform-box:fill-box;transform-origin:bottom center;animation:pentheus-flame-dance 3.8s ease-in-out infinite alternate}
+.pentheus-flame:nth-child(2){animation-delay:-1.4s;animation-duration:4.5s}
+.pentheus-bacchae{animation:pentheus-ritual-drift 9s ease-in-out infinite alternate}
+.pentheus-agave{transform-box:fill-box;transform-origin:center;animation:pentheus-agave-pause 7s ease-in-out infinite alternate}
+.pentheus-curtains path:first-child,.pentheus-curtains path:nth-child(2){animation:pentheus-curtain-breathe 13s ease-in-out infinite alternate}
+.pentheus-curtains path:nth-child(2){animation-delay:-4s}
+.pentheus-embers circle{opacity:0;animation:pentheus-ember-drift 8s ease-in-out infinite}
+.pentheus-foreground-leaves{transform-box:fill-box;transform-origin:bottom center;animation:pentheus-branch-wind 12s ease-in-out infinite alternate}
+.layout-pentheus-tragedy{display:block;padding:0;overflow:hidden}
+.layout-pentheus-tragedy .copy{display:contents}
+.layout-pentheus-tragedy .eyebrow{position:absolute;z-index:5;left:6.5vw;top:7.5vh;color:#d4b77b;font-size:11px;letter-spacing:.3em}
+.layout-pentheus-tragedy .copy h1{position:absolute;z-index:5;left:6.5vw;top:10.5vh;max-width:83vw;margin:0;color:#f1e5d0;font-size:clamp(38px,3.8vw,68px);line-height:1.04;text-shadow:0 4px 24px #100b18}
+.layout-pentheus-tragedy:before{content:'';position:absolute;z-index:3;inset:0;pointer-events:none;background:linear-gradient(180deg,#211827ad 0%,transparent 31%,transparent 71%,#21182782 100%)}
+.layout-pentheus-tragedy .pentheus-inscriptions{display:contents}
+.layout-pentheus-tragedy .pentheus-inscription{position:absolute;z-index:5;display:grid;grid-template-columns:24px 1fr;gap:10px;width:25vw;max-width:480px;min-height:100px;padding:8px 13px 10px 0;background:linear-gradient(100deg,#211827ed 0%,#211827d2 85%,#21182700 100%);border-top:1px solid #b79a6888;text-shadow:0 2px 12px #100b18}
+.layout-pentheus-tragedy .pentheus-inscription:before{content:'';position:absolute;top:-2px;left:0;width:34px;border-top:3px solid #b79a68}
+.layout-pentheus-tragedy .pentheus-inscription-0{left:5vw;top:27vh}
+.layout-pentheus-tragedy .pentheus-inscription-1{left:5vw;top:45vh}
+.layout-pentheus-tragedy .pentheus-inscription-2{right:5vw;top:27vh;width:25vw}
+.layout-pentheus-tragedy .pentheus-inscription-3{right:5vw;top:45vh;width:25vw}
+.layout-pentheus-tragedy .pentheus-inscription>span{padding-top:2px;color:#d0ad71;font:600 14px Cinzel,Georgia,serif}
+.layout-pentheus-tragedy .pentheus-inscription strong{display:block;margin-bottom:4px;color:#e8d2a2;font:600 clamp(18px,1.3vw,24px)/1.1 "Cormorant Garamond",Georgia,serif;letter-spacing:.035em;text-transform:uppercase}
+.layout-pentheus-tragedy .pentheus-inscription p{margin:0;color:#f0e6d7;font:400 clamp(12px,.82vw,15px)/1.38 Inter,system-ui,sans-serif}
+.layout-pentheus-tragedy .pentheus-reflection{position:absolute;z-index:5;left:6vw;bottom:8vh;width:47vw;margin:0;padding:10px 16px;border-left:2px solid #b79a68;background:#211827e8;color:#f0d9a6;font:italic 500 clamp(20px,1.5vw,27px)/1.3 "Cormorant Garamond",Georgia,serif;text-shadow:0 2px 12px #100b18}
+.layout-pentheus-tragedy .pentheus-note{position:absolute;z-index:5;right:5vw;bottom:4.5vh;width:35vw;margin:0;color:#e0d1b7;text-align:right;font:italic 400 clamp(10px,.72vw,13px)/1.35 "Cormorant Garamond",Georgia,serif;text-shadow:0 2px 12px #100b18}
+@keyframes pentheus-aura-breathe{from{opacity:.5;scale:.96}to{opacity:.96;scale:1.04}}
+@keyframes pentheus-flame-dance{from{scale:.95 1;rotate:-2deg}to{scale:1.04 .98;rotate:2deg}}
+@keyframes pentheus-ritual-drift{from{translate:-2px 1px}to{translate:3px -3px}}
+@keyframes pentheus-agave-pause{from{translate:0 0}to{translate:-2px -3px}}
+@keyframes pentheus-curtain-breathe{from{opacity:.92}to{opacity:1}}
+@keyframes pentheus-ember-drift{0%,100%{opacity:0;translate:0 5px}38%,62%{opacity:.74}50%{translate:0 -8px}}
+@keyframes pentheus-branch-wind{from{rotate:-1deg}to{rotate:1.2deg}}
+@media(max-width:800px){
+ .theme-bacchae .ex-pentheus-tragedy{opacity:.18}
+ .animated-museum .layout-pentheus-tragedy{overflow-y:auto;padding:8vh 7vw 15vh}
+ .layout-pentheus-tragedy .copy{display:block;position:relative;z-index:5;padding:0}
+ .layout-pentheus-tragedy:before{background:#211827e8}
+ .layout-pentheus-tragedy .eyebrow,.layout-pentheus-tragedy .copy h1,.layout-pentheus-tragedy .pentheus-inscription,
+ .layout-pentheus-tragedy .pentheus-reflection,.layout-pentheus-tragedy .pentheus-note{position:relative;inset:auto;left:auto;right:auto;top:auto;bottom:auto;width:auto;max-width:100%;margin:0}
+ .layout-pentheus-tragedy .eyebrow{margin-bottom:13px}
+ .layout-pentheus-tragedy .copy h1{font-size:clamp(34px,9vw,54px);margin-bottom:20px}
+ .layout-pentheus-tragedy .pentheus-inscriptions{display:flex;flex-direction:column;gap:10px}
+ .layout-pentheus-tragedy .pentheus-inscription{min-height:0;padding:9px 12px 10px 0;background:linear-gradient(90deg,#211827ed,#211827b0 88%,transparent)}
+ .layout-pentheus-tragedy .pentheus-inscription strong{font-size:19px}
+ .layout-pentheus-tragedy .pentheus-inscription p{font-size:14px}
+ .layout-pentheus-tragedy .pentheus-reflection{margin-top:14px;padding:10px 14px;font-size:21px}
+ .layout-pentheus-tragedy .pentheus-note{margin-top:8px;text-align:left;background:#211827d9}
+}
+@media(prefers-reduced-motion:reduce){
+ .pentheus-layer{transition:none!important;will-change:auto}
+ .pentheus-divine-aura,.pentheus-flame,.pentheus-bacchae,.pentheus-agave,.pentheus-curtains path,
+ .pentheus-embers circle,.pentheus-foreground-leaves{animation:none!important}
+}
+
+/* Minyas: a quiet loom room opens onto the distant Dionysian celebration. */
+.theme-bats .ex-minyas-weaving{background:#211827}
+.minyas-layer{position:absolute;inset:-1.5%;width:103%;height:103%;overflow:visible;pointer-events:none;transition:transform .7s cubic-bezier(.16,1,.3,1);will-change:transform}
+.minyas-room{z-index:0}
+.minyas-sisters{z-index:3}
+.minyas-loom{z-index:2}
+.minyas-foreground{z-index:3}
+.minyas-festival path{animation:minyas-flame-glow 4.8s ease-in-out infinite alternate}
+.minyas-festival path:nth-child(2){animation-delay:-2.1s}
+.minyas-sister-one{animation:minyas-weaver-breath 9s ease-in-out infinite alternate}
+.minyas-sister-two{animation:minyas-weaver-breath 11s ease-in-out infinite alternate-reverse}
+.minyas-sister-three{animation:minyas-weaver-breath 10s ease-in-out infinite alternate}
+.minyas-bats path{transform-box:fill-box;transform-origin:center;animation:minyas-bat-drift 12s ease-in-out infinite alternate}
+.minyas-bats path:nth-child(2){animation-delay:-4s;animation-duration:14s}
+.minyas-bats path:nth-child(3){animation-delay:-7s;animation-duration:11s}
+.minyas-bats path:nth-child(4){animation-delay:-2s;animation-duration:16s}
+.minyas-threads{animation:minyas-thread-shift 8s ease-in-out infinite alternate}
+.minyas-cloth-edge{animation:minyas-cloth-pulse 7s ease-in-out infinite alternate}
+.minyas-woven-bats{opacity:.76;animation:minyas-pattern-reveal 12s ease-in-out infinite alternate}
+.minyas-shadow-veil{animation:minyas-shadow-change 14s ease-in-out infinite alternate}
+.layout-minyas-weaving{display:block;padding:0;overflow:hidden}
+.layout-minyas-weaving .copy{display:contents}
+.layout-minyas-weaving .eyebrow{position:absolute;z-index:5;left:6.5vw;top:9vh;color:#d4b77b;font-size:11px;letter-spacing:.3em}
+.layout-minyas-weaving .copy h1{position:absolute;z-index:5;left:6.5vw;top:12vh;max-width:640px;margin:0;color:#f1e5d0;font-size:clamp(38px,3.8vw,68px);line-height:1.04;text-shadow:0 4px 24px #100b18}
+.layout-minyas-weaving:before{content:'';position:absolute;z-index:4;inset:0;pointer-events:none;background:linear-gradient(90deg,#15121bf2 0%,#15121be8 27%,#15121b8f 40%,transparent 57%),linear-gradient(0deg,#15121b82 0%,transparent 24%,transparent 83%,#15121b55 100%)}
+.layout-minyas-weaving .minyas-inscriptions{display:contents}
+.layout-minyas-weaving .minyas-inscription{position:absolute;z-index:5;display:grid;grid-template-columns:26px 1fr;gap:12px;width:min(34vw,650px);padding:9px 16px 13px 0;border-top:1px solid #b79a6877;background:linear-gradient(90deg,#211827f2 0%,#211827dd 82%,#21182700 100%);text-shadow:0 2px 14px #100b18}
+.layout-minyas-weaving .minyas-inscription:before{content:'';position:absolute;top:-2px;left:0;width:38px;border-top:3px solid #b79a68}
+.layout-minyas-weaving .minyas-inscription-0{left:6vw;top:31vh}
+.layout-minyas-weaving .minyas-inscription-1{left:6vw;top:48vh}
+.layout-minyas-weaving .minyas-inscription-2{left:6vw;top:65vh}
+.layout-minyas-weaving .minyas-inscription>span{padding-top:2px;color:#d0ad71;font:600 14px Cinzel,Georgia,serif}
+.layout-minyas-weaving .minyas-inscription strong{display:block;margin-bottom:4px;color:#e8d2a2;font:600 clamp(18px,1.3vw,24px)/1.1 "Cormorant Garamond",Georgia,serif;letter-spacing:.035em;text-transform:uppercase}
+.layout-minyas-weaving .minyas-inscription p{margin:0;color:#f0e6d7;font:400 clamp(13px,.86vw,16px)/1.42 Inter,system-ui,sans-serif}
+.layout-minyas-weaving .minyas-reflection{position:absolute;z-index:5;left:6vw;bottom:8vh;width:min(36vw,660px);margin:0;padding:10px 16px;border-left:2px solid #b79a68;background:#211827ed;color:#f0d9a6;font:italic 500 clamp(20px,1.5vw,27px)/1.3 "Cormorant Garamond",Georgia,serif;text-shadow:0 2px 12px #100b18}
+.layout-minyas-weaving .minyas-note{position:absolute;z-index:5;right:5vw;bottom:4.5vh;width:34vw;margin:0;color:#e0d1b7;text-align:right;font:italic 400 clamp(11px,.76vw,14px)/1.35 "Cormorant Garamond",Georgia,serif;text-shadow:0 2px 12px #100b18}
+@keyframes minyas-flame-glow{from{opacity:.7}to{opacity:1}}
+@keyframes minyas-weaver-breath{from{translate:0 0}to{translate:0 -3px}}
+@keyframes minyas-bat-drift{from{translate:-4px 2px;rotate:-2deg}to{translate:7px -8px;rotate:2deg}}
+@keyframes minyas-thread-shift{from{translate:-2px 0;opacity:.72}to{translate:3px -3px;opacity:1}}
+@keyframes minyas-cloth-pulse{from{opacity:.72}to{opacity:1}}
+@keyframes minyas-pattern-reveal{from{opacity:.55}to{opacity:.9}}
+@keyframes minyas-shadow-change{from{opacity:.62}to{opacity:.96}}
+@media(max-width:800px){
+ .theme-bats .ex-minyas-weaving{opacity:.22}
+ .animated-museum .layout-minyas-weaving{overflow-y:auto;padding:14vh 7vw 15vh}
+ .layout-minyas-weaving .copy{display:block;position:relative;z-index:5;padding:0}
+ .layout-minyas-weaving .eyebrow,.layout-minyas-weaving .copy h1,.layout-minyas-weaving .minyas-inscription,
+ .layout-minyas-weaving .minyas-reflection,.layout-minyas-weaving .minyas-note{position:relative;inset:auto;left:auto;right:auto;top:auto;bottom:auto;width:auto;max-width:100%;margin:0}
+ .layout-minyas-weaving .eyebrow{margin-bottom:13px}
+ .layout-minyas-weaving .copy h1{font-size:clamp(35px,10vw,56px);margin-bottom:22px}
+ .layout-minyas-weaving .minyas-inscriptions{display:flex;flex-direction:column;gap:12px}
+ .layout-minyas-weaving .minyas-inscription{min-height:0;padding:10px 12px 12px 0;background:linear-gradient(90deg,#211827f0,#211827c9 90%,transparent)}
+ .layout-minyas-weaving .minyas-inscription strong{font-size:20px}
+ .layout-minyas-weaving .minyas-inscription p{font-size:14px}
+ .layout-minyas-weaving .minyas-reflection{margin-top:16px;padding:10px 14px;font-size:22px}
+ .layout-minyas-weaving .minyas-note{margin-top:10px;text-align:left;background:#211827e8}
+}
+@media(prefers-reduced-motion:reduce){
+ .minyas-layer{transition:none!important;will-change:auto}
+ .minyas-festival path,.minyas-sister-one,.minyas-sister-two,.minyas-sister-three,.minyas-bats path,
+ .minyas-threads,.minyas-cloth-edge,.minyas-woven-bats,.minyas-shadow-veil{animation:none!important}
+}
+
+/* Ariadne: the cool shore and Dionysian dawn meet around a new beginning. */
+.theme-ariadne .ex-ariadne-naxos{background:#211827}
+.ariadne-layer{position:absolute;inset:-1.5%;width:103%;height:103%;overflow:visible;pointer-events:none;transition:transform .7s cubic-bezier(.16,1,.3,1);will-change:transform}
+.ariadne-horizon{z-index:0}
+.ariadne-figures{z-index:1}
+.ariadne-foreground{z-index:2}
+.ariadne-dawn-glow,.ariadne-arrival-light{transform-box:fill-box;transform-origin:center;animation:ariadne-light-breathe 12s ease-in-out infinite alternate}
+.ariadne-water{animation:ariadne-tide-drift 14s ease-in-out infinite alternate}
+.ariadne-departing-ship{animation:ariadne-ship-drift 24s ease-in-out infinite alternate}
+.ariadne-stars{animation:ariadne-star-glimmer 9s ease-in-out infinite alternate}
+.ariadne-corona{transform-box:fill-box;transform-origin:center;animation:ariadne-corona-glow 8s ease-in-out infinite alternate}
+.ariadne-alone{animation:ariadne-alone-breath 12s ease-in-out infinite alternate}
+.ariadne-dionysus{animation:ariadne-arrival 9s ease-in-out infinite alternate}
+.ariadne-thiasos{animation:ariadne-thiasos-sway 12s ease-in-out infinite alternate}
+.ariadne-flora{transform-box:fill-box;transform-origin:bottom center;animation:ariadne-flower-sway 10s ease-in-out infinite alternate}
+.ariadne-leaves{transform-box:fill-box;transform-origin:bottom center;animation:ariadne-flower-sway 13s ease-in-out infinite alternate-reverse}
+.layout-ariadne-naxos{display:block;padding:0;overflow:hidden}
+.layout-ariadne-naxos .copy{display:contents}
+.layout-ariadne-naxos .eyebrow{position:absolute;z-index:5;left:6vw;top:7.5vh;color:#d4b77b;font-size:11px;letter-spacing:.3em}
+.layout-ariadne-naxos .copy h1{position:absolute;z-index:5;left:6vw;top:10.5vh;max-width:980px;margin:0;color:#f1e5d0;font-size:clamp(38px,4vw,70px);line-height:1.04;text-shadow:0 4px 24px #100b18}
+.layout-ariadne-naxos:before{content:'';position:absolute;z-index:4;inset:0;pointer-events:none;background:linear-gradient(90deg,#211827b8 0%,#21182748 30%,transparent 55%),linear-gradient(0deg,#2118279c 0%,transparent 25%,transparent 82%,#21182744 100%)}
+.layout-ariadne-naxos .ariadne-inscriptions{display:contents}
+.layout-ariadne-naxos .ariadne-inscription{position:absolute;z-index:5;display:grid;grid-template-columns:26px 1fr;gap:12px;width:min(28vw,520px);padding:10px 15px 13px 0;border-top:1px solid #b79a6888;background:linear-gradient(100deg,#211827ed 0%,#211827c9 84%,#21182700 100%);text-shadow:0 2px 14px #100b18}
+.layout-ariadne-naxos .ariadne-inscription:before{content:'';position:absolute;top:-2px;left:0;width:38px;border-top:3px solid #b79a68}
+.layout-ariadne-naxos .ariadne-inscription-0{left:5vw;top:48vh;width:min(30vw,570px)}
+.layout-ariadne-naxos .ariadne-inscription-1{right:5vw;top:34vh}
+.layout-ariadne-naxos .ariadne-inscription-2{right:5vw;top:53vh}
+.layout-ariadne-naxos .ariadne-inscription>span{padding-top:2px;color:#d0ad71;font:600 14px Cinzel,Georgia,serif}
+.layout-ariadne-naxos .ariadne-inscription strong{display:block;margin-bottom:4px;color:#e8d2a2;font:600 clamp(18px,1.3vw,24px)/1.1 "Cormorant Garamond",Georgia,serif;letter-spacing:.035em;text-transform:uppercase}
+.layout-ariadne-naxos .ariadne-inscription p{margin:0;color:#f0e6d7;font:400 clamp(13px,.86vw,16px)/1.42 Inter,system-ui,sans-serif}
+.layout-ariadne-naxos .ariadne-reflection{position:absolute;z-index:5;left:28vw;bottom:7vh;width:min(46vw,880px);margin:0;padding:11px 17px;border-left:2px solid #b79a68;background:#211827ed;color:#f0d9a6;font:italic 500 clamp(20px,1.55vw,28px)/1.3 "Cormorant Garamond",Georgia,serif;text-shadow:0 2px 12px #100b18}
+.layout-ariadne-naxos .ariadne-note{position:absolute;z-index:5;right:5vw;bottom:4vh;width:32vw;margin:0;color:#e0d1b7;text-align:right;font:italic 400 clamp(11px,.76vw,14px)/1.35 "Cormorant Garamond",Georgia,serif;text-shadow:0 2px 12px #100b18}
+@keyframes ariadne-light-breathe{from{opacity:.62;scale:.98}to{opacity:1;scale:1.04}}
+@keyframes ariadne-tide-drift{from{translate:-3px 1px}to{translate:5px -2px}}
+@keyframes ariadne-ship-drift{from{translate:0 0;opacity:.9}to{translate:-16px -3px;opacity:.62}}
+@keyframes ariadne-star-glimmer{from{opacity:.62}to{opacity:1}}
+@keyframes ariadne-corona-glow{from{opacity:.5;scale:.98}to{opacity:1;scale:1.04}}
+@keyframes ariadne-alone-breath{from{translate:0 0}to{translate:0 -2px}}
+@keyframes ariadne-arrival{from{translate:1px 0}to{translate:-2px -3px}}
+@keyframes ariadne-thiasos-sway{from{translate:-2px 1px}to{translate:3px -3px}}
+@keyframes ariadne-flower-sway{from{rotate:-1deg}to{rotate:1.2deg}}
+@media(max-width:800px){
+ .theme-ariadne .ex-ariadne-naxos{opacity:.22}
+ .animated-museum .layout-ariadne-naxos{overflow-y:auto;padding:14vh 7vw 15vh}
+ .layout-ariadne-naxos .copy{display:block;position:relative;z-index:5;padding:0}
+ .layout-ariadne-naxos .eyebrow,.layout-ariadne-naxos .copy h1,.layout-ariadne-naxos .ariadne-inscription,
+ .layout-ariadne-naxos .ariadne-reflection,.layout-ariadne-naxos .ariadne-note{position:relative;inset:auto;left:auto;right:auto;top:auto;bottom:auto;width:auto;max-width:100%;margin:0}
+ .layout-ariadne-naxos .eyebrow{margin-bottom:13px}
+ .layout-ariadne-naxos .copy h1{font-size:clamp(34px,9vw,54px);margin-bottom:22px}
+ .layout-ariadne-naxos .ariadne-inscriptions{display:flex;flex-direction:column;gap:12px}
+ .layout-ariadne-naxos .ariadne-inscription{min-height:0;padding:10px 12px 12px 0;background:linear-gradient(90deg,#211827f2,#211827c9 90%,transparent)}
+ .layout-ariadne-naxos .ariadne-inscription strong{font-size:20px}
+ .layout-ariadne-naxos .ariadne-inscription p{font-size:14px}
+ .layout-ariadne-naxos .ariadne-reflection{margin-top:16px;padding:10px 14px;font-size:22px}
+ .layout-ariadne-naxos .ariadne-note{margin-top:10px;text-align:left;background:#211827e8}
+}
+@media(prefers-reduced-motion:reduce){
+ .ariadne-layer{transition:none!important;will-change:auto}
+ .ariadne-dawn-glow,.ariadne-arrival-light,.ariadne-water,.ariadne-departing-ship,.ariadne-stars,
+ .ariadne-corona,.ariadne-alone,.ariadne-dionysus,.ariadne-thiasos,.ariadne-flora,.ariadne-leaves{animation:none!important}
+}
+
+/* Underworld: the path from shadow to light frames Dionysus and Semele's reunion. */
+.theme-underworld .ex-dionysus-underworld{background:#211827}
+.underworld-layer{position:absolute;inset:-1.5%;width:103%;height:103%;overflow:visible;pointer-events:none;transition:transform .7s cubic-bezier(.16,1,.3,1);will-change:transform}
+.underworld-depth{z-index:0}
+.underworld-figures{z-index:1}
+.underworld-foreground{z-index:2}
+.underworld-portal,.underworld-aura,.underworld-semele-light{transform-box:fill-box;transform-origin:center;animation:underworld-light-breathe 11s ease-in-out infinite alternate}
+.underworld-sunbeam{animation:underworld-beam-pulse 13s ease-in-out infinite alternate}
+.underworld-styx{animation:underworld-river-flow 14s ease-in-out infinite alternate}
+.underworld-procession{animation:underworld-step 11s ease-in-out infinite alternate}
+.underworld-spirits{animation:underworld-spirits-rise 9s ease-in-out infinite alternate}
+.underworld-guiding-light{animation:underworld-guide-glow 8s ease-in-out infinite alternate}
+.underworld-withered{transform-box:fill-box;transform-origin:bottom center;animation:underworld-withered-sway 12s ease-in-out infinite alternate}
+.underworld-dust circle{opacity:.12;animation:underworld-dust-rise 8s ease-in-out infinite}
+.underworld-dust circle:nth-child(even){animation-delay:-4s}
+.layout-dionysus-underworld{display:block;padding:0;overflow:hidden}
+.layout-dionysus-underworld .copy{display:contents}
+.layout-dionysus-underworld .eyebrow{position:absolute;z-index:5;left:6vw;top:7.5vh;color:#d4b77b;font-size:11px;letter-spacing:.3em}
+.layout-dionysus-underworld .copy h1{position:absolute;z-index:5;left:6vw;top:10.5vh;max-width:860px;margin:0;color:#f1e5d0;font-size:clamp(38px,3.8vw,68px);line-height:1.04;text-shadow:0 4px 24px #100b18}
+.layout-dionysus-underworld:before{content:'';position:absolute;z-index:4;inset:0;pointer-events:none;background:linear-gradient(90deg,#17131ee8 0%,#17131eb5 24%,transparent 48%),linear-gradient(0deg,#17131e9c 0%,transparent 24%,transparent 80%,#17131e5c 100%)}
+.layout-dionysus-underworld .underworld-inscriptions{display:contents}
+.layout-dionysus-underworld .underworld-inscription{position:absolute;z-index:5;display:grid;grid-template-columns:26px 1fr;gap:12px;width:min(30vw,570px);padding:10px 15px 13px 0;border-top:1px solid #b79a6888;background:linear-gradient(100deg,#211827ed 0%,#211827d1 84%,#21182700 100%);text-shadow:0 2px 14px #100b18}
+.layout-dionysus-underworld .underworld-inscription:before{content:'';position:absolute;top:-2px;left:0;width:38px;border-top:3px solid #b79a68}
+.layout-dionysus-underworld .underworld-inscription-0{left:5vw;top:36vh}
+.layout-dionysus-underworld .underworld-inscription-1{right:5vw;top:35vh;width:min(27vw,520px)}
+.layout-dionysus-underworld .underworld-inscription-2{left:6vw;top:59vh;width:min(30vw,570px)}
+.layout-dionysus-underworld .underworld-inscription>span{padding-top:2px;color:#d0ad71;font:600 14px Cinzel,Georgia,serif}
+.layout-dionysus-underworld .underworld-inscription strong{display:block;margin-bottom:4px;color:#e8d2a2;font:600 clamp(18px,1.3vw,24px)/1.1 "Cormorant Garamond",Georgia,serif;letter-spacing:.035em;text-transform:uppercase}
+.layout-dionysus-underworld .underworld-inscription p{margin:0;color:#f0e6d7;font:400 clamp(13px,.84vw,16px)/1.42 Inter,system-ui,sans-serif}
+.layout-dionysus-underworld .underworld-reflection{position:absolute;z-index:5;left:29vw;bottom:7.5vh;width:min(42vw,810px);margin:0;padding:11px 17px;border-left:2px solid #b79a68;background:#211827ed;color:#f0d9a6;font:italic 500 clamp(20px,1.5vw,27px)/1.3 "Cormorant Garamond",Georgia,serif;text-shadow:0 2px 12px #100b18}
+.layout-dionysus-underworld .underworld-note{position:absolute;z-index:5;right:5vw;bottom:3.5vh;width:32vw;margin:0;color:#e0d1b7;text-align:right;font:italic 400 clamp(11px,.73vw,14px)/1.35 "Cormorant Garamond",Georgia,serif;text-shadow:0 2px 12px #100b18}
+@keyframes underworld-light-breathe{from{opacity:.62;scale:.98}to{opacity:1;scale:1.04}}
+@keyframes underworld-beam-pulse{from{opacity:.55}to{opacity:.96}}
+@keyframes underworld-river-flow{from{translate:-3px 1px}to{translate:5px -2px}}
+@keyframes underworld-step{from{translate:0 0}to{translate:2px -3px}}
+@keyframes underworld-spirits-rise{from{opacity:.3;translate:0 6px}to{opacity:.72;translate:0 -8px}}
+@keyframes underworld-guide-glow{from{opacity:.38}to{opacity:.9}}
+@keyframes underworld-withered-sway{from{rotate:-.8deg}to{rotate:.8deg}}
+@keyframes underworld-dust-rise{0%,100%{opacity:0;translate:0 5px}35%,70%{opacity:.65}50%{translate:0 -9px}}
+@media(max-width:800px){
+ .theme-underworld .ex-dionysus-underworld{opacity:.22}
+ .animated-museum .layout-dionysus-underworld{overflow-y:auto;padding:14vh 7vw 15vh}
+ .layout-dionysus-underworld .copy{display:block;position:relative;z-index:5;padding:0}
+ .layout-dionysus-underworld .eyebrow,.layout-dionysus-underworld .copy h1,.layout-dionysus-underworld .underworld-inscription,
+ .layout-dionysus-underworld .underworld-reflection,.layout-dionysus-underworld .underworld-note{position:relative;inset:auto;left:auto;right:auto;top:auto;bottom:auto;width:auto;max-width:100%;margin:0}
+ .layout-dionysus-underworld .eyebrow{margin-bottom:13px}
+ .layout-dionysus-underworld .copy h1{font-size:clamp(34px,9vw,54px);margin-bottom:22px}
+ .layout-dionysus-underworld .underworld-inscriptions{display:flex;flex-direction:column;gap:12px}
+ .layout-dionysus-underworld .underworld-inscription{min-height:0;padding:10px 12px 12px 0;background:linear-gradient(90deg,#211827f2,#211827c9 90%,transparent)}
+ .layout-dionysus-underworld .underworld-inscription strong{font-size:20px}
+ .layout-dionysus-underworld .underworld-inscription p{font-size:14px}
+ .layout-dionysus-underworld .underworld-reflection{margin-top:16px;padding:10px 14px;font-size:22px}
+ .layout-dionysus-underworld .underworld-note{margin-top:10px;text-align:left;background:#211827e8}
+}
+@media(prefers-reduced-motion:reduce){
+ .underworld-layer{transition:none!important;will-change:auto}
+ .underworld-portal,.underworld-aura,.underworld-semele-light,.underworld-sunbeam,.underworld-styx,
+ .underworld-procession,.underworld-spirits,.underworld-guiding-light,.underworld-withered,
+ .underworld-dust circle{animation:none!important}
+}
+
+/* Dionysian polis: one processional route connects distinct civic celebrations. */
+.theme-festival-polis .ex-dionysian-polis{background:#211827}
+.polis-layer{position:absolute;inset:-1.5%;width:103%;height:103%;overflow:visible;pointer-events:none;transition:transform .7s cubic-bezier(.16,1,.3,1);will-change:transform}
+.polis-city{z-index:0}
+.polis-procession{z-index:1}
+.polis-foreground{z-index:2}
+.polis-garland{transform-box:fill-box;transform-origin:center;animation:polis-garland-sway 14s ease-in-out infinite alternate}
+.polis-procession-people{animation:polis-procession-drift 11s ease-in-out infinite alternate}
+.polis-foreground-leaves{transform-box:fill-box;transform-origin:bottom center;animation:polis-leaf-sway 13s ease-in-out infinite alternate}
+.polis-particles circle{opacity:0;animation:polis-particle-glow 8s ease-in-out infinite}
+.layout-dionysian-polis{display:block;padding:0;overflow:hidden}
+.layout-dionysian-polis .copy{display:contents}
+.layout-dionysian-polis .eyebrow{position:absolute;z-index:5;left:6vw;top:7vh;color:#d4b77b;font-size:11px;letter-spacing:.3em}
+.layout-dionysian-polis .copy h1{position:absolute;z-index:5;left:6vw;top:10vh;max-width:76vw;margin:0;color:#f1e5d0;font-size:clamp(36px,3.8vw,68px);line-height:1.04;text-shadow:0 4px 24px #100b18}
+.layout-dionysian-polis:before{content:'';position:absolute;z-index:4;inset:0;pointer-events:none;background:linear-gradient(90deg,#211827a8 0%,#21182770 30%,transparent 56%),linear-gradient(0deg,#211827a8 0%,transparent 23%,transparent 82%,#21182752 100%)}
+.layout-dionysian-polis .festival-polis-inscriptions{display:contents}
+.layout-dionysian-polis .festival-polis-inscription{position:absolute;z-index:5;display:grid;grid-template-columns:24px 1fr;gap:10px;width:min(22vw,425px);padding:9px 13px 12px 0;border-top:1px solid #b79a6888;background:linear-gradient(100deg,#211827ed 0%,#211827d2 85%,#21182700 100%);text-shadow:0 2px 14px #100b18}
+.layout-dionysian-polis .festival-polis-inscription:before{content:'';position:absolute;top:-2px;left:0;width:36px;border-top:3px solid #b79a68}
+.layout-dionysian-polis .festival-polis-inscription-0{left:4.5vw;top:34vh}
+.layout-dionysian-polis .festival-polis-inscription-1{left:28vw;top:51vh;width:min(23vw,440px)}
+.layout-dionysian-polis .festival-polis-inscription-2{right:28vw;top:34vh;width:min(23vw,440px)}
+.layout-dionysian-polis .festival-polis-inscription-3{right:4.5vw;top:51vh;width:min(24vw,460px)}
+.layout-dionysian-polis .festival-polis-inscription>span{padding-top:2px;color:#d0ad71;font:600 13px Cinzel,Georgia,serif}
+.layout-dionysian-polis .festival-polis-inscription strong{display:block;margin-bottom:4px;color:#e8d2a2;font:600 clamp(17px,1.2vw,22px)/1.1 "Cormorant Garamond",Georgia,serif;letter-spacing:.04em;text-transform:uppercase}
+.layout-dionysian-polis .festival-polis-inscription p{margin:0;color:#f0e6d7;font:400 clamp(12px,.78vw,15px)/1.38 Inter,system-ui,sans-serif}
+.layout-dionysian-polis .festival-polis-reflection{position:absolute;z-index:5;left:25vw;bottom:8vh;width:min(50vw,940px);margin:0;padding:10px 16px;border-left:2px solid #b79a68;background:#211827ed;color:#f0d9a6;font:italic 500 clamp(20px,1.45vw,27px)/1.3 "Cormorant Garamond",Georgia,serif;text-shadow:0 2px 12px #100b18}
+.layout-dionysian-polis .festival-polis-note{position:absolute;z-index:5;right:4vw;bottom:3.6vh;width:40vw;margin:0;color:#e0d1b7;text-align:right;font:italic 400 clamp(10px,.69vw,13px)/1.35 "Cormorant Garamond",Georgia,serif;text-shadow:0 2px 12px #100b18}
+@keyframes polis-garland-sway{from{translate:-2px 0;rotate:-.25deg}to{translate:3px 1px;rotate:.25deg}}
+@keyframes polis-procession-drift{from{translate:-1px 1px}to{translate:2px -2px}}
+@keyframes polis-leaf-sway{from{rotate:-1deg}to{rotate:1.2deg}}
+@keyframes polis-particle-glow{0%,100%{opacity:0;translate:0 5px}38%,62%{opacity:.68}50%{translate:0 -7px}}
+@media(max-width:800px){
+ .theme-festival-polis .ex-dionysian-polis{opacity:.2}
+ .animated-museum .layout-dionysian-polis{overflow-y:auto;padding:14vh 7vw 15vh}
+ .layout-dionysian-polis .copy{display:block;position:relative;z-index:5;padding:0}
+ .layout-dionysian-polis .eyebrow,.layout-dionysian-polis .copy h1,.layout-dionysian-polis .festival-polis-inscription,
+ .layout-dionysian-polis .festival-polis-reflection,.layout-dionysian-polis .festival-polis-note{position:relative;inset:auto;left:auto;right:auto;top:auto;bottom:auto;width:auto;max-width:100%;margin:0}
+ .layout-dionysian-polis .eyebrow{margin-bottom:13px}
+ .layout-dionysian-polis .copy h1{font-size:clamp(34px,9vw,54px);margin-bottom:22px}
+ .layout-dionysian-polis .festival-polis-inscriptions{display:flex;flex-direction:column;gap:12px}
+ .layout-dionysian-polis .festival-polis-inscription{min-height:0;padding:10px 12px 12px 0;background:linear-gradient(90deg,#211827f2,#211827c9 90%,transparent)}
+ .layout-dionysian-polis .festival-polis-inscription strong{font-size:20px}
+ .layout-dionysian-polis .festival-polis-inscription p{font-size:14px}
+ .layout-dionysian-polis .festival-polis-reflection{margin-top:16px;padding:10px 14px;font-size:22px}
+ .layout-dionysian-polis .festival-polis-note{margin-top:10px;text-align:left;background:#211827e8}
+}
+@media(prefers-reduced-motion:reduce){
+ .polis-layer{transition:none!important;will-change:auto}
+ .polis-garland,.polis-procession-people,.polis-foreground-leaves,.polis-particles circle{animation:none!important}
+}
+
+/* Maenad thiasos: dancers, musicians and vegetation spiral through the mountain rite. */
+.theme-maenad-thiasos .ex-maenad-thiasos{background:#211827}
+.maenad-layer{position:absolute;inset:-1.5%;width:103%;height:103%;overflow:visible;pointer-events:none;transition:transform .7s cubic-bezier(.16,1,.3,1);will-change:transform}
+.maenad-mountains{z-index:0}
+.maenad-dancers{z-index:1}
+.maenad-foreground{z-index:2}
+.maenad-dance-ring{transform-box:fill-box;transform-origin:center;animation:maenad-ring-sway 18s ease-in-out infinite alternate}
+.maenad-dancer-one,.maenad-dancer-three{transform-box:fill-box;transform-origin:center;animation:maenad-dance-step 7s ease-in-out infinite alternate}
+.maenad-dancer-two{transform-box:fill-box;transform-origin:center;animation:maenad-dance-step 8s ease-in-out infinite alternate-reverse}
+.maenad-dancer-four{transform-box:fill-box;transform-origin:center;animation:maenad-dance-step 9s ease-in-out infinite alternate}
+.maenad-thiasos-elders{animation:maenad-procession-drift 12s ease-in-out infinite alternate}
+.maenad-garlands{transform-box:fill-box;transform-origin:center;animation:maenad-vine-sway 14s ease-in-out infinite alternate}
+.maenad-ivy-leaves{transform-box:fill-box;transform-origin:bottom center;animation:maenad-vine-sway 11s ease-in-out infinite alternate-reverse}
+.maenad-dust circle{opacity:0;animation:maenad-dust-glow 8s ease-in-out infinite}
+.layout-maenad-thiasos{display:block;padding:0;overflow:hidden}
+.layout-maenad-thiasos .copy{display:contents}
+.layout-maenad-thiasos .eyebrow{position:absolute;z-index:5;left:6vw;top:7vh;color:#d4b77b;font-size:11px;letter-spacing:.3em}
+.layout-maenad-thiasos .copy h1{position:absolute;z-index:5;left:6vw;top:10vh;max-width:76vw;margin:0;color:#f1e5d0;font-size:clamp(35px,3.8vw,68px);line-height:1.04;text-shadow:0 4px 24px #100b18}
+.layout-maenad-thiasos:before{content:'';position:absolute;z-index:4;inset:0;pointer-events:none;background:linear-gradient(90deg,#211827d9 0%,#2118279e 24%,transparent 43%,transparent 57%,#21182792 78%,#211827c9 100%),linear-gradient(0deg,#211827b5 0%,transparent 26%,transparent 82%,#21182748 100%)}
+.layout-maenad-thiasos .maenad-inscriptions{display:contents}
+.layout-maenad-thiasos .maenad-inscription{position:absolute;z-index:5;display:grid;grid-template-columns:24px 1fr;gap:10px;width:min(24vw,455px);padding:9px 13px 12px 0;border-top:1px solid #b79a6888;background:linear-gradient(100deg,#211827ed 0%,#211827d2 85%,#21182700 100%);text-shadow:0 2px 14px #100b18}
+.layout-maenad-thiasos .maenad-inscription:before{content:'';position:absolute;top:-2px;left:0;width:36px;border-top:3px solid #b79a68}
+.layout-maenad-thiasos .maenad-inscription-0{left:4.5vw;top:33vh}
+.layout-maenad-thiasos .maenad-inscription-1{left:4.5vw;top:53vh}
+.layout-maenad-thiasos .maenad-inscription-2{right:4.5vw;top:33vh}
+.layout-maenad-thiasos .maenad-inscription-3{right:4.5vw;top:53vh}
+.layout-maenad-thiasos .maenad-inscription>span{padding-top:2px;color:#d0ad71;font:600 13px Cinzel,Georgia,serif}
+.layout-maenad-thiasos .maenad-inscription strong{display:block;margin-bottom:4px;color:#e8d2a2;font:600 clamp(17px,1.18vw,22px)/1.1 "Cormorant Garamond",Georgia,serif;letter-spacing:.035em;text-transform:uppercase}
+.layout-maenad-thiasos .maenad-inscription p{margin:0;color:#f0e6d7;font:400 clamp(12px,.78vw,15px)/1.38 Inter,system-ui,sans-serif}
+.layout-maenad-thiasos .maenad-reflection{position:absolute;z-index:5;left:25vw;bottom:7.8vh;width:min(49vw,910px);margin:0;padding:10px 16px;border-left:2px solid #b79a68;background:#211827ed;color:#f0d9a6;font:italic 500 clamp(20px,1.45vw,27px)/1.3 "Cormorant Garamond",Georgia,serif;text-shadow:0 2px 12px #100b18}
+.layout-maenad-thiasos .maenad-note{position:absolute;z-index:5;right:4vw;bottom:3.3vh;width:40vw;margin:0;color:#e0d1b7;text-align:right;font:italic 400 clamp(10px,.69vw,13px)/1.35 "Cormorant Garamond",Georgia,serif;text-shadow:0 2px 12px #100b18}
+@keyframes maenad-ring-sway{from{rotate:-.5deg;translate:-2px 0}to{rotate:.5deg;translate:2px -2px}}
+@keyframes maenad-dance-step{from{translate:0 0;rotate:-.35deg}to{translate:1px -4px;rotate:.45deg}}
+@keyframes maenad-procession-drift{from{translate:-2px 1px}to{translate:3px -3px}}
+@keyframes maenad-vine-sway{from{rotate:-1deg}to{rotate:1.2deg}}
+@keyframes maenad-dust-glow{0%,100%{opacity:0;translate:0 5px}38%,62%{opacity:.68}50%{translate:0 -7px}}
+@media(max-width:800px){
+ .theme-maenad-thiasos .ex-maenad-thiasos{opacity:.2}
+ .animated-museum .layout-maenad-thiasos{overflow-y:auto;padding:14vh 7vw 15vh}
+ .layout-maenad-thiasos .copy{display:block;position:relative;z-index:5;padding:0}
+ .layout-maenad-thiasos .eyebrow,.layout-maenad-thiasos .copy h1,.layout-maenad-thiasos .maenad-inscription,
+ .layout-maenad-thiasos .maenad-reflection,.layout-maenad-thiasos .maenad-note{position:relative;inset:auto;left:auto;right:auto;top:auto;bottom:auto;width:auto;max-width:100%;margin:0}
+ .layout-maenad-thiasos .eyebrow{margin-bottom:13px}
+ .layout-maenad-thiasos .copy h1{font-size:clamp(33px,8.6vw,52px);margin-bottom:22px}
+ .layout-maenad-thiasos .maenad-inscriptions{display:flex;flex-direction:column;gap:12px}
+ .layout-maenad-thiasos .maenad-inscription{min-height:0;padding:10px 12px 12px 0;background:linear-gradient(90deg,#211827f2,#211827c9 90%,transparent)}
+ .layout-maenad-thiasos .maenad-inscription strong{font-size:20px}
+ .layout-maenad-thiasos .maenad-inscription p{font-size:14px}
+ .layout-maenad-thiasos .maenad-reflection{margin-top:16px;padding:10px 14px;font-size:21px}
+ .layout-maenad-thiasos .maenad-note{margin-top:10px;text-align:left;background:#211827e8}
+}
+@media(prefers-reduced-motion:reduce){
+ .maenad-layer{transition:none!important;will-change:auto}
+ .maenad-dance-ring,.maenad-dancer-one,.maenad-dancer-two,.maenad-dancer-three,.maenad-dancer-four,
+ .maenad-thiasos-elders,.maenad-garlands,.maenad-ivy-leaves,.maenad-dust circle{animation:none!important}
+}
+
+/* Sanctuary mysteries: a ceremonial altar opens onto a veiled inner chamber. */
+.theme-sanctuary-mysteries .ex-sanctuary-mysteries{background:#211827}
+.cult-layer{position:absolute;inset:-1.5%;width:103%;height:103%;overflow:visible;pointer-events:none;transition:transform .7s cubic-bezier(.16,1,.3,1);will-change:transform}
+.cult-architecture{z-index:0}
+.cult-officiants{z-index:1}
+.cult-foreground{z-index:2}
+.cult-sanctum-aura,.cult-inner-light,.cult-floor-glow,.cult-wall-lamps ellipse{transform-box:fill-box;transform-origin:center;animation:cult-light-breathe 12s ease-in-out infinite alternate}
+.cult-inner-curtains path:first-child,.cult-inner-curtains path:nth-child(2){animation:cult-curtain-sway 14s ease-in-out infinite alternate}
+.cult-approach-procession{animation:cult-procession-drift 12s ease-in-out infinite alternate}
+.cult-offering-flame{transform-box:fill-box;transform-origin:bottom center;animation:cult-flame-dance 4s ease-in-out infinite alternate}
+.cult-foreground-leaves{transform-box:fill-box;transform-origin:bottom center;animation:cult-leaf-sway 12s ease-in-out infinite alternate}
+.cult-lamp-motes circle{opacity:0;animation:cult-mote-rise 8s ease-in-out infinite}
+.layout-sanctuary-mysteries{display:block;padding:0;overflow:hidden}
+.layout-sanctuary-mysteries .copy{display:contents}
+.layout-sanctuary-mysteries .eyebrow{position:absolute;z-index:5;left:6vw;top:7vh;color:#d4b77b;font-size:11px;letter-spacing:.3em}
+.layout-sanctuary-mysteries .copy h1{position:absolute;z-index:5;left:6vw;top:10vh;max-width:950px;margin:0;color:#f1e5d0;font-size:clamp(35px,3.8vw,68px);line-height:1.04;text-shadow:0 4px 24px #100b18}
+.layout-sanctuary-mysteries:before{content:'';position:absolute;z-index:4;inset:0;pointer-events:none;background:linear-gradient(90deg,#211827a8 0%,#21182782 27%,transparent 51%,transparent 68%,#21182762 100%),linear-gradient(0deg,#211827bd 0%,transparent 26%,transparent 81%,#21182755 100%)}
+.layout-sanctuary-mysteries .cult-inscriptions{display:contents}
+.layout-sanctuary-mysteries .cult-inscription{position:absolute;z-index:5;display:grid;grid-template-columns:24px 1fr;gap:10px;width:min(24vw,455px);padding:9px 13px 12px 0;border-top:1px solid #b79a6888;background:linear-gradient(100deg,#211827ed 0%,#211827d2 85%,#21182700 100%);text-shadow:0 2px 14px #100b18}
+.layout-sanctuary-mysteries .cult-inscription:before{content:'';position:absolute;top:-2px;left:0;width:36px;border-top:3px solid #b79a68}
+.layout-sanctuary-mysteries .cult-inscription-0{left:4.5vw;top:34vh}
+.layout-sanctuary-mysteries .cult-inscription-1{right:4.5vw;top:34vh}
+.layout-sanctuary-mysteries .cult-inscription-2{left:4.5vw;top:52vh}
+.layout-sanctuary-mysteries .cult-inscription-3{right:4.5vw;top:52vh;width:min(27vw,510px)}
+.layout-sanctuary-mysteries .cult-inscription>span{padding-top:2px;color:#d0ad71;font:600 13px Cinzel,Georgia,serif}
+.layout-sanctuary-mysteries .cult-inscription strong{display:block;margin-bottom:4px;color:#e8d2a2;font:600 clamp(17px,1.18vw,22px)/1.1 "Cormorant Garamond",Georgia,serif;letter-spacing:.035em;text-transform:uppercase}
+.layout-sanctuary-mysteries .cult-inscription p{margin:0;color:#f0e6d7;font:400 clamp(12px,.78vw,15px)/1.38 Inter,system-ui,sans-serif}
+.layout-sanctuary-mysteries .cult-reflection{position:absolute;z-index:5;left:25vw;bottom:7.5vh;width:min(49vw,920px);margin:0;padding:10px 16px;border-left:2px solid #b79a68;background:#211827ed;color:#f0d9a6;font:italic 500 clamp(20px,1.4vw,26px)/1.3 "Cormorant Garamond",Georgia,serif;text-shadow:0 2px 12px #100b18}
+
+/* Keep quotation panels readable without competing with the artwork. */
+@media(min-width:801px){
+ .animated-museum blockquote{font-size:clamp(17px,1.18vw,23px)!important}
+}
+.layout-sanctuary-mysteries .cult-note{position:absolute;z-index:5;right:4vw;bottom:3.2vh;width:42vw;margin:0;color:#e0d1b7;text-align:right;font:italic 400 clamp(10px,.67vw,13px)/1.35 "Cormorant Garamond",Georgia,serif;text-shadow:0 2px 12px #100b18}
+@keyframes cult-light-breathe{from{opacity:.62;scale:.98}to{opacity:1;scale:1.04}}
+@keyframes cult-curtain-sway{from{translate:-2px 0}to{translate:3px -2px}}
+@keyframes cult-procession-drift{from{translate:-2px 1px}to{translate:3px -3px}}
+@keyframes cult-flame-dance{from{scale:.95 1;rotate:-2deg}to{scale:1.04 .98;rotate:2deg}}
+@keyframes cult-leaf-sway{from{rotate:-1deg}to{rotate:1.2deg}}
+@keyframes cult-mote-rise{0%,100%{opacity:0;translate:0 5px}38%,62%{opacity:.68}50%{translate:0 -7px}}
+@media(max-width:800px){
+ .theme-sanctuary-mysteries .ex-sanctuary-mysteries{opacity:.2}
+ .animated-museum .layout-sanctuary-mysteries{overflow-y:auto;padding:14vh 7vw 15vh}
+ .layout-sanctuary-mysteries .copy{display:block;position:relative;z-index:5;padding:0}
+ .layout-sanctuary-mysteries .eyebrow,.layout-sanctuary-mysteries .copy h1,.layout-sanctuary-mysteries .cult-inscription,
+ .layout-sanctuary-mysteries .cult-reflection,.layout-sanctuary-mysteries .cult-note{position:relative;inset:auto;left:auto;right:auto;top:auto;bottom:auto;width:auto;max-width:100%;margin:0}
+ .layout-sanctuary-mysteries .eyebrow{margin-bottom:13px}
+ .layout-sanctuary-mysteries .copy h1{font-size:clamp(33px,8.5vw,52px);margin-bottom:22px}
+ .layout-sanctuary-mysteries .cult-inscriptions{display:flex;flex-direction:column;gap:12px}
+ .layout-sanctuary-mysteries .cult-inscription{min-height:0;padding:10px 12px 12px 0;background:linear-gradient(90deg,#211827f2,#211827c9 90%,transparent)}
+ .layout-sanctuary-mysteries .cult-inscription strong{font-size:20px}
+ .layout-sanctuary-mysteries .cult-inscription p{font-size:14px}
+ .layout-sanctuary-mysteries .cult-reflection{margin-top:16px;padding:10px 14px;font-size:21px}
+ .layout-sanctuary-mysteries .cult-note{margin-top:10px;text-align:left;background:#211827e8}
+}
+@media(prefers-reduced-motion:reduce){
+ .cult-layer{transition:none!important;will-change:auto}
+ .cult-sanctum-aura,.cult-inner-light,.cult-floor-glow,.cult-wall-lamps ellipse,.cult-inner-curtains path,
+ .cult-approach-procession,.cult-offering-flame,.cult-foreground-leaves,.cult-lamp-motes circle{animation:none!important}
+}
+
+/* Dionysian meanings: a single vine connects landscape, community, theatre, and procession. */
+.theme-ritual-meaning .ex-ritual-meaning{background:#211827}
+.meaning-layer{position:absolute;inset:-1.5%;width:103%;height:103%;overflow:visible;pointer-events:none;transition:transform .7s cubic-bezier(.16,1,.3,1);will-change:transform}
+.meaning-landscape{z-index:0}
+.meaning-vine{z-index:1}
+.meaning-figures{z-index:2}
+.meaning-light{transform-box:fill-box;transform-origin:center;animation:meaning-light-breathe 14s ease-in-out infinite alternate}
+.meaning-leaves{transform-box:fill-box;transform-origin:center;animation:meaning-vine-sway 12s ease-in-out infinite alternate}
+.meaning-grapes circle{transform-box:fill-box;transform-origin:center;animation:meaning-grape-glow 9s ease-in-out infinite alternate}
+.layout-ritual-meaning{display:block;padding:0;overflow:hidden}
+.layout-ritual-meaning .copy{display:contents}
+.layout-ritual-meaning .eyebrow{position:absolute;z-index:5;left:6vw;top:7vh;color:#d4b77b;font-size:11px;letter-spacing:.3em}
+.layout-ritual-meaning .copy h1{position:absolute;z-index:5;left:6vw;top:10vh;max-width:900px;margin:0;color:#f1e5d0;font-size:clamp(35px,3.8vw,68px);line-height:1.04;text-shadow:0 4px 24px #100b18}
+.layout-ritual-meaning:before{content:'';position:absolute;z-index:3;inset:0;pointer-events:none;background:linear-gradient(90deg,#21182792 0%,#21182748 23%,transparent 40%,transparent 62%,#2118274d 80%,#2118278a 100%),linear-gradient(0deg,#211827ed 0%,transparent 22%,transparent 78%,#21182742 100%)}
+.layout-ritual-meaning .ritual-inscriptions{display:contents}
+.layout-ritual-meaning .ritual-inscription{position:absolute;z-index:4;display:grid;grid-template-columns:24px 1fr;gap:10px;width:min(23vw,430px);padding:10px 12px 12px 0;border-top:1px solid #b79a6888;background:linear-gradient(100deg,#211827eF 0%,#211827cf 82%,#21182700 100%);text-shadow:0 2px 14px #100b18}
+.layout-ritual-meaning .ritual-inscription:before{content:'';position:absolute;top:-2px;left:0;width:36px;border-top:3px solid #b79a68}
+.layout-ritual-meaning .ritual-inscription-0{left:4.5vw;top:34vh}
+.layout-ritual-meaning .ritual-inscription-1{left:4.5vw;top:56vh}
+.layout-ritual-meaning .ritual-inscription-2{right:4.5vw;top:34vh;background:linear-gradient(270deg,#211827ef 0%,#211827cf 82%,#21182700 100%)}
+.layout-ritual-meaning .ritual-inscription-3{right:4.5vw;top:56vh;background:linear-gradient(270deg,#211827ef 0%,#211827cf 82%,#21182700 100%)}
+.layout-ritual-meaning .ritual-inscription>span{padding-top:2px;color:#d0ad71;font:600 13px Cinzel,Georgia,serif}
+.layout-ritual-meaning .ritual-inscription strong{display:block;margin-bottom:4px;color:#e8d2a2;font:600 clamp(17px,1.18vw,22px)/1.1 "Cormorant Garamond",Georgia,serif;letter-spacing:.025em}
+.layout-ritual-meaning .ritual-inscription p{margin:0;color:#f0e6d7;font:400 clamp(14px,.9vw,16px)/1.38 Inter,system-ui,sans-serif}
+.layout-ritual-meaning .ritual-reflection{position:absolute;z-index:5;left:17vw;bottom:7.7vh;width:66vw;margin:0;padding:10px 17px;border-left:2px solid #b79a68;background:#211827ed;color:#f0d9a6;font:italic 500 clamp(20px,1.42vw,27px)/1.3 "Cormorant Garamond",Georgia,serif;text-shadow:0 2px 12px #100b18}
+.layout-ritual-meaning .ritual-note{position:absolute;z-index:5;left:12vw;right:12vw;bottom:2.6vh;margin:0;color:#e0d1b7;text-align:center;font:italic 400 clamp(12px,.8vw,14px)/1.35 "Cormorant Garamond",Georgia,serif;text-shadow:0 2px 12px #100b18}
+@keyframes meaning-light-breathe{from{opacity:.62;scale:.98}to{opacity:.95;scale:1.03}}
+@keyframes meaning-vine-sway{from{rotate:-.35deg}to{rotate:.35deg}}
+@keyframes meaning-grape-glow{from{opacity:.82}to{opacity:1}}
+@media(max-width:800px){
+ .theme-ritual-meaning .ex-ritual-meaning{opacity:.2}
+ .animated-museum .layout-ritual-meaning{overflow-y:auto;padding:14vh 7vw 15vh}
+ .layout-ritual-meaning .copy{display:block;position:relative;z-index:5;padding:0}
+ .layout-ritual-meaning .eyebrow,.layout-ritual-meaning .copy h1,.layout-ritual-meaning .ritual-inscription,
+ .layout-ritual-meaning .ritual-reflection,.layout-ritual-meaning .ritual-note{position:relative;inset:auto;left:auto;right:auto;top:auto;bottom:auto;width:auto;max-width:100%;margin:0}
+ .layout-ritual-meaning .eyebrow{margin-bottom:13px}
+ .layout-ritual-meaning .copy h1{font-size:clamp(33px,8.5vw,52px);margin-bottom:22px}
+ .layout-ritual-meaning .ritual-inscriptions{display:flex;flex-direction:column;gap:12px}
+ .layout-ritual-meaning .ritual-inscription{min-height:0;padding:10px 12px 12px 0;background:linear-gradient(90deg,#211827f2,#211827c9 90%,transparent)}
+ .layout-ritual-meaning .ritual-inscription strong{font-size:20px}
+ .layout-ritual-meaning .ritual-inscription p{font-size:14px}
+ .layout-ritual-meaning .ritual-reflection{margin-top:16px;padding:10px 14px;font-size:21px}
+ .layout-ritual-meaning .ritual-note{margin-top:10px;text-align:left;background:#211827e8}
+}
+@media(prefers-reduced-motion:reduce){
+ .meaning-layer{transition:none!important;will-change:auto}
+ .meaning-light,.meaning-leaves,.meaning-grapes circle{animation:none!important}
+}
+
+/* Apollo and Dionysus meet in one continuous field rather than opposing panels. */
+.theme-apollo-dionysus .ex-apollo-dionysus{background:#211827}
+.duality-layer{position:absolute;inset:-1.5%;width:103%;height:103%;overflow:visible;pointer-events:none;transition:transform .7s cubic-bezier(.16,1,.3,1);will-change:transform}
+.duality-architecture{z-index:0}
+.duality-flora{z-index:1}
+.duality-figures{z-index:2}
+.duality-vines{transform-box:fill-box;transform-origin:center;animation:duality-vine-sway 13s ease-in-out infinite alternate}
+.duality-music{animation:duality-music-drift 12s ease-in-out infinite alternate}
+.layout-apollo-dionysus{display:block;padding:0;overflow:hidden}
+.layout-apollo-dionysus .copy{display:contents}
+.layout-apollo-dionysus .eyebrow{position:absolute;z-index:5;left:50%;top:7vh;transform:translateX(-50%);color:#e1c995;font-size:11px;letter-spacing:.3em;text-align:center}
+.layout-apollo-dionysus .copy h1{position:absolute;z-index:5;left:50%;top:10vh;transform:translateX(-50%);width:84vw;max-width:1180px;margin:0;color:#f1e5d0;font-size:clamp(34px,3.8vw,66px);line-height:1.04;text-align:center;text-shadow:0 4px 24px #100b18}
+.layout-apollo-dionysus:before{content:'';position:absolute;z-index:3;inset:0;pointer-events:none;background:linear-gradient(90deg,#21182780 0%,#21182735 21%,transparent 42%,transparent 58%,#21182735 79%,#21182785 100%),linear-gradient(0deg,#211827e8 0%,transparent 20%,transparent 76%,#21182740 100%)}
+.layout-apollo-dionysus .duality-inscriptions{display:contents}
+.layout-apollo-dionysus .duality-inscription{position:absolute;z-index:4;width:min(25vw,440px);padding:11px 15px 13px;border-top:1px solid #c6a674aa;background:linear-gradient(100deg,#211827eF,#211827be 84%,transparent);text-shadow:0 2px 14px #100b18}
+.layout-apollo-dionysus .duality-inscription:before{content:'';position:absolute;top:-2px;left:0;width:42px;border-top:3px solid #d5bd8a}
+.layout-apollo-dionysus .duality-inscription-0{left:5vw;top:32vh}
+.layout-apollo-dionysus .duality-inscription-1{right:5vw;top:32vh;background:linear-gradient(270deg,#211827ef,#211827be 84%,transparent);text-align:right}
+.layout-apollo-dionysus .duality-inscription strong{display:block;margin-bottom:8px;color:#e8d2a2;font:600 clamp(19px,1.45vw,27px)/1.1 "Cormorant Garamond",Georgia,serif;letter-spacing:.04em}
+.layout-apollo-dionysus .duality-inscription p{margin:0;color:#f0e6d7;font:400 clamp(14px,.95vw,17px)/1.65 Inter,system-ui,sans-serif}
+.layout-apollo-dionysus .duality-reflection{position:absolute;z-index:5;left:18vw;bottom:10vh;width:64vw;margin:0;padding:10px 18px;border-left:2px solid #b79a68;background:#211827ed;color:#f0d9a6;font:italic 500 clamp(20px,1.5vw,28px)/1.28 "Cormorant Garamond",Georgia,serif;text-align:center;text-shadow:0 2px 12px #100b18}
+.layout-apollo-dionysus .duality-closing{position:absolute;z-index:5;left:25vw;right:25vw;bottom:6vh;margin:0;color:#efe2cc;font:400 clamp(12px,.85vw,15px)/1.4 Inter,system-ui,sans-serif;text-align:center;text-shadow:0 2px 12px #100b18}
+.layout-apollo-dionysus .duality-note{position:absolute;z-index:5;left:12vw;right:12vw;bottom:2.5vh;margin:0;color:#dccbad;font:italic 400 clamp(10px,.68vw,13px)/1.3 "Cormorant Garamond",Georgia,serif;text-align:center;text-shadow:0 2px 12px #100b18}
+@keyframes duality-vine-sway{from{rotate:-.45deg}to{rotate:.45deg}}
+@keyframes duality-music-drift{from{translate:-3px 1px}to{translate:3px -2px}}
+@media(max-width:800px){
+ .theme-apollo-dionysus .ex-apollo-dionysus{opacity:.22}
+ .animated-museum .layout-apollo-dionysus{overflow-y:auto;padding:14vh 7vw 15vh}
+ .layout-apollo-dionysus .copy{display:block;position:relative;z-index:5;padding:0}
+ .layout-apollo-dionysus .eyebrow,.layout-apollo-dionysus .copy h1,.layout-apollo-dionysus .duality-inscription,
+ .layout-apollo-dionysus .duality-reflection,.layout-apollo-dionysus .duality-closing,.layout-apollo-dionysus .duality-note{position:relative;inset:auto;left:auto;right:auto;top:auto;bottom:auto;width:auto;max-width:100%;margin:0;transform:none;text-align:left}
+ .layout-apollo-dionysus .eyebrow{margin-bottom:13px}
+ .layout-apollo-dionysus .copy h1{font-size:clamp(33px,8.5vw,52px);margin-bottom:22px}
+ .layout-apollo-dionysus .duality-inscriptions{display:flex;flex-direction:column;gap:12px}
+ .layout-apollo-dionysus .duality-inscription{padding:10px 12px 12px 0;background:linear-gradient(90deg,#211827f2,#211827c9 90%,transparent)}
+ .layout-apollo-dionysus .duality-inscription strong{font-size:20px}
+ .layout-apollo-dionysus .duality-inscription p{font-size:14px;line-height:1.55}
+ .layout-apollo-dionysus .duality-reflection{margin-top:16px;padding:10px 14px;text-align:left;font-size:21px}
+ .layout-apollo-dionysus .duality-closing{margin-top:12px;background:#211827e8}
+ .layout-apollo-dionysus .duality-note{margin-top:8px;background:#211827e8}
+}
+@media(prefers-reduced-motion:reduce){
+ .duality-layer{transition:none!important;will-change:auto}
+ .duality-vines,.duality-music{animation:none!important}
+}
+
+/* Nietzsche's study opens onto a theatre where two artistic impulses converge. */
+.theme-nietzsche-tragedy .ex-nietzsche-tragedy{background:#211827}
+.nietzsche-layer{position:absolute;inset:-1.5%;width:103%;height:103%;overflow:visible;pointer-events:none;transition:transform .7s cubic-bezier(.16,1,.3,1);will-change:transform}
+.nietzsche-gallery{z-index:0}
+.nietzsche-masks{z-index:1}
+.nietzsche-portrait{z-index:2}
+.nietzsche-theatre-glow{animation:nietzsche-stage-breath 12s ease-in-out infinite alternate}
+.nietzsche-ivy{transform-box:fill-box;transform-origin:center;animation:nietzsche-ivy-sway 13s ease-in-out infinite alternate}
+.layout-nietzsche-tragedy{display:block;padding:0;overflow:hidden}
+.layout-nietzsche-tragedy .copy{display:contents}
+.layout-nietzsche-tragedy .eyebrow{position:absolute;z-index:5;left:50%;top:6.5vh;transform:translateX(-50%);color:#d4b77b;font-size:11px;letter-spacing:.3em;text-align:center}
+.layout-nietzsche-tragedy .copy h1{position:absolute;z-index:5;left:50%;top:9.5vh;transform:translateX(-50%);width:84vw;max-width:1180px;margin:0;color:#f1e5d0;font-size:clamp(34px,3.8vw,66px);line-height:1.04;text-align:center;text-shadow:0 4px 24px #100b18}
+.layout-nietzsche-tragedy:before{content:'';position:absolute;z-index:3;inset:0;pointer-events:none;background:linear-gradient(90deg,#2118278c 0%,#2118273b 23%,transparent 42%,transparent 59%,#21182739 79%,#21182782 100%),linear-gradient(0deg,#211827ed 0%,transparent 20%,transparent 78%,#21182745 100%)}
+.layout-nietzsche-tragedy .nietzsche-inscriptions{display:contents}
+.layout-nietzsche-tragedy .nietzsche-inscription{position:absolute;z-index:4;display:grid;grid-template-columns:24px 1fr;gap:10px;width:min(23vw,420px);padding:10px 13px 12px 0;border-top:1px solid #b79a6888;background:linear-gradient(100deg,#211827ef 0%,#211827d1 84%,#21182700 100%);text-shadow:0 2px 14px #100b18}
+.layout-nietzsche-tragedy .nietzsche-inscription:before{content:'';position:absolute;top:-2px;left:0;width:38px;border-top:3px solid #b79a68}
+.layout-nietzsche-tragedy .nietzsche-inscription-0{left:4.5vw;top:32vh}
+.layout-nietzsche-tragedy .nietzsche-inscription-1{right:4.5vw;top:32vh;width:min(25vw,455px);background:linear-gradient(270deg,#211827ef 0%,#211827d1 84%,#21182700 100%)}
+.layout-nietzsche-tragedy .nietzsche-inscription-2{left:4.5vw;top:54vh;width:min(24vw,440px)}
+.layout-nietzsche-tragedy .nietzsche-inscription>span{padding-top:2px;color:#d0ad71;font:600 13px Cinzel,Georgia,serif}
+.layout-nietzsche-tragedy .nietzsche-inscription strong{display:block;margin-bottom:5px;color:#e8d2a2;font:600 clamp(18px,1.3vw,24px)/1.1 "Cormorant Garamond",Georgia,serif;letter-spacing:.025em}
+.layout-nietzsche-tragedy .nietzsche-inscription p{margin:0;color:#f0e6d7;font:400 clamp(14px,.9vw,16px)/1.42 Inter,system-ui,sans-serif}
+.layout-nietzsche-tragedy .nietzsche-reflection{position:absolute;z-index:5;left:25vw;bottom:12vh;width:50vw;margin:0;padding:10px 18px;border-left:2px solid #b79a68;background:#211827ed;color:#f0d9a6;font:italic 500 clamp(20px,1.48vw,28px)/1.3 "Cormorant Garamond",Georgia,serif;text-align:center;text-shadow:0 2px 12px #100b18}
+.layout-nietzsche-tragedy .nietzsche-synthesis{position:absolute;z-index:5;left:24vw;right:24vw;bottom:7.3vh;margin:0;color:#efe2cc;font:400 clamp(12px,.82vw,15px)/1.38 Inter,system-ui,sans-serif;text-align:center;text-shadow:0 2px 12px #100b18}
+.layout-nietzsche-tragedy .nietzsche-synthesis span{display:block;margin-top:3px;color:#d4b77b;font:italic 400 clamp(10px,.68vw,13px)/1.3 "Cormorant Garamond",Georgia,serif}
+.layout-nietzsche-tragedy .nietzsche-note{position:absolute;z-index:5;left:12vw;right:12vw;bottom:2.4vh;margin:0;color:#e0d1b7;font:italic 400 clamp(10px,.68vw,13px)/1.32 "Cormorant Garamond",Georgia,serif;text-align:center;text-shadow:0 2px 12px #100b18}
+@keyframes nietzsche-stage-breath{from{opacity:.55}to{opacity:.92}}
+@keyframes nietzsche-ivy-sway{from{rotate:-.5deg}to{rotate:.5deg}}
+@media(max-width:800px){
+ .theme-nietzsche-tragedy .ex-nietzsche-tragedy{opacity:.18}
+ .animated-museum .layout-nietzsche-tragedy{overflow-y:auto;padding:14vh 7vw 15vh}
+ .layout-nietzsche-tragedy .copy{display:block;position:relative;z-index:5;padding:0}
+ .layout-nietzsche-tragedy .eyebrow,.layout-nietzsche-tragedy .copy h1,.layout-nietzsche-tragedy .nietzsche-inscription,
+ .layout-nietzsche-tragedy .nietzsche-reflection,.layout-nietzsche-tragedy .nietzsche-synthesis,.layout-nietzsche-tragedy .nietzsche-note{position:relative;inset:auto;left:auto;right:auto;top:auto;bottom:auto;width:auto;max-width:100%;margin:0;transform:none;text-align:left}
+ .layout-nietzsche-tragedy .eyebrow{margin-bottom:13px}
+ .layout-nietzsche-tragedy .copy h1{font-size:clamp(33px,8.5vw,52px);margin-bottom:22px}
+ .layout-nietzsche-tragedy .nietzsche-inscriptions{display:flex;flex-direction:column;gap:12px}
+ .layout-nietzsche-tragedy .nietzsche-inscription{min-height:0;padding:10px 12px 12px 0;background:linear-gradient(90deg,#211827f2,#211827c9 90%,transparent)}
+ .layout-nietzsche-tragedy .nietzsche-inscription strong{font-size:20px}
+ .layout-nietzsche-tragedy .nietzsche-inscription p{font-size:14px;line-height:1.52}
+ .layout-nietzsche-tragedy .nietzsche-reflection{margin-top:16px;padding:10px 14px;font-size:21px}
+ .layout-nietzsche-tragedy .nietzsche-synthesis{margin-top:12px;background:#211827e8}
+ .layout-nietzsche-tragedy .nietzsche-note{margin-top:9px;background:#211827e8}
+}
+@media(prefers-reduced-motion:reduce){
+ .nietzsche-layer{transition:none!important;will-change:auto}
+ .nietzsche-theatre-glow,.nietzsche-ivy{animation:none!important}
+}
+
+/* Freedom and responsibility meet along two paths that converge at Dionysus. */
+.theme-freedom-limits .ex-freedom-limits{background:#211827}
+.limits-layer{position:absolute;inset:-1.5%;width:103%;height:103%;overflow:visible;pointer-events:none;transition:transform .7s cubic-bezier(.16,1,.3,1);will-change:transform}
+.limits-landscape{z-index:0}
+.limits-paths{z-index:1}
+.limits-figures{z-index:2}
+.limits-vines{transform-box:fill-box;transform-origin:center;animation:limits-vine-sway 12s ease-in-out infinite alternate}
+.limits-firelight circle{animation:limits-glimmer 7s ease-in-out infinite alternate}
+.layout-freedom-limits{display:block;padding:0;overflow:hidden}
+.layout-freedom-limits .copy{display:contents}
+.layout-freedom-limits .eyebrow{position:absolute;z-index:5;left:50%;top:7vh;transform:translateX(-50%);color:#d4b77b;font-size:11px;letter-spacing:.3em;text-align:center}
+.layout-freedom-limits .copy h1{position:absolute;z-index:5;left:50%;top:10vh;transform:translateX(-50%);width:84vw;max-width:1120px;margin:0;color:#f1e5d0;font-size:clamp(35px,3.8vw,66px);line-height:1.04;text-align:center;text-shadow:0 4px 24px #100b18}
+.layout-freedom-limits:before{content:'';position:absolute;z-index:3;inset:0;pointer-events:none;background:linear-gradient(90deg,#21182785 0%,#2118273b 24%,transparent 42%,transparent 59%,#21182743 80%,#21182788 100%),linear-gradient(0deg,#211827e8 0%,transparent 19%,transparent 78%,#21182746 100%)}
+.layout-freedom-limits .limit-inscriptions{display:contents}
+.layout-freedom-limits .limit-inscription{position:absolute;z-index:4;display:grid;grid-template-columns:24px 1fr;gap:10px;width:min(23vw,420px);padding:10px 13px 12px 0;border-top:1px solid #b79a6888;background:linear-gradient(100deg,#211827ef 0%,#211827d1 84%,#21182700 100%);text-shadow:0 2px 14px #100b18}
+.layout-freedom-limits .limit-inscription:before{content:'';position:absolute;top:-2px;left:0;width:38px;border-top:3px solid #b79a68}
+.layout-freedom-limits .limit-inscription-0{left:4.5vw;top:29vh}
+.layout-freedom-limits .limit-inscription-1{right:4.5vw;top:29vh;background:linear-gradient(270deg,#211827ef 0%,#211827d1 84%,#21182700 100%)}
+.layout-freedom-limits .limit-inscription-2{left:4.5vw;top:53vh;width:min(24vw,440px)}
+.layout-freedom-limits .limit-inscription>span{padding-top:2px;color:#d0ad71;font:600 13px Cinzel,Georgia,serif}
+.layout-freedom-limits .limit-inscription strong{display:block;margin-bottom:5px;color:#e8d2a2;font:600 clamp(18px,1.3vw,24px)/1.1 "Cormorant Garamond",Georgia,serif;letter-spacing:.025em}
+.layout-freedom-limits .limit-inscription p{margin:0;color:#f0e6d7;font:400 clamp(14px,.9vw,16px)/1.42 Inter,system-ui,sans-serif}
+.layout-freedom-limits .limit-reflection{position:absolute;z-index:5;left:23vw;bottom:10vh;width:54vw;margin:0;padding:10px 18px;border-left:2px solid #b79a68;background:#211827ed;color:#f0d9a6;font:italic 500 clamp(20px,1.45vw,27px)/1.3 "Cormorant Garamond",Georgia,serif;text-align:center;text-shadow:0 2px 12px #100b18}
+.layout-freedom-limits .limit-note{position:absolute;z-index:5;left:12vw;right:12vw;bottom:3.3vh;margin:0;color:#e0d1b7;font:italic 400 clamp(10px,.68vw,13px)/1.32 "Cormorant Garamond",Georgia,serif;text-align:center;text-shadow:0 2px 12px #100b18}
+@keyframes limits-vine-sway{from{rotate:-.45deg}to{rotate:.45deg}}
+@keyframes limits-glimmer{from{opacity:.35}to{opacity:.9}}
+@media(max-width:800px){
+ .theme-freedom-limits .ex-freedom-limits{opacity:.18}
+ .animated-museum .layout-freedom-limits{overflow-y:auto;padding:14vh 7vw 15vh}
+ .layout-freedom-limits .copy{display:block;position:relative;z-index:5;padding:0}
+ .layout-freedom-limits .eyebrow,.layout-freedom-limits .copy h1,.layout-freedom-limits .limit-inscription,
+ .layout-freedom-limits .limit-reflection,.layout-freedom-limits .limit-note{position:relative;inset:auto;left:auto;right:auto;top:auto;bottom:auto;width:auto;max-width:100%;margin:0;transform:none;text-align:left}
+ .layout-freedom-limits .eyebrow{margin-bottom:13px}
+ .layout-freedom-limits .copy h1{font-size:clamp(33px,8.5vw,52px);margin-bottom:22px}
+ .layout-freedom-limits .limit-inscriptions{display:flex;flex-direction:column;gap:12px}
+ .layout-freedom-limits .limit-inscription{min-height:0;padding:10px 12px 12px 0;background:linear-gradient(90deg,#211827f2,#211827c9 90%,transparent)}
+ .layout-freedom-limits .limit-inscription strong{font-size:20px}
+ .layout-freedom-limits .limit-inscription p{font-size:14px;line-height:1.52}
+ .layout-freedom-limits .limit-reflection{margin-top:16px;padding:10px 14px;font-size:21px}
+ .layout-freedom-limits .limit-note{margin-top:10px;background:#211827e8}
+}
+@media(prefers-reduced-motion:reduce){
+ .limits-layer{transition:none!important;will-change:auto}
+ .limits-vines,.limits-firelight circle{animation:none!important}
+}
+
+/* Ethical reflections unfold as four connected tableaux across one mythic landscape. */
+.theme-ethical-reflections .ex-ethical-reflections{background:#211827}
+.ethics-scene-layer{position:absolute;inset:-1.5%;width:103%;height:103%;overflow:visible;pointer-events:none;transition:transform .7s cubic-bezier(.16,1,.3,1);will-change:transform}
+.ethics-landscape{z-index:0}
+.ethics-architecture{z-index:1}
+.ethics-human-scenes{z-index:2}
+.ethics-vines{transform-box:fill-box;transform-origin:center;animation:ethics-vine-sway 13s ease-in-out infinite alternate}
+.animated-museum .layout-ethical-reflections{display:block;padding:0;overflow:hidden}
+.layout-ethical-reflections .copy{display:contents}
+.layout-ethical-reflections .eyebrow{position:absolute;z-index:5;left:50%;top:6.5vh;transform:translateX(-50%);color:#d4b77b;font-size:11px;letter-spacing:.3em;text-align:center}
+.layout-ethical-reflections .copy h1{position:absolute;z-index:5;left:50%;top:9.5vh;transform:translateX(-50%);width:84vw;max-width:1120px;margin:0;color:#f1e5d0;font-size:clamp(35px,3.8vw,66px);line-height:1.04;text-align:center;text-shadow:0 4px 24px #100b18}
+.layout-ethical-reflections:before{content:'';position:absolute;z-index:3;inset:0;pointer-events:none;background:linear-gradient(90deg,#21182794 0%,#21182748 23%,transparent 42%,transparent 60%,#21182740 80%,#21182788 100%),linear-gradient(0deg,#211827ef 0%,transparent 20%,transparent 77%,#21182744 100%)}
+.layout-ethical-reflections .ethics-inscriptions{display:contents}
+.layout-ethical-reflections .ethics-inscription{position:absolute;z-index:4;display:grid;grid-template-columns:24px 1fr;gap:10px;width:min(22vw,405px);padding:9px 12px 11px 0;border-top:1px solid #b79a6888;background:linear-gradient(100deg,#211827ef 0%,#211827d1 84%,#21182700 100%);text-shadow:0 2px 14px #100b18}
+.layout-ethical-reflections .ethics-inscription:before{content:'';position:absolute;top:-2px;left:0;width:38px;border-top:3px solid #b79a68}
+.layout-ethical-reflections .ethics-inscription-0{left:4.5vw;top:30vh}
+.layout-ethical-reflections .ethics-inscription-1{right:4.5vw;top:31vh;background:linear-gradient(270deg,#211827ef 0%,#211827d1 84%,#21182700 100%)}
+.layout-ethical-reflections .ethics-inscription-2{left:4.5vw;top:53vh}
+.layout-ethical-reflections .ethics-inscription-3{right:4.5vw;top:53vh;background:linear-gradient(270deg,#211827ef 0%,#211827d1 84%,#21182700 100%)}
+.layout-ethical-reflections .ethics-inscription>span{padding-top:2px;color:#d0ad71;font:600 13px Cinzel,Georgia,serif}
+.layout-ethical-reflections .ethics-inscription strong{display:block;margin-bottom:4px;color:#e8d2a2;font:600 clamp(17px,1.2vw,22px)/1.1 "Cormorant Garamond",Georgia,serif;letter-spacing:.025em}
+.layout-ethical-reflections .ethics-inscription p{margin:0;color:#f0e6d7;font:400 clamp(13px,.82vw,15px)/1.38 Inter,system-ui,sans-serif}
+.layout-ethical-reflections .ethics-reflection{position:absolute;z-index:5;left:25vw;bottom:6vh;width:50vw;margin:0;padding:10px 18px;border-left:2px solid #b79a68;background:#211827ed;color:#f0d9a6;font:italic 500 clamp(20px,1.45vw,27px)/1.3 "Cormorant Garamond",Georgia,serif;text-align:center;text-shadow:0 2px 12px #100b18}
+.layout-ethical-reflections .ethics-note{position:absolute;z-index:5;left:12vw;right:12vw;bottom:2.4vh;margin:0;color:#e0d1b7;font:italic 400 clamp(10px,.68vw,13px)/1.32 "Cormorant Garamond",Georgia,serif;text-align:center;text-shadow:0 2px 12px #100b18}
+@keyframes ethics-vine-sway{from{rotate:-.4deg}to{rotate:.4deg}}
+@media(max-width:800px){
+ .theme-ethical-reflections .ex-ethical-reflections{opacity:.18}
+ .animated-museum .layout-ethical-reflections{overflow-y:auto;padding:14vh 7vw 15vh}
+ .layout-ethical-reflections .copy{display:block;position:relative;z-index:5;padding:0}
+ .layout-ethical-reflections .eyebrow,.layout-ethical-reflections .copy h1,.layout-ethical-reflections .ethics-inscription,
+ .layout-ethical-reflections .ethics-reflection,.layout-ethical-reflections .ethics-note{position:relative;inset:auto;left:auto;right:auto;top:auto;bottom:auto;width:auto;max-width:100%;margin:0;transform:none;text-align:left}
+ .layout-ethical-reflections .eyebrow{margin-bottom:13px}
+ .layout-ethical-reflections .copy h1{font-size:clamp(33px,8.5vw,52px);margin-bottom:22px}
+ .layout-ethical-reflections .ethics-inscriptions{display:flex;flex-direction:column;gap:12px}
+ .layout-ethical-reflections .ethics-inscription{min-height:0;padding:10px 12px 12px 0;background:linear-gradient(90deg,#211827f2,#211827c9 90%,transparent)}
+ .layout-ethical-reflections .ethics-inscription strong{font-size:20px}
+ .layout-ethical-reflections .ethics-inscription p{font-size:14px;line-height:1.52}
+ .layout-ethical-reflections .ethics-reflection{margin-top:16px;padding:10px 14px;font-size:21px}
+ .layout-ethical-reflections .ethics-note{margin-top:10px;background:#211827e8}
+}
+@media(prefers-reduced-motion:reduce){
+ .ethics-scene-layer{transition:none!important;will-change:auto}
+ .ethics-vines{animation:none!important}
+}
+
+/* Knowledge is staged around a reflective fountain, not as a conventional split layout. */
+.theme-knowledge-fountain .ex-knowledge-fountain{background:#211827}
+.knowledge-layer{position:absolute;inset:-1%;width:102%;height:102%;overflow:visible;pointer-events:none;transition:transform .7s cubic-bezier(.16,1,.3,1);will-change:transform}
+.knowledge-sanctuary{z-index:0}
+.knowledge-nature{z-index:1}
+.knowledge-fountain{z-index:2}
+.animated-museum .layout-knowledge-fountain{display:block;padding:0;overflow:hidden}
+.layout-knowledge-fountain .copy{display:contents}
+.layout-knowledge-fountain .eyebrow{position:absolute;z-index:5;left:50%;top:5vh;transform:translateX(-50%);color:#d4b77b;font-size:11px;letter-spacing:.3em;text-align:center}
+.layout-knowledge-fountain .copy h1{position:absolute;z-index:5;left:50%;top:8vh;transform:translateX(-50%);width:84vw;max-width:1120px;margin:0;color:#f1e5d0;font-size:clamp(35px,3.8vw,66px);line-height:1.04;text-align:center;text-shadow:0 4px 24px #100b18}
+.layout-knowledge-fountain:before{content:'';position:absolute;z-index:3;inset:0;pointer-events:none;background:linear-gradient(90deg,#211827a8 0%,#21182750 23%,transparent 42%,transparent 60%,#21182745 80%,#211827a0 100%),linear-gradient(0deg,#211827e8 0%,transparent 20%,transparent 76%,#2118274d 100%)}
+.layout-knowledge-fountain .knowledge-inscriptions{display:contents}
+.layout-knowledge-fountain .knowledge-inscription{position:absolute;z-index:4;display:grid;grid-template-columns:24px 1fr;gap:10px;width:min(23vw,430px);padding:10px 13px 12px 0;border-top:1px solid #b79a6888;background:linear-gradient(100deg,#211827ef 0%,#211827d1 84%,#21182700 100%);text-shadow:0 2px 14px #100b18}
+.layout-knowledge-fountain .knowledge-inscription:before{content:'';position:absolute;top:-2px;left:0;width:38px;border-top:3px solid #b79a68}
+.layout-knowledge-fountain .knowledge-inscription-0{left:4.5vw;top:27vh}
+.layout-knowledge-fountain .knowledge-inscription-1{right:4.5vw;top:28vh;background:linear-gradient(270deg,#211827ef 0%,#211827d1 84%,#21182700 100%)}
+.layout-knowledge-fountain .knowledge-inscription-2{left:5vw;top:53vh}
+.layout-knowledge-fountain .knowledge-inscription>span{padding-top:2px;color:#d0ad71;font:600 13px Cinzel,Georgia,serif}
+.layout-knowledge-fountain .knowledge-inscription strong{display:block;margin-bottom:4px;color:#e8d2a2;font:600 clamp(17px,1.2vw,22px)/1.1 "Cormorant Garamond",Georgia,serif;letter-spacing:.025em}
+.layout-knowledge-fountain .knowledge-inscription p{margin:0;color:#f0e6d7;font:400 clamp(13px,.82vw,15px)/1.38 Inter,system-ui,sans-serif}
+.layout-knowledge-fountain .knowledge-reflection{position:absolute;z-index:5;left:31vw;right:24vw;bottom:8.5vh;margin:0;padding:11px 18px;border-left:2px solid #b79a68;background:#211827ed;color:#f0d9a6;font:italic 500 clamp(20px,1.5vw,27px)/1.3 "Cormorant Garamond",Georgia,serif;text-align:center;text-shadow:0 2px 12px #100b18}
+.layout-knowledge-fountain .knowledge-note{position:absolute;z-index:5;right:4.5vw;bottom:6.5vh;width:min(25vw,480px);margin:0;color:#e0d1b7;font:italic 400 clamp(10px,.68vw,13px)/1.32 "Cormorant Garamond",Georgia,serif;text-align:right;text-shadow:0 2px 12px #100b18}
+@media(max-width:800px){
+ .theme-knowledge-fountain .ex-knowledge-fountain{opacity:.17}
+ .animated-museum .layout-knowledge-fountain{overflow-y:auto;padding:14vh 7vw 15vh}
+ .layout-knowledge-fountain .copy{display:block;position:relative;z-index:5;padding:0}
+ .layout-knowledge-fountain .eyebrow,.layout-knowledge-fountain .copy h1,.layout-knowledge-fountain .knowledge-inscription,
+ .layout-knowledge-fountain .knowledge-reflection,.layout-knowledge-fountain .knowledge-note{position:relative;inset:auto;left:auto;right:auto;top:auto;bottom:auto;width:auto;max-width:100%;margin:0;transform:none;text-align:left}
+ .layout-knowledge-fountain .eyebrow{margin-bottom:13px}
+ .layout-knowledge-fountain .copy h1{font-size:clamp(33px,8.5vw,52px);margin-bottom:22px}
+ .layout-knowledge-fountain .knowledge-inscriptions{display:flex;flex-direction:column;gap:12px}
+ .layout-knowledge-fountain .knowledge-inscription{min-height:0;padding:10px 12px 12px 0;background:linear-gradient(90deg,#211827f2,#211827c9 90%,transparent)}
+ .layout-knowledge-fountain .knowledge-inscription strong{font-size:20px}
+ .layout-knowledge-fountain .knowledge-inscription p{font-size:14px;line-height:1.52}
+ .layout-knowledge-fountain .knowledge-reflection{margin-top:16px;padding:10px 14px;font-size:21px}
+ .layout-knowledge-fountain .knowledge-note{margin-top:10px;background:#211827e8}
+}
+@media(prefers-reduced-motion:reduce){
+ .knowledge-layer{transition:none!important;transform:none!important;will-change:auto}
+}
+
+/* Three distinct exhibits share one museum route from the present back to myth. */
+.theme-popular-culture .ex-popular-culture{background:#211827}
+.culture-layer{position:absolute;inset:-1%;width:102%;height:102%;overflow:visible;pointer-events:none;transition:transform .7s cubic-bezier(.16,1,.3,1);will-change:transform}
+.culture-gallery{z-index:0}
+.culture-exhibits{z-index:1}
+.culture-route{z-index:2}
+.culture-music{filter:drop-shadow(0 10px 20px rgba(18,12,22,.34))}
+.culture-campfire{filter:drop-shadow(0 0 15px rgba(225,160,79,.65))}
+.culture-underworld{filter:drop-shadow(0 8px 18px rgba(20,14,20,.42))}
+.animated-museum .layout-popular-culture{display:block;padding:0;overflow:hidden}
+.layout-popular-culture .copy{display:contents}
+.layout-popular-culture .eyebrow{position:absolute;z-index:5;left:50%;top:5.5vh;transform:translateX(-50%);color:#d4b77b;font-size:11px;letter-spacing:.3em;text-align:center}
+.layout-popular-culture .copy h1{position:absolute;z-index:5;left:50%;top:8.5vh;transform:translateX(-50%);width:84vw;max-width:1120px;margin:0;color:#f1e5d0;font-size:clamp(35px,3.8vw,66px);line-height:1.04;text-align:center;text-shadow:0 4px 24px #100b18}
+.layout-popular-culture:before{content:'';position:absolute;z-index:3;inset:0;pointer-events:none;background:linear-gradient(90deg,#21182772 0%,transparent 29%,transparent 69%,#21182770 100%),linear-gradient(0deg,#211827e8 0%,transparent 18%,transparent 79%,#21182748 100%)}
+.layout-popular-culture .culture-inscriptions{display:contents}
+.layout-popular-culture .culture-inscription{position:absolute;z-index:4;width:min(23vw,435px);padding:11px 15px 13px 17px;border-left:2px solid #b79a68;background:linear-gradient(105deg,#211827ed 0%,#211827c9 82%,#21182700 100%);box-shadow:0 10px 28px #130e1852;text-shadow:0 2px 12px #100b18}
+.layout-popular-culture .culture-inscription-0{left:4.5vw;top:31vh}
+.layout-popular-culture .culture-inscription-1{left:38.5vw;top:41vh;width:min(24vw,460px)}
+.layout-popular-culture .culture-inscription-2{right:4.5vw;top:31vh;background:linear-gradient(255deg,#211827ed 0%,#211827c9 82%,#21182700 100%);border-left:0;border-right:2px solid #b79a68;text-align:right}
+.layout-popular-culture .culture-inscription>span{display:block;margin-bottom:5px;color:#d0ad71;font:600 10px Cinzel,Georgia,serif;letter-spacing:.13em}
+.layout-popular-culture .culture-inscription strong{display:block;color:#f0d9a6;font:600 clamp(17px,1.22vw,23px)/1.14 "Cormorant Garamond",Georgia,serif;letter-spacing:.025em}
+.layout-popular-culture .culture-inscription p{margin:6px 0 0;color:#f0e6d7;font:400 clamp(12px,.78vw,15px)/1.42 Inter,system-ui,sans-serif}
+.layout-popular-culture .culture-reflection{position:absolute;z-index:5;left:23vw;right:23vw;bottom:14vh;margin:0;padding:10px 18px;border-top:1px solid #b79a68;border-bottom:1px solid #b79a68;background:#211827ed;color:#f0d9a6;font:italic 500 clamp(20px,1.45vw,27px)/1.25 "Cormorant Garamond",Georgia,serif;text-align:center;text-shadow:0 2px 12px #100b18}
+.layout-popular-culture .culture-closing{position:absolute;z-index:5;left:27vw;right:27vw;bottom:8.7vh;margin:0;color:#e8ddca;font:400 clamp(12px,.85vw,16px)/1.38 Inter,system-ui,sans-serif;text-align:center;text-shadow:0 2px 12px #100b18}
+.layout-popular-culture .culture-note{position:absolute;z-index:5;left:8vw;right:8vw;top:19vh;margin:0;color:#e0d1b7;font:italic 400 clamp(10px,.68vw,13px)/1.32 "Cormorant Garamond",Georgia,serif;text-align:center;text-shadow:0 2px 12px #100b18}
+@media(max-width:800px){
+ .theme-popular-culture .ex-popular-culture{opacity:.15}
+ .animated-museum .layout-popular-culture{overflow-y:auto;padding:14vh 7vw 15vh}
+ .layout-popular-culture .copy{display:block;position:relative;z-index:5;padding:0}
+ .layout-popular-culture .eyebrow,.layout-popular-culture .copy h1,.layout-popular-culture .culture-inscription,
+ .layout-popular-culture .culture-reflection,.layout-popular-culture .culture-closing,.layout-popular-culture .culture-note{position:relative;inset:auto;left:auto;right:auto;top:auto;bottom:auto;width:auto;max-width:100%;margin:0;transform:none;text-align:left}
+ .layout-popular-culture .eyebrow{margin-bottom:13px}
+ .layout-popular-culture .copy h1{font-size:clamp(33px,8.5vw,52px);margin-bottom:14px}
+ .layout-popular-culture .culture-note{margin-bottom:20px}
+ .layout-popular-culture .culture-inscriptions{display:flex;flex-direction:column;gap:12px}
+ .layout-popular-culture .culture-inscription{min-height:0;padding:10px 12px 12px;border-left:2px solid #b79a68;border-right:0;background:linear-gradient(90deg,#211827f2,#211827c9 90%,transparent);text-align:left}
+ .layout-popular-culture .culture-inscription strong{font-size:20px}
+ .layout-popular-culture .culture-inscription p{font-size:14px;line-height:1.5}
+ .layout-popular-culture .culture-reflection{margin-top:17px;padding:12px 14px;font-size:21px}
+ .layout-popular-culture .culture-closing{margin-top:12px;font-size:14px;line-height:1.5}
+}
+@media(prefers-reduced-motion:reduce){
+ .culture-layer{transition:none!important;transform:none!important;will-change:auto}
+ .culture-campfire{filter:none}
+}
+
+/* The conclusion returns to Dionysus as a temple-scale, unified mural. */
+.theme-conclusion-mural .ex-conclusion-mural{background:#211827}
+.conclusion-layer{position:absolute;inset:-1%;width:102%;height:102%;overflow:visible;pointer-events:none;transition:transform .7s cubic-bezier(.16,1,.3,1);will-change:transform}
+.conclusion-temple{z-index:0}
+.conclusion-symbols{z-index:1}
+.conclusion-dionysus{z-index:2}
+.conclusion-vines{transform-box:fill-box;transform-origin:bottom center;animation:conclusion-vine-sway 14s ease-in-out infinite alternate}
+.conclusion-ritual-cup,.conclusion-theatre-mask,.conclusion-ariadne-relief{filter:drop-shadow(0 8px 12px rgba(20,14,20,.32))}
+.animated-museum .layout-conclusion-mural{display:block;padding:0;overflow:hidden}
+.layout-conclusion-mural .copy{display:contents}
+.layout-conclusion-mural .eyebrow{position:absolute;z-index:5;left:50%;top:5.5vh;transform:translateX(-50%);color:#d4b77b;font-size:11px;letter-spacing:.3em;text-align:center}
+.layout-conclusion-mural .copy h1{position:absolute;z-index:5;left:50%;top:8.5vh;transform:translateX(-50%);width:84vw;max-width:1220px;margin:0;color:#f1e5d0;font-size:clamp(34px,3.55vw,62px);line-height:1.04;text-align:center;text-shadow:0 4px 24px #100b18}
+.layout-conclusion-mural:before{content:'';position:absolute;z-index:3;inset:0;pointer-events:none;background:linear-gradient(90deg,#211827a6 0%,#2118276a 22%,transparent 42%,transparent 58%,#2118276a 78%,#211827a6 100%),linear-gradient(0deg,#211827ed 0%,transparent 19%,transparent 78%,#21182758 100%)}
+.layout-conclusion-mural .conclusion-inscriptions{display:contents}
+.layout-conclusion-mural .conclusion-inscription{position:absolute;z-index:4;width:min(24vw,450px);padding:10px 14px 12px 17px;border-left:2px solid #b79a68;background:linear-gradient(100deg,#211827ed 0%,#211827c9 83%,#21182700 100%);box-shadow:0 10px 28px #130e1852;text-shadow:0 2px 12px #100b18}
+.layout-conclusion-mural .conclusion-inscription-0{left:4.5vw;top:27vh}
+.layout-conclusion-mural .conclusion-inscription-1{left:4.5vw;top:53vh}
+.layout-conclusion-mural .conclusion-inscription-2{right:4.5vw;top:27vh;border-left:0;border-right:2px solid #b79a68;text-align:right;background:linear-gradient(260deg,#211827ed 0%,#211827c9 83%,#21182700 100%)}
+.layout-conclusion-mural .conclusion-inscription-3{right:4.5vw;top:53vh;border-left:0;border-right:2px solid #b79a68;text-align:right;background:linear-gradient(260deg,#211827ed 0%,#211827c9 83%,#21182700 100%)}
+.layout-conclusion-mural .conclusion-inscription-0,.layout-conclusion-mural .conclusion-inscription-2{top:31vh}
+.layout-conclusion-mural .conclusion-inscription>span{display:block;margin-bottom:4px;color:#d0ad71;font:600 10px Cinzel,Georgia,serif;letter-spacing:.13em}
+.layout-conclusion-mural .conclusion-inscription strong{display:block;color:#f0d9a6;font:600 clamp(17px,1.18vw,22px)/1.12 "Cormorant Garamond",Georgia,serif;letter-spacing:.025em}
+.layout-conclusion-mural .conclusion-inscription p{margin:5px 0 0;color:#f0e6d7;font:400 clamp(12px,.78vw,15px)/1.42 Inter,system-ui,sans-serif}
+.layout-conclusion-mural .conclusion-reflection{position:absolute;z-index:5;left:25vw;right:25vw;bottom:8.5vh;margin:0;padding:12px 18px;border-top:1px solid #b79a68;border-bottom:1px solid #b79a68;background:#211827ed;color:#f0d9a6;font:italic 500 clamp(20px,1.45vw,27px)/1.28 "Cormorant Garamond",Georgia,serif;text-align:center;text-shadow:0 2px 12px #100b18}
+@keyframes conclusion-vine-sway{from{rotate:-.35deg}to{rotate:.35deg}}
+@media(max-width:800px){
+ .theme-conclusion-mural .ex-conclusion-mural{opacity:.13}
+ .animated-museum .layout-conclusion-mural{overflow-y:auto;padding:14vh 7vw 15vh}
+ .layout-conclusion-mural .copy{display:block;position:relative;z-index:5;padding:0}
+ .layout-conclusion-mural .eyebrow,.layout-conclusion-mural .copy h1,.layout-conclusion-mural .conclusion-inscription,
+ .layout-conclusion-mural .conclusion-reflection{position:relative;inset:auto;left:auto;right:auto;top:auto;bottom:auto;width:auto;max-width:100%;margin:0;transform:none;text-align:left}
+ .layout-conclusion-mural .eyebrow{margin-bottom:13px}
+ .layout-conclusion-mural .copy h1{font-size:clamp(32px,8.2vw,50px);margin-bottom:20px}
+ .layout-conclusion-mural .conclusion-inscriptions{display:flex;flex-direction:column;gap:12px}
+ .layout-conclusion-mural .conclusion-inscription{min-height:0;padding:10px 12px 12px;border-left:2px solid #b79a68;border-right:0;background:linear-gradient(90deg,#211827f2,#211827c9 90%,transparent);text-align:left}
+ .layout-conclusion-mural .conclusion-inscription strong{font-size:20px}
+ .layout-conclusion-mural .conclusion-inscription p{font-size:14px;line-height:1.5}
+ .layout-conclusion-mural .conclusion-reflection{margin-top:17px;padding:12px 14px;font-size:21px}
+}
+@media(prefers-reduced-motion:reduce){
+ .conclusion-layer{transition:none!important;transform:none!important;will-change:auto}
+ .conclusion-vines{animation:none!important}
+}
+
+/* The bibliography reads as an archive in two distinct architectural bays. */
+.theme-bibliography-archive .ex-bibliography-archive{background:#211827}
+.archive-layer{position:absolute;inset:-1%;width:102%;height:102%;overflow:visible;pointer-events:none;transition:transform .7s cubic-bezier(.16,1,.3,1);will-change:transform}
+.archive-architecture{z-index:0}
+.archive-manuscripts{z-index:1}
+.archive-scrolls,.archive-vase-fragments{filter:drop-shadow(0 8px 12px rgba(20,14,20,.32))}
+.animated-museum .layout-bibliography-archive{display:block;padding:0;overflow:hidden}
+.layout-bibliography-archive .copy{display:contents}
+.layout-bibliography-archive .eyebrow{position:absolute;z-index:5;left:50%;top:5.5vh;transform:translateX(-50%);color:#d4b77b;font-size:11px;letter-spacing:.3em;text-align:center}
+.layout-bibliography-archive .copy h1{position:absolute;z-index:5;left:50%;top:8.5vh;transform:translateX(-50%);width:84vw;max-width:1120px;margin:0;color:#f1e5d0;font-size:clamp(36px,3.8vw,64px);line-height:1.04;text-align:center;text-shadow:0 4px 24px #100b18}
+.layout-bibliography-archive:before{content:'';position:absolute;z-index:2;inset:0;pointer-events:none;background:linear-gradient(90deg,#21182792 0%,#2118273d 25%,transparent 48%,transparent 64%,#21182745 80%,#21182790 100%),linear-gradient(0deg,#211827d9 0%,transparent 17%,transparent 78%,#2118274d 100%)}
+.layout-bibliography-archive .archive-groups{position:absolute;z-index:4;left:8vw;right:8vw;top:23vh;bottom:14vh;display:grid;grid-template-columns:1.55fr 1fr;gap:4vw;align-items:stretch}
+.layout-bibliography-archive .archive-group{min-width:0;padding:16px 21px 12px;background:linear-gradient(115deg,#211827d9 0%,#211827b8 72%,#21182758 100%);border-top:1px solid #b79a6899;border-bottom:1px solid #b79a684d;box-shadow:0 12px 30px #130e1833}
+.layout-bibliography-archive .archive-group-1{background:linear-gradient(245deg,#211827db 0%,#211827b8 72%,#21182758 100%)}
+.layout-bibliography-archive .archive-group h2{margin:0 0 11px;color:#eddaa9;font:600 clamp(17px,1.35vw,25px)/1.16 Cinzel,Georgia,serif;letter-spacing:.025em}
+.layout-bibliography-archive .archive-group ol{list-style:none;padding:0;margin:0}
+.layout-bibliography-archive .archive-group li{display:grid;grid-template-columns:34px minmax(0,1fr);align-items:center;gap:12px;min-height:clamp(57px,7vh,76px);padding:7px 0;border-top:1px solid #c6a67442}
+.layout-bibliography-archive .archive-mark{color:#c6a674;font:600 12px Cinzel,Georgia,serif;letter-spacing:.08em}
+.layout-bibliography-archive .archive-entry{display:flex;flex-direction:column;gap:2px;min-width:0}
+.layout-bibliography-archive .archive-entry strong{color:#e9dcc0;font:600 clamp(14px,1vw,18px)/1.2 Inter,Lato,sans-serif}
+.layout-bibliography-archive .archive-entry em{color:#f0d9a6;font:italic 500 clamp(17px,1.23vw,23px)/1.18 "Cormorant Garamond",Georgia,serif}
+.layout-bibliography-archive .archive-note{position:absolute;z-index:5;left:12vw;right:12vw;bottom:7.8vh;margin:0;color:#e0d1b7;font:italic 400 clamp(10px,.68vw,13px)/1.32 "Cormorant Garamond",Georgia,serif;text-align:center;text-shadow:0 2px 12px #100b18}
+@media(max-width:800px){
+ .theme-bibliography-archive .ex-bibliography-archive{opacity:.13}
+ .animated-museum .layout-bibliography-archive{overflow-y:auto;padding:14vh 7vw 15vh}
+ .layout-bibliography-archive .copy{display:block;position:relative;z-index:5;padding:0}
+ .layout-bibliography-archive .eyebrow,.layout-bibliography-archive .copy h1,.layout-bibliography-archive .archive-groups,
+ .layout-bibliography-archive .archive-note{position:relative;inset:auto;left:auto;right:auto;top:auto;bottom:auto;width:auto;max-width:100%;margin:0;transform:none;text-align:left}
+ .layout-bibliography-archive .eyebrow{margin-bottom:13px}
+ .layout-bibliography-archive .copy h1{font-size:clamp(34px,8.5vw,52px);margin-bottom:22px}
+ .layout-bibliography-archive .archive-groups{display:flex;flex-direction:column;gap:20px}
+ .layout-bibliography-archive .archive-group{padding:12px 14px;background:linear-gradient(100deg,#211827ed,#211827d1 90%,#211827a8)}
+ .layout-bibliography-archive .archive-group h2{font-size:19px;margin-bottom:8px}
+ .layout-bibliography-archive .archive-group li{min-height:56px;grid-template-columns:27px 1fr;padding:7px 0}
+ .layout-bibliography-archive .archive-entry strong{font-size:14px}
+ .layout-bibliography-archive .archive-entry em{font-size:18px}
+ .layout-bibliography-archive .archive-note{margin-top:14px;padding:8px 10px;background:#211827e8}
+}
+@media(prefers-reduced-motion:reduce){
+ .archive-layer{transition:none!important;transform:none!important;will-change:auto}
+}
+
+/* The final activity is staged as an invitation, with masks as its visual focus. */
+.theme-mask-invitation .ex-mask-invitation{background:#211827}
+.invitation-layer{position:absolute;inset:-1%;width:102%;height:102%;overflow:visible;pointer-events:none;transition:transform .75s cubic-bezier(.16,1,.3,1);will-change:transform}
+.invitation-stage{z-index:0}
+.invitation-masks{z-index:1}
+.invitation-feature{z-index:2}
+.invitation-chosen-mask{filter:drop-shadow(0 10px 24px rgba(20,14,20,.42));animation:invitation-mask-glow 5s ease-in-out infinite alternate}
+.invitation-side-mask{filter:drop-shadow(0 8px 13px rgba(20,14,20,.34))}
+.animated-museum .layout-mask-invitation{display:block;padding:0;overflow:hidden}
+.layout-mask-invitation .copy{display:contents}
+.layout-mask-invitation .eyebrow{position:absolute;z-index:5;left:7vw;top:7vh;color:#d4b77b;font-size:11px;letter-spacing:.3em}
+.layout-mask-invitation .copy h1{position:absolute;z-index:5;left:7vw;top:10vh;width:56vw;max-width:980px;margin:0;color:#f1e5d0;font-size:clamp(32px,3.15vw,56px);line-height:1.04;white-space:nowrap;text-shadow:0 4px 24px #100b18}
+.layout-mask-invitation:before{content:'';position:absolute;z-index:3;inset:0;pointer-events:none;background:linear-gradient(90deg,#211827f2 0%,#211827dd 34%,#21182793 48%,transparent 66%),linear-gradient(0deg,#211827b8 0%,transparent 20%,transparent 81%,#21182750 100%)}
+.layout-mask-invitation .activity-inscriptions{display:contents}
+.layout-mask-invitation .activity-inscription{position:absolute;z-index:4;left:7vw;width:39vw;max-width:735px;padding:8px 15px 11px 17px;border-left:2px solid #b79a68;background:linear-gradient(100deg,#211827ed 0%,#211827c9 82%,#21182700 100%);text-shadow:0 2px 12px #100b18}
+.layout-mask-invitation .activity-inscription-0{top:32vh}
+.layout-mask-invitation .activity-inscription-1{top:48vh}
+.layout-mask-invitation .activity-inscription-2{top:65vh}
+.layout-mask-invitation .activity-inscription>span{display:block;margin-bottom:4px;color:#d0ad71;font:600 11px Cinzel,Georgia,serif;letter-spacing:.13em}
+.layout-mask-invitation .activity-inscription p{margin:0;color:#f0e6d7;font:400 clamp(14px,1vw,18px)/1.44 Inter,system-ui,sans-serif}
+.layout-mask-invitation .activity-timing{position:absolute;z-index:4;left:7vw;bottom:15vh;width:42vw;max-width:795px;padding:9px 14px;background:#211827e8;border-top:1px solid #b79a6877;border-bottom:1px solid #b79a6844}
+.layout-mask-invitation .activity-timing p{display:flex;gap:12px;align-items:baseline;margin:3px 0;color:#e9dcc0;font:400 clamp(12px,.82vw,15px)/1.4 Inter,system-ui,sans-serif}
+.layout-mask-invitation .activity-timing strong{flex:none;color:#f0d9a6;font:600 clamp(13px,.9vw,16px)/1.3 Cinzel,Georgia,serif}
+.layout-mask-invitation .activity-reflection{position:absolute;z-index:5;left:7vw;bottom:7vh;width:44vw;max-width:830px;margin:0;padding:10px 14px;border-left:2px solid #b79a68;background:#211827ed;color:#f0d9a6;font:italic 500 clamp(18px,1.3vw,24px)/1.28 "Cormorant Garamond",Georgia,serif;text-shadow:0 2px 12px #100b18}
+@keyframes invitation-mask-glow{from{filter:drop-shadow(0 7px 15px rgba(20,14,20,.4))}to{filter:drop-shadow(0 5px 24px rgba(230,194,117,.37))}}
+@media(max-width:800px){
+ .theme-mask-invitation .ex-mask-invitation{opacity:.13}
+ .animated-museum .layout-mask-invitation{overflow-y:auto;padding:14vh 7vw 15vh}
+ .layout-mask-invitation .copy{display:block;position:relative;z-index:5;padding:0}
+ .layout-mask-invitation .eyebrow,.layout-mask-invitation .copy h1,.layout-mask-invitation .activity-inscription,
+ .layout-mask-invitation .activity-timing,.layout-mask-invitation .activity-reflection{position:relative;inset:auto;left:auto;right:auto;top:auto;bottom:auto;width:auto;max-width:100%;margin:0;transform:none;text-align:left}
+ .layout-mask-invitation .eyebrow{margin-bottom:13px}
+ .layout-mask-invitation .copy h1{font-size:clamp(34px,8.5vw,52px);margin-bottom:20px}
+ .layout-mask-invitation .copy h1{white-space:normal}
+ .layout-mask-invitation .activity-inscriptions{display:flex;flex-direction:column;gap:12px}
+ .layout-mask-invitation .activity-inscription{padding:10px 12px 12px;background:linear-gradient(90deg,#211827f2,#211827c9 90%,transparent)}
+ .layout-mask-invitation .activity-inscription p{font-size:14px;line-height:1.52}
+ .layout-mask-invitation .activity-timing{margin-top:16px;padding:10px 12px}
+ .layout-mask-invitation .activity-timing p{display:block;font-size:13px;line-height:1.45}
+ .layout-mask-invitation .activity-timing strong{display:block;margin-bottom:2px}
+ .layout-mask-invitation .activity-reflection{margin-top:14px;padding:10px 12px;font-size:20px}
+}
+@media(prefers-reduced-motion:reduce){
+ .invitation-layer{transition:none!important;transform:none!important;will-change:auto}
+ .invitation-chosen-mask{animation:none!important}
+}
+
+/* La cita del inframundo se mantiene en una zona lateral despejada. */
+.layout-dionysus-underworld .underworld-reflection{right:5vw;top:65vh;left:auto;bottom:auto;width:min(28vw,520px);padding:9px 13px;font-size:clamp(16px,1.15vw,22px);line-height:1.25}

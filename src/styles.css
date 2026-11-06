@@ -16,8 +16,26 @@
 @media(max-width:800px){.app{min-height:100svh}.slide{display:block;padding:16vh 8vw 16vh;overflow:auto}.copy{max-width:100%;max-height:72svh;overflow:auto;padding-right:4px}.copy h1{font-size:clamp(36px,11vw,64px);margin-top:14px}.subtitle{font-size:16px}.body{font-size:13px;line-height:1.55}.visual{position:absolute;right:-18vw;bottom:9vh;width:68vw;height:68vw;opacity:.28;z-index:-1}.cards{grid-template-columns:1fr 1fr;gap:8px}.card{padding:11px;font-size:10px}.gallery,.bibliography{grid-template-columns:1fr;gap:8px}.gallery div,.bibliography div{min-height:auto;padding:12px}.bibliography p{font-size:9px}.hint{display:none}.footer{bottom:16px}.steps,.timeline{gap:8px}.steps span,.timeline span{min-width:70px;font-size:10px}.pill-grid span{font-size:10px;padding:8px 11px}}
 @media(max-width:480px){.brand{font-size:11px}.brand small{display:none}.topbar{top:20px}.progress{top:62px}.slide{padding-top:13vh;padding-bottom:15vh}.copy h1{font-size:clamp(32px,10vw,48px)}.cards{grid-template-columns:1fr}.compare{grid-template-columns:1fr}.compare div+div{border-left:0;border-top:1px solid rgba(233,223,201,.2)}.family{transform:scale(.88);transform-origin:left center;width:114%}.visual{right:-25vw;bottom:12vh;width:80vw;height:80vw}.footer{font-size:9px}.nav button{width:30px;height:30px}}
 @media(prefers-reduced-motion:reduce){.visual,.visual:before,.visual:after,.orb,.glyph,.parallax-leaf{transition:none!important;transform:none!important}}
+
+/* Shared projection-safe layout and type scale */
+:root{--safe-x:8vw;--safe-top:14vh;--safe-bottom:13vh;--title-size:clamp(42px,3.75vw,72px);--long-title-size:clamp(36px,3.1vw,58px);--subtitle-size:clamp(18px,1.6vw,30px);--body-size:clamp(16px,1.25vw,24px);--note-size:clamp(13px,.95vw,18px)}
+.animated-museum .slide{box-sizing:border-box;grid-template-columns:minmax(0,46%) minmax(0,50%);gap:4%;padding:var(--safe-top) var(--safe-x) var(--safe-bottom);min-height:0;overflow:visible}.animated-museum .copy{min-width:0;max-width:100%;position:relative;z-index:5}.animated-museum .copy h1{font-size:var(--title-size);line-height:1.08;margin:14px 0 20px;max-width:100%;overflow-wrap:anywhere}.animated-museum .copy .subtitle{font-size:var(--subtitle-size);line-height:1.38;margin:0 0 22px}.animated-museum .copy .body{font-size:var(--body-size);line-height:1.5;margin:0 0 20px;max-width:100%}.animated-museum .copy .note{font-size:var(--note-size);line-height:1.45;margin:18px 0 0;max-width:100%}.animated-museum .copy blockquote{font-size:clamp(20px,1.7vw,32px);line-height:1.35;max-width:100%;margin:24px 0}.animated-museum .cards{max-width:100%;min-width:0}.animated-museum .card{font-size:clamp(15px,1.05vw,20px);line-height:1.4;overflow-wrap:anywhere}.animated-museum .footer,.animated-museum .topbar{z-index:20}.print-action{margin-top:12px!important;border-top:1px solid rgba(198,161,91,.3)!important;color:#c6a15b!important}.print-action i{font-style:normal}.chapter-menu button{min-height:38px}
+@media print{ @page{size:landscape;aspect-ratio:16/9;margin:0}html,body{width:100%;height:auto;overflow:visible;background:#100d13}.app{height:auto;min-height:0;overflow:visible}.topbar,.footer,.progress,.chapter-menu,.grain{display:none!important}.slide{position:relative!important;inset:auto!important;width:100vw;height:56.25vw;min-height:0;page-break-after:always;break-after:page;overflow:hidden!important;transform:none!important;opacity:1!important}.parallax-scene,.gallery-scene,.exhibition-scene{position:absolute!important;inset:0!important;transform:none!important}.motion-reduce,.parallax-layer,.ex-plane{animation:none!important;transition:none!important}.copy{transform:none!important}.visual{display:none!important}}
 @media(prefers-reduced-motion:reduce){.hero-slide .copy,.hero-slide .subtitle{animation:none!important}}
 @media(max-width:800px){.scene-backdrop img{width:155%;height:110%;left:-27%}.scene-vine{width:150%!important;height:115%!important;left:-25%!important;object-position:center bottom!important}.scene-vineyard{opacity:.35}}
+
+/* Igualar la línea de controles con la diapositiva de referencia. */
+.animated-museum .footer{bottom:29px!important}
+@media(max-width:800px){.animated-museum .footer{bottom:20px!important}}
+@media(max-width:480px){.animated-museum .footer{bottom:16px!important}}
+.nav .arrow-btn.is-hidden{display:none}
+
+@media(min-width:801px){
+ .animated-museum .slide .eyebrow{top:12.5vh!important}
+ .animated-museum .slide .copy h1{top:15.5vh!important}
+ .theme-tree .layout-family-mural .copy h1{top:8vh!important}
+ .theme-theatre .layout-theatre-panorama .copy h1{top:8vh!important}
+}
 .theme-gallery-dionysus .layout-gallery .subtitle{color:#f4ead8;font-size:clamp(17px,1.2vw,23px);font-weight:500}.theme-gallery-dionysus .layout-gallery .note{color:#c6a15b;border-left-color:#c6a15b;font-size:clamp(12px,.8vw,15px);margin-top:20px}
 .theme-gallery-dionysus .parallax-scene{background:linear-gradient(180deg,#29152f 0%,#3a1d38 56%,#211523 57%,#100d13 100%);isolation:isolate}.theme-gallery-dionysus .parallax-layer[src*="dionysus_gallery"]{opacity:0!important}.theme-gallery-dionysus .parallax-scene:before{content:'';position:absolute;inset:0;z-index:0;background:linear-gradient(103deg,transparent 0 41%,rgba(198,161,91,.18) 41.2%,transparent 41.6%),linear-gradient(77deg,transparent 0 65%,rgba(198,161,91,.14) 65.2%,transparent 65.6%),linear-gradient(180deg,transparent 0 55%,rgba(198,161,91,.2) 55.2%,transparent 55.6%),repeating-linear-gradient(90deg,transparent 0 18%,rgba(233,223,201,.08) 18.1% 18.25%,transparent 18.4% 36%);opacity:.72}.theme-gallery-dionysus .parallax-scene:after{z-index:4;background:linear-gradient(90deg,rgba(41,21,47,.78) 0%,rgba(41,21,47,.5) 36%,rgba(16,13,19,.08) 68%,rgba(16,13,19,.2)),linear-gradient(0deg,rgba(16,13,19,.28),transparent 48%)}.gallery-pedestal{position:absolute;z-index:1;right:16%;bottom:9%;width:min(25vw,330px);height:min(13vh,112px);background:linear-gradient(180deg,#c1b29a,#806d63 44%,#3e3036 100%);box-shadow:0 18px 0 -7px #251b27,0 24px 32px rgba(16,13,19,.55),inset 0 3px 0 rgba(233,223,201,.35);border:1px solid rgba(233,223,201,.32);transition:transform .55s cubic-bezier(.22,.61,.36,1)}.gallery-pedestal:before{content:'';position:absolute;left:-8%;right:-8%;bottom:-18px;height:20px;background:#51434a;box-shadow:0 9px 18px rgba(16,13,19,.5);border:1px solid rgba(233,223,201,.2)}.gallery-pedestal:after{content:'';position:absolute;inset:14% 5%;border-top:1px solid rgba(233,223,201,.22);border-bottom:1px solid rgba(16,13,19,.25)}.gallery-pedestal span{position:absolute;left:-13%;right:-13%;bottom:-38px;height:12px;background:#29212b;box-shadow:0 10px 18px rgba(16,13,19,.5)}.theme-gallery-dionysus .parallax-layer[src*="hero_dionysus_bust"]{z-index:2;width:100%;height:70%;left:0;top:5%;object-fit:contain;object-position:center bottom;filter:brightness(1.06) contrast(1.03) drop-shadow(0 18px 16px rgba(16,13,19,.45))}
 .theme-gallery-dionysus .layout-gallery .copy{transform:translateY(-2vh);position:relative;z-index:5}.theme-gallery-dionysus .layout-gallery .copy:before{content:'';position:absolute;z-index:-1;left:-6vw;top:-5vh;bottom:-5vh;width:112%;background:linear-gradient(90deg,rgba(41,21,47,.8),rgba(41,21,47,.48) 68%,transparent);filter:blur(18px);pointer-events:none}.theme-gallery-dionysus .parallax-layer[src*="hero_dionysus_bust"]{width:100%;height:78%;left:0;top:7%;object-fit:contain;object-position:center bottom;filter:brightness(1.07) contrast(1.03) drop-shadow(0 22px 18px rgba(41,21,47,.36));transform-origin:center bottom}.theme-gallery-dionysus .parallax-layer[src*="hero_vine_foreground"]{opacity:.1!important;filter:blur(1.5px)}.theme-gallery-dionysus .parallax-layer[src*="hero_fog"]{opacity:.05!important}.theme-gallery-dionysus .parallax-scene:after{background:linear-gradient(90deg,rgba(41,21,47,.72) 0%,rgba(41,21,47,.5) 33%,rgba(41,21,47,.08) 65%,rgba(41,21,47,.16) 100%),linear-gradient(0deg,rgba(41,21,47,.24),transparent 48%)}
@@ -34,4 +52,58 @@
 .theme-vine .parallax-layer[src*="hero_dionysus"]{width:100%;height:100%;left:0;top:0;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 12px 24px rgba(198,161,91,.18));transform-origin:center bottom}.theme-vine .parallax-layer[src*="hero_vine_foreground"]{filter:blur(1.3px);transform-origin:center bottom}.theme-vine .parallax-layer[src*="hero_columns"]{filter:brightness(.78) blur(.15px)}.theme-vine .parallax-layer[src*="hero_fog"]{opacity:.1!important}.theme-vine .parallax-scene:after{background:linear-gradient(90deg,rgba(16,13,19,.88) 0%,rgba(16,13,19,.34) 52%,rgba(16,13,19,.14)),linear-gradient(0deg,rgba(16,13,19,.66),transparent 58%)}
 .hero-slide .copy{max-width:570px}.hero-slide .eyebrow{font-size:11px;letter-spacing:.3em}.hero-slide .copy h1{font-size:clamp(64px,9vw,132px);margin:22px 0 17px}.hero-slide .subtitle{font-size:clamp(18px,2vw,28px);line-height:1.25;color:#e9dfc9;max-width:460px}.hero-slide .note{font-size:12px;color:#c6a15b;margin-top:29px}.hero-slide .start{margin-top:28px;background:#5a1838;border:1px solid rgba(198,161,91,.76);color:#e9dfc9;padding:14px 22px;letter-spacing:.04em;transition:transform .25s ease,background .25s ease,box-shadow .25s ease}.hero-slide .start:hover{background:#70417d;transform:translateY(-2px);box-shadow:0 12px 28px rgba(16,13,19,.35)}.is-launching .hero-slide .copy{transform:scale(1.025);transition:transform .52s ease}.is-launching .theme-vine{}
 .hero-slide .copy{align-self:center;transform:translateY(1vh)}.hero-slide .copy h1{font-size:clamp(56px,7.6vw,112px);margin:0 0 6px}.hero-slide .subtitle{font-size:clamp(15px,1.35vw,20px);font-weight:400;letter-spacing:.01em;color:#e9dfc9}.hero-slide .footer{font-size:9px;letter-spacing:.1em}.hero-slide .footer .hint{display:none}.theme-vine.help-visible .footer .hint{display:block}.theme-vine>.progress{display:none}.theme-vine .parallax-layer[src*="hero_dionysus"]{filter:brightness(1.12) contrast(1.03) saturate(.96) drop-shadow(0 12px 24px rgba(198,161,91,.22))}
+.hero-slide .copy h1{font-size:clamp(50px,6.7vw,98px)}.hero-slide .subtitle{font-size:clamp(14px,1.15vw,18px)}
 .theme-vine .parallax-layer{transition:transform .55s cubic-bezier(.22,.61,.36,1)}.theme-vine .parallax-layer[src*="hero_fog"]{opacity:.16!important;animation:fogDrift 18s ease-in-out infinite alternate}.theme-vine .parallax-layer[src*="hero_vine_foreground"]{filter:blur(1.3px)}@keyframes fogDrift{from{margin-left:-1.2%}to{margin-left:1.2%}}
+
+.topbar{height:38px}
+.topbar .chapter-tag{display:block;position:absolute;left:50%;top:43px;z-index:7;max-width:80vw;overflow:hidden;text-align:center;text-overflow:ellipsis;white-space:nowrap;line-height:12px;transform:translateX(-50%)}
+.progress{top:94px}
+.progress{top:auto;bottom:10px}
+.animated-museum .footer{bottom:29px}
+@media(max-width:480px){
+ .topbar{top:20px}
+ .topbar .chapter-tag{top:43px;max-width:calc(100vw - 32px);font-size:8px;letter-spacing:.14em}
+ .progress{top:84px}
+ .progress{top:auto;bottom:6px}
+ .animated-museum .footer{bottom:16px}
+}
+
+/* Ajuste editorial común para proyección y PDF: el texto se adapta al espacio
+   de cada escena sin alterar sus fondos, figuras ni tarjetas existentes. */
+.animated-museum .slide{padding-top:clamp(132px,16vh,170px);padding-bottom:clamp(112px,14vh,145px)}
+.animated-museum .copy h1{overflow:visible;overflow-wrap:normal;word-break:normal;hyphens:none;text-wrap:balance}
+.animated-museum .copy p,.animated-museum .copy blockquote,.animated-museum .copy strong,.animated-museum .copy span{overflow-wrap:normal;word-break:normal;hyphens:none}
+.animated-museum .copy blockquote{margin-top:18px;margin-bottom:18px}
+.animated-museum .copy .note{margin-top:12px}
+.hero-slide .copy h1{white-space:nowrap;word-break:keep-all;overflow:visible;font-size:clamp(48px,6.6vw,96px);letter-spacing:.015em}
+.hero-slide .copy{max-width:min(44vw,620px)}
+
+/* Long headings get a little more width or a calmer scale before body copy
+   is touched. These are per-scene exceptions, preserving the common scale. */
+.layout-birth-story .copy h1,.layout-nisa-story .copy h1,.layout-family-mural .copy h1,
+.layout-festival-procession .copy h1,.layout-theatre-panorama .copy h1,
+.layout-pentheus-tragedy .copy h1,.layout-dionysus-underworld .copy h1,
+.layout-dionysian-polis .copy h1,.layout-sanctuary-mysteries .copy h1,
+.layout-ritual-meaning .copy h1,.layout-apollo-dionysus .copy h1,
+.layout-nietzsche-tragedy .copy h1,.layout-freedom-limits .copy h1,
+.layout-philosophy .copy h1,.layout-threshold .copy h1,.layout-sensory .copy h1,
+.layout-popular-culture .copy h1,.layout-conclusion-mural .copy h1{font-size:var(--long-title-size);line-height:1.05}
+
+/* Keep the final reading zone clear of the lower navigation in every scene. */
+.animated-museum .slide > .copy{max-height:calc(100% - 10px)}
+.animated-museum .footer{bottom:clamp(26px,4.2vh,44px)}
+
+@media(max-width:800px){
+ .animated-museum .slide{padding-top:132px;padding-bottom:92px;overflow:hidden}
+ .animated-museum .copy{max-height:none;overflow:visible;padding-right:0}
+ .animated-museum .copy h1{font-size:clamp(34px,9.5vw,56px);line-height:1.06}
+ .hero-slide .copy{max-width:90vw}
+ .hero-slide .copy h1{font-size:clamp(42px,13vw,76px);white-space:nowrap}
+ .animated-museum .footer{bottom:20px}
+}
+
+@media print{
+ .animated-museum .slide{padding-top:16vh;padding-bottom:13vh}
+ .animated-museum .copy h1{overflow:visible;overflow-wrap:normal;word-break:normal}
+ .hero-slide .copy h1{white-space:nowrap}
+}

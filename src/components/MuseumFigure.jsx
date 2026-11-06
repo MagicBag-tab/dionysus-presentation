@@ -1,7 +1,8 @@
 import React from 'react';
 
 const crownCharacters = new Set(['hera', 'midas', 'lycurgus', 'pentheus']);
-const longHairCharacters = new Set(['dionysus', 'ampelos', 'semele', 'hera', 'ariadne', 'nymph', 'maenad']);
+const longHairCharacters = new Set(['dionysus', 'ampelos', 'semele', 'hera', 'ariadne', 'nymph', 'maenad', 'minyas']);
+const feminineCharacters = new Set(['semele', 'hera', 'ariadne', 'nymph', 'maenad', 'minyas']);
 const cloakColors = {
   apollo: '#b59a68',
   ariadne: '#81515a',
@@ -10,6 +11,7 @@ const cloakColors = {
   lycurgus: '#51464d',
   maenad: '#6f5347',
   midas: '#8d7141',
+  minyas: '#76535b',
   nymph: '#59634b',
   pentheus: '#63505b',
   semele: '#817260',
@@ -57,7 +59,16 @@ export default function MuseumFigure({
 
     <g transform={child ? 'translate(0 -22) scale(.84)' : undefined}>
       {longHair
-        ? <path d="M-24-166Q-44-146-36-106L-28-81Q-20-94-17-111L-11-151ZM24-166Q44-146 36-106L28-81Q20-94 17-111L11-151Z" fill={hair} stroke="#d5c19d" strokeOpacity=".24" strokeWidth="2"/>
+        ? <>
+          <path d="M-25-164Q-43-177-37-192Q-31-207-12-204Q1-214 15-204Q37-205 40-187Q43-174 25-162L22-137Q12-146 10-159Q2-152-5-160Q-13-149-22-146Z" fill={hair} stroke="#d5c19d" strokeOpacity=".32" strokeWidth="2"/>
+          <path d="M-24-165Q-44-146-37-111Q-34-91-27-82Q-18-91-18-111L-12-148ZM24-165Q44-146 37-111Q34-91 27-82Q18-91 18-111L12-148Z" fill={hair} stroke="#d5c19d" strokeOpacity=".3" strokeWidth="2"/>
+          <path d="M-28-190Q-19-199-10-190M-7-201Q2-194 10-200M16-194Q26-199 32-188M-34-173Q-26-180-20-173M34-173Q26-180 20-173" fill="none" stroke="#9b8063" strokeWidth="3" strokeLinecap="round"/>
+          {feminineCharacters.has(character) && <g fill="none" stroke="#b79a68" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M-26-177Q0-190 26-177" strokeWidth="3"/>
+            <path d="M-23-174Q-19-180-15-174Q-11-168-7-174Q-3-180 1-174Q5-168 9-174Q13-180 17-174Q21-168 25-174" strokeWidth="2"/>
+            <path d="M-27-151Q-33-142-27-133Q-21-128-27-120M27-151Q33-142 27-133Q21-128 27-120" stroke={hair} strokeWidth="4"/>
+          </g>}
+        </>
         : <path d="M-31-143Q-36-181 0-181Q36-181 31-143L25-158Q12-169 0-161Q-17-170-27-153Z" fill={hair} stroke="#d5c19d" strokeOpacity=".24" strokeWidth="2"/>}
       {(character === 'dionysus' || character === 'ampelos') && <g stroke="#c1aa78" strokeWidth="2.2" strokeLinejoin="round">
         <path d="M-29-163Q-15-180 0-170Q15-180 29-163" fill="none" stroke="#a78b59" strokeWidth="3"/>
@@ -69,6 +80,10 @@ export default function MuseumFigure({
       <path d="M-20-151Q-21-173 0-174Q21-173 20-151L16-126Q10-111 0-110Q-12-112-17-128Z" fill="#d4c19e" stroke="#ead7b5" strokeOpacity=".55" strokeWidth="2"/>
       {mature && <path d="M-16-132Q-11-119 0-118Q11-119 16-132L13-105Q0-91-13-105Z" fill={hair} stroke="#d3bf9b" strokeOpacity=".35" strokeWidth="1.5"/>}
       {longHair && <path d="M-21-148Q-26-124-19-108M21-148Q26-124 19-108" fill="none" stroke={hair} strokeWidth="7" strokeLinecap="round"/>}
+      {feminineCharacters.has(character) && <g fill="none" stroke={hair} strokeWidth="2.5" strokeLinecap="round" opacity=".8">
+        <path d="M-18-150Q-24-143-18-137Q-12-131-18-124"/>
+        <path d="M18-150Q24-143 18-137Q12-131 18-124"/>
+      </g>}
       {(character === 'dionysus' || character === 'ampelos') && <g fill="none" stroke={hair} strokeWidth="3.5" strokeLinecap="round">
         <path d="M-27-153Q-37-146-29-137Q-21-131-28-122M27-153Q37-146 29-137Q21-131 28-122"/>
         <path d="M-31-146Q-35-137-29-132M31-146Q35-137 29-132" stroke="#9b8063" strokeWidth="1.5"/>
