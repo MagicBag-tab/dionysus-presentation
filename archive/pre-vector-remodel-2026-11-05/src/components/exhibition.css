@@ -1,0 +1,179 @@
+/* Shared animated museum language. The first two scenes keep their own styles. */
+.exhibition-scene{position:absolute;inset:0;overflow:hidden;isolation:isolate;background:#211925;pointer-events:none;color:#d0b27d}
+.ex-plane{will-change:transform;transition:transform .7s cubic-bezier(.16,1,.3,1)}
+.ex-architecture{position:absolute;inset:-3%;width:106%;height:106%}
+.ex-art-wrap{position:absolute;left:48%;right:2%;top:15%;bottom:8%;z-index:1;filter:drop-shadow(0 20px 30px #09061255)}
+.ex-art{height:100%;width:100%;overflow:visible}
+.ex-drawing{animation:exReveal 1s cubic-bezier(.2,.8,.2,1) both}
+.ex-edge{position:absolute;z-index:2;right:-3%;top:-5%;bottom:-8%;width:5%;background:linear-gradient(90deg,#3b2e31,#b29a74 48%,#4e3d37);box-shadow:-22px 0 45px #140b2244}
+.ex-shade{position:absolute;inset:0;z-index:3;background:linear-gradient(90deg,#130f1deb 0%,#1e1426c4 32%,#23182755 51%,transparent 67%),linear-gradient(0deg,#100b1a88,transparent 25%,transparent 83%,#100b1a55)}
+.animated-museum:after{display:none}
+.animated-museum .grain{opacity:.03}
+.animated-museum .slide{padding:16vh 8vw 13vh;gap:4vw;grid-template-columns:46% 50%}
+.animated-museum .copy{max-width:620px;align-self:center}
+.animated-museum .copy h1{font-size:clamp(36px,4.35vw,72px);line-height:1.06;letter-spacing:-.035em;margin:18px 0 24px;max-width:650px}
+.animated-museum .subtitle{color:#eee3d1;font-size:clamp(17px,1.35vw,23px);line-height:1.5;font-weight:400;margin:0 0 24px}
+.animated-museum .body{color:#d6cbbb;font-size:clamp(17px,1.2vw,21px);line-height:1.65;margin:0 0 20px}
+.animated-museum .note{color:#c8ac77;font-size:clamp(12px,.95vw,16px);line-height:1.55;margin:22px 0 0}
+.animated-museum .eyebrow{font-size:11px;letter-spacing:.23em}
+.animated-museum .cards{grid-template-columns:1fr;gap:0;max-width:560px}
+.animated-museum .card{border:0;border-bottom:1px solid #c6a15b35;background:none;padding:12px 0;color:#e9dfc9;font-size:clamp(15px,1.15vw,20px);line-height:1.45}
+.animated-museum .card:last-child{border-bottom:0}
+.animated-museum blockquote{font-size:clamp(21px,2vw,32px);line-height:1.4;max-width:650px;margin:25px 0}
+.animated-museum .pill-grid{gap:10px}
+.animated-museum .pill-grid span{font-size:clamp(15px,1.1vw,19px);background:#251b2f66;border-color:#c6a15b44;border-radius:0;padding:12px 17px}
+.animated-museum .steps,.animated-museum .timeline{gap:0;display:flex;flex-direction:column;max-width:550px}
+.animated-museum .steps span,.animated-museum .timeline span{font-size:clamp(14px,1.05vw,18px);flex-direction:row;align-items:baseline;gap:18px;padding:11px 0;border-bottom:1px solid #c6a15b2e;line-height:1.4}
+.animated-museum .steps b,.animated-museum .timeline b{font-size:13px;min-width:24px}
+/* Object catalogue: text labels and vector objects are one exhibit each. */
+.animated-museum .layout-catalogue{display:block;padding-top:14vh}
+.layout-catalogue .copy{max-width:none!important}
+.animated-museum .layout-catalogue .copy h1{font-size:clamp(36px,3.8vw,62px);max-width:none;margin:14px 0}
+.layout-catalogue .subtitle{margin-bottom:22px;max-width:900px}
+.animated-museum .layout-catalogue .cards{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px;max-width:none;margin-top:3vh}
+.animated-museum .layout-catalogue .card{padding:22px 12px 20px;border:1px solid #c6a15b30;background:linear-gradient(145deg,#68513c33,#21172888);text-align:center;font-size:clamp(14px,1vw,18px);min-height:260px;display:flex;flex-direction:column;justify-content:space-between;align-items:center}
+.ex-card-object{width:100%;height:170px;max-width:145px;color:#d0b27d;filter:drop-shadow(0 8px 7px #100b1955);margin-bottom:18px}
+.theme-symbols .ex-art-wrap{opacity:.06;left:40%}
+.theme-symbols .ex-shade{background:linear-gradient(90deg,#130f1ddd,#21182788)}
+/* Facets: stable labels around the conceptual scene. */
+.animated-museum .layout-facets .pill-grid{margin-top:30px;display:grid;grid-template-columns:1fr 1fr;max-width:500px}
+.layout-facets .pill-grid span:last-child{grid-column:1/-1}
+/* Family: preserve the supplied labels and draw actual relationships. */
+.animated-museum .layout-family{display:block;padding-top:14vh;text-align:center}
+.layout-family .copy{max-width:none!important}
+.layout-family .copy h1{margin-left:auto!important;margin-right:auto!important}
+.layout-family .subtitle{max-width:none}
+.layout-family .family{height:34vh;min-height:235px;max-width:1050px;margin:3vh auto 0;display:block}
+.layout-family .family:before{display:none}
+.family-lines{position:absolute;inset:0;width:100%;height:100%;color:#c6a15b;opacity:.45;overflow:visible}
+.layout-family .family span{position:absolute;display:grid;place-items:center;width:21%;height:62px;padding:8px;border:1px solid #c6a15b66;background:linear-gradient(135deg,#65503d88,#261c2de8);font-size:clamp(15px,1.1vw,20px);color:#e9dfc9}
+.layout-family .family-0{left:18%;top:0}
+.layout-family .family-1{left:61%;top:0}
+.layout-family .family-2{left:39.5%;top:43%;border-color:#c6a15b!important}
+.layout-family .family-3{left:74%;top:43%}
+.layout-family .family-4{left:57%;top:85%;width:27%!important}
+.theme-tree .ex-art-wrap{opacity:.07;inset:18% 6% 6% 40%}
+.theme-tree .ex-shade{background:linear-gradient(90deg,#130f1dcc,#21182788)}
+/* Four festivals run across a frieze instead of another left-hand list. */
+.animated-museum .layout-frieze{display:block;padding-top:14vh}
+.layout-frieze .copy{max-width:none!important}
+.layout-frieze .copy h1{max-width:850px!important}
+.layout-frieze .subtitle{max-width:900px}
+.animated-museum .layout-frieze .timeline{position:absolute;top:62vh;left:0;right:0;display:grid;grid-template-columns:repeat(4,1fr);max-width:none;gap:20px}
+.layout-frieze .timeline span{display:flex;flex-direction:column!important;gap:14px!important;border-top:1px solid #c6a15b77;border-bottom:0!important;padding:18px!important;background:#221829aa}
+.layout-frieze .note{position:absolute;top:75vh;max-width:850px}
+.theme-festival .ex-art-wrap{left:43%;right:4%;top:9%;bottom:29%;opacity:.65}
+/* Two-column philosophy: centered headings, separate balanced panels. */
+.animated-museum .layout-dialogue{display:block;padding-top:14vh;text-align:center}
+.layout-dialogue .copy{max-width:1300px!important;margin:auto}
+.layout-dialogue .copy h1{max-width:1100px!important;margin-left:auto!important;margin-right:auto!important}
+.layout-dialogue .subtitle{max-width:1000px;margin-left:auto;margin-right:auto}
+.layout-dialogue .compare{margin:6vh auto 0;max-width:1150px;gap:7vw;border:0}
+.layout-dialogue .compare div{padding:25px 30px 35px;border:1px solid #c6a15b55;background:linear-gradient(145deg,#8f795a22,#1e162be6);text-align:left;min-height:200px}
+.layout-dialogue .compare div+div{border-left:1px solid #c6a15b55;background:linear-gradient(145deg,#6e344a44,#1e162be6)}
+.layout-dialogue .compare strong{font-size:clamp(25px,2vw,34px);letter-spacing:.1em}
+.layout-dialogue .compare span{font-size:clamp(18px,1.4vw,24px);line-height:1.9}
+.theme-dual .ex-art-wrap{inset:15% 12% 7%;opacity:.18}
+.theme-dual .ex-shade{background:linear-gradient(0deg,#16101dcc,#21182766)}
+/* Ethics: three deliberately equal spaces. */
+.animated-museum .layout-triptych{display:block;padding-top:14vh}
+.layout-triptych .copy{max-width:none!important}
+.layout-triptych .copy h1{max-width:1100px!important}
+.layout-triptych .subtitle{max-width:1000px}
+.animated-museum .layout-triptych .cards{margin-top:8vh;max-width:none;display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.animated-museum .layout-triptych .card{min-height:230px;border:1px solid #c6a15b44;padding:25px;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;background:linear-gradient(135deg,#5b46363d,#201626c7);font-size:clamp(18px,1.4vw,24px)}
+.layout-triptych .ex-card-object{height:100px;width:100px;margin:0 0 22px}
+.theme-ethics .ex-art-wrap{opacity:.12;inset:10% 8% 3% 30%}
+/* Culture & references: a wide editorial grid. */
+.animated-museum .layout-editorial{display:block;padding-top:13vh}
+.layout-editorial .copy{max-width:none!important}
+.layout-editorial .copy h1{font-size:clamp(36px,3.8vw,62px);max-width:1200px!important;margin:14px 0 18px}
+.layout-editorial .subtitle{max-width:1000px}
+.animated-museum .layout-editorial .gallery,.animated-museum .layout-editorial .bibliography{max-width:none;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;margin-top:4vh}
+.layout-editorial .gallery div,.layout-editorial .bibliography div{background:linear-gradient(135deg,#6a513b2b,#201727df);border:1px solid #c6a15b44;padding:28px;min-height:260px}
+.layout-editorial .gallery b,.layout-editorial .bibliography b{font-size:clamp(18px,1.5vw,26px);line-height:1.4}
+.layout-editorial .gallery span{font-size:clamp(17px,1.25vw,22px);margin-top:12px}
+.layout-editorial .gallery small{font-size:clamp(14px,1.1vw,18px);color:#c5b6a4;margin-top:12px}
+.layout-editorial .bibliography p{font-size:clamp(13px,1vw,18px);line-height:1.85;color:#ddd0bd}
+.layout-editorial .gallery .ex-card-object{height:100px;width:100px;display:block}
+.theme-books .ex-art-wrap,.theme-gallery .ex-art-wrap{opacity:.08;left:15%;right:5%}
+.theme-books .ex-shade,.theme-gallery .ex-shade{background:linear-gradient(90deg,#130f1dcc,#21182799)}
+.theme-underworld .exhibition-scene{background:#100c1c}
+.theme-underworld .ex-architecture{filter:brightness(.72) saturate(.7)}
+.theme-gold .ex-art{color:#e3bd6d}
+.theme-forest .ex-art,.theme-ampelo .ex-art{color:#b2ad7d}
+.theme-ship .ex-art{color:#c6b58c}
+.theme-bacchae .ex-art{color:#bc8d82}
+.theme-final .copy h1{font-size:clamp(38px,4.15vw,69px)}
+.theme-fusion .copy h1{font-size:clamp(36px,3.9vw,64px)}
+.theme-fusion blockquote{font-size:clamp(21px,1.7vw,28px)}
+.ex-wave{animation:exWater 8s ease-in-out infinite alternate}
+.ex-vessel{animation:exSail 9s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:center}
+.ex-floating{animation:exHover 9s ease-in-out infinite alternate}
+@keyframes exReveal{from{opacity:0;translate:0 12px}to{opacity:1;translate:0 0}}
+@keyframes exWater{from{translate:-12px 0}to{translate:12px 4px}}
+@keyframes exSail{from{rotate:-.7deg;translate:0 0}to{rotate:.7deg;translate:0 4px}}
+@keyframes exHover{from{translate:0 -4px}to{translate:0 4px}}
+@media(max-height:740px) and (min-width:801px){
+ .animated-museum .slide{padding-top:15vh;padding-bottom:11vh}
+ .animated-museum .copy h1{font-size:clamp(34px,3.6vw,54px);margin:12px 0 17px}
+ .animated-museum .subtitle{font-size:17px;margin-bottom:17px}
+ .animated-museum .card{font-size:15px;padding:8px 0}
+ .animated-museum .body{font-size:16px;line-height:1.5}
+ .animated-museum .note{font-size:12px;margin-top:15px}
+ .animated-museum blockquote{font-size:22px;margin:18px 0}
+ .animated-museum .layout-catalogue .card{min-height:220px}
+ .layout-catalogue .ex-card-object{height:120px}
+ .layout-editorial .bibliography div{padding:18px}
+ .layout-editorial .bibliography p{font-size:13px}
+ .animated-museum .layout-triptych .cards{margin-top:4vh}
+}
+@media(max-width:800px){
+ .animated-museum .slide{display:block;padding:15vh 7vw 14vh;overflow:auto}
+ .animated-museum .copy{max-width:100%;max-height:none;overflow:visible;padding:0}
+ .animated-museum .copy h1{font-size:clamp(32px,7.5vw,52px);max-width:650px}
+ .animated-museum .subtitle{font-size:17px;max-width:560px}
+ .animated-museum .body{font-size:16px;line-height:1.6}
+ .animated-museum .card{font-size:15px}
+ .animated-museum .note{font-size:13px}
+ .ex-art-wrap{left:35%;right:-20%;top:32%;bottom:0;opacity:.24}
+ .ex-shade{background:linear-gradient(90deg,#160f1eef,#211827aa 65%,#21182755)}
+ .ex-edge{width:4%;right:-3%}
+ .animated-museum .layout-catalogue .cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:25px}
+ .animated-museum .layout-catalogue .card{min-height:170px;padding:16px;font-size:14px}
+ .layout-catalogue .ex-card-object{height:100px;margin-bottom:10px}
+ .animated-museum .layout-catalogue .copy h1,.animated-museum .layout-editorial .copy h1{font-size:clamp(32px,7.5vw,52px)}
+ .layout-family .family{height:300px;min-height:300px;width:100%;transform:none;margin-top:40px}
+ .layout-family .family span{font-size:12px;width:27%;height:65px;padding:6px}
+ .layout-family .family-0{left:10%}.layout-family .family-1{left:62%}.layout-family .family-2{left:30%}.layout-family .family-3{left:70%}.layout-family .family-4{left:48%;width:40%!important}
+ .animated-museum .layout-frieze .timeline{position:static;grid-template-columns:1fr 1fr;margin-top:35px;gap:12px}
+ .layout-frieze .note{position:static}
+ .layout-dialogue .compare{grid-template-columns:1fr;gap:15px;margin-top:25px}
+ .layout-dialogue .compare div{min-height:150px;padding:20px}
+ .layout-dialogue .compare span{font-size:17px}
+ .animated-museum .layout-triptych .cards{grid-template-columns:1fr;gap:15px;margin-top:25px}
+ .animated-museum .layout-triptych .card{min-height:150px;padding:20px;font-size:18px}
+ .layout-triptych .ex-card-object{height:70px;width:70px;margin:0 0 12px}
+ .animated-museum .layout-editorial .gallery,.animated-museum .layout-editorial .bibliography{grid-template-columns:1fr;gap:15px}
+ .layout-editorial .gallery div,.layout-editorial .bibliography div{min-height:0;padding:23px}
+ .layout-editorial .bibliography p{font-size:15px;line-height:1.85}
+ .theme-festival .ex-art-wrap{opacity:.17;inset:20% -30% 0 20%}
+}
+@media(prefers-reduced-motion:reduce){
+ .ex-plane{transform:none!important;transition:none!important;will-change:auto}
+ .ex-drawing,.ex-wave,.ex-vessel,.ex-floating{animation:none!important;translate:none!important;rotate:none!important}
+}
+/* Frieze positions are relative to the slide, not the text block. */
+@media(min-width:801px){
+ .layout-frieze .copy{position:static}
+ .animated-museum .layout-frieze .timeline{left:8vw;right:8vw;top:62vh}
+ .layout-frieze .note{left:8vw;right:8vw;top:78vh;max-width:1100px}
+}
+/* The philosophy slide has the longest unchanged text block. */
+@media(min-width:801px){
+ .theme-fusion .copy h1{font-size:clamp(34px,3.35vw,56px);margin:14px 0 18px}
+ .theme-fusion .subtitle{font-size:clamp(17px,1.15vw,21px);margin-bottom:18px}
+ .theme-fusion .body{font-size:clamp(16px,1.05vw,19px);line-height:1.55}
+ .theme-fusion blockquote{font-size:clamp(20px,1.45vw,25px);line-height:1.4;margin:20px 0}
+ .theme-fusion .note{font-size:clamp(12px,.85vw,15px);margin-top:17px}
+}

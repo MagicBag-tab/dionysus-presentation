@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 1040" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="base" x1="0" x2="1" y1="0" y2=".5">
+      <stop stop-color="#d7c6a4"/>
+      <stop offset=".27" stop-color="#aa9577"/>
+      <stop offset=".68" stop-color="#82705d"/>
+      <stop offset="1" stop-color="#4a3b39"/>
+    </linearGradient>
+    <linearGradient id="socle" x1="0" x2="1">
+      <stop stop-color="#d3c09d"/>
+      <stop offset=".18" stop-color="#9d896d"/>
+      <stop offset=".7" stop-color="#74604f"/>
+      <stop offset="1" stop-color="#413437"/>
+    </linearGradient>
+    <linearGradient id="front" x1="0" x2="0" y1="0" y2="1">
+      <stop stop-color="#b09a78"/>
+      <stop offset=".18" stop-color="#98836a"/>
+      <stop offset="1" stop-color="#625146"/>
+    </linearGradient>
+    <linearGradient id="side" x1="0" x2="1">
+      <stop stop-color="#72604f"/>
+      <stop offset="1" stop-color="#332a2d"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" x2="1">
+      <stop stop-color="#6d4b28"/>
+      <stop offset=".45" stop-color="#d2ad68"/>
+      <stop offset="1" stop-color="#78542f"/>
+    </linearGradient>
+    <filter id="relief" x="-.1" y="-.1" width="1.2" height="1.2">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2.3" result="blur"/>
+      <feOffset dy="3" result="offset"/>
+      <feComposite in="offset" in2="SourceAlpha" operator="out" result="edge"/>
+      <feColorMatrix in="edge" values="0 0 0 0 .11 0 0 0 0 .07 0 0 0 0 .06 0 0 0 .4 0"/>
+      <feBlend in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g filter="url(#relief)" transform="translate(0 236) scale(1 .769)">
+    <path d="M110 694c115 28 421 29 540-1l-20 74c-117 32-389 32-502 0Z" fill="url(#base)" stroke="#e1d0ad" stroke-opacity=".62" stroke-width="3"/>
+    <path d="M110 694c115 25 421 26 540-1l-11 19c-132 29-382 28-518 0Z" fill="#ddcaa6" stroke="#f0dfbd" stroke-opacity=".65" stroke-width="3"/>
+    <path d="M122 773h516l-26 39H151Z" fill="url(#socle)" stroke="#d1bd98" stroke-opacity=".55" stroke-width="2"/>
+    <path d="M151 812h461v32H151z" fill="url(#base)" stroke="#dfcaa5" stroke-opacity=".5" stroke-width="2"/>
+
+    <path d="M132 844h493l19 27H114Z" fill="url(#socle)" stroke="#ead7b4" stroke-opacity=".63" stroke-width="3"/>
+    <path d="M157 871h441l-18 143H178Z" fill="url(#front)" stroke="#d8c29b" stroke-opacity=".7" stroke-width="2.5"/>
+    <path d="M598 871h27l19 27v116l-64 0Z" fill="url(#side)" stroke="#c1a77e" stroke-opacity=".48" stroke-width="2"/>
+    <path d="M157 871h441v18H157Z" fill="#c6b18d" opacity=".72"/>
+    <path d="M177 904h401v3H177zm-4 79h408v3H173z" fill="#e1cba5" opacity=".36"/>
+    <path d="M202 915h350v58H202Z" fill="none" stroke="url(#gold)" stroke-width="4"/>
+    <path d="M212 924h330v40H212Z" fill="none" stroke="#d6b570" stroke-opacity=".34" stroke-width="1.5"/>
+    <path d="M180 1014h390l-19 20H199Z" fill="#4a3a37" opacity=".85"/>
+    <path d="M144 1010h471v22H144Z" fill="url(#base)" stroke="#dfcba7" stroke-opacity=".64" stroke-width="2"/>
+    <path d="M125 1032h510v8H125Z" fill="#59443d"/>
+  </g>
+</svg>
